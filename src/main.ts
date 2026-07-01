@@ -1,6 +1,7 @@
-import './styles/global.css'
+import { Body } from "./components/body";
+import "./styles/global.css";
 
-const app = document.getElementById('app') as HTMLElement;
+const app = document.getElementById("app") as HTMLElement;
 if (app) {
-    app.innerHTML = '<h1 class="text-2xl text-blue-800 font-bold">Welcome to Taskyrox</h1>';
+  app.innerHTML = Body();
 }
