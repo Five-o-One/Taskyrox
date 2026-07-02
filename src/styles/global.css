@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "/assets/fonts/fonts.css";
 
 :root {
   --color-primary: oklch(0.64 0.21 255);
@@ -83,4 +83,14 @@
   --color-icon: var(--color-icon);
   --color-icon-muted: var(--color-icon-muted);
   --color-overlay: var(--color-overlay);
+}
+
+html {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition-duration: 0.3s;
+    transition-property: all;
 }
