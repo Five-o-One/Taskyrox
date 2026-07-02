@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "/assets/fonts/fonts.css";
+@import "../assets/fonts/fonts.css";
 
 :root {
   --color-primary: oklch(0.64 0.21 255);
