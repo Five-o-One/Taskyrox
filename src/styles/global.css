@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+
+:root {
+  --color-primary: oklch(0.64 0.21 255);
+  --color-primary-hover: oklch(0.58 0.21 255);
+  --color-primary-soft: oklch(0.93 0.03 255);
+  --color-success: oklch(0.77 0.11 180);
+  --color-success-soft: oklch(0.92 0.05 180);
+  --color-warning: oklch(0.82 0.14 75);
+  --color-warning-soft: oklch(0.93 0.05 75);
+  --color-danger: oklch(0.69 0.20 30);
+  --color-danger-soft: oklch(0.92 0.05 30);
+  --color-bg: oklch(0.985 0.002 260);
+  --color-bg-elevated: oklch(0.995 0.002 260);
+  --color-surface: oklch(0.985 0.003 260);
+  --color-surface-hover: oklch(0.965 0.004 260);
+  --color-surface-active: oklch(0.945 0.005 260);
+  --color-sidebar: oklch(0.975 0.003 260);
+  --color-border: oklch(0.89 0.004 260);
+  --color-border-muted: oklch(0.94 0.003 260);
+  --color-border-focus: var(--color-primary);
+  --color-text: oklch(0.27 0.01 260);
+  --color-text-secondary: oklch(0.50 0.01 260);
+  --color-text-muted: oklch(0.67 0.008 260);
+  --color-text-disabled: oklch(0.77 0.006 260);
+  --color-icon: oklch(0.46 0.01 260);
+  --color-icon-muted: oklch(0.70 0.007 260);
+  --color-overlay: oklch(0 0 0 / 0.08);
+}
+
+[data-theme='dark']{
+  --color-primary: oklch(0.68 0.21 255);
+  --color-primary-hover: oklch(0.73 0.20 255);
+  --color-primary-soft: oklch(0.24 0.05 255);
+  --color-success: oklch(0.73 0.12 180);
+  --color-success-soft: oklch(0.28 0.06 180);
+  --color-warning: oklch(0.80 0.14 75);
+  --color-warning-soft: oklch(0.30 0.06 75);
+  --color-danger: oklch(0.72 0.19 30);
+  --color-danger-soft: oklch(0.31 0.06 30);
+  --color-bg: oklch(0.16 0.012 260);
+  --color-bg-elevated: oklch(0.19 0.013 260);
+  --color-surface: oklch(0.21 0.014 260);
+  --color-surface-hover: oklch(0.25 0.015 260);
+  --color-surface-active: oklch(0.29 0.016 260);
+  --color-sidebar: oklch(0.19 0.013 260);
+  --color-border: oklch(0.30 0.013 260);
+  --color-border-muted: oklch(0.25 0.013 260);
+  --color-border-focus: var(--color-primary);
+  --color-text: oklch(0.96 0.003 260);
+  --color-text-secondary: oklch(0.80 0.005 260);
+  --color-text-muted: oklch(0.67 0.006 260);
+  --color-text-disabled: oklch(0.50 0.005 260);
+  --color-icon: oklch(0.84 0.004 260);
+  --color-icon-muted: oklch(0.62 0.005 260);
+  --color-overlay: oklch(0 0 0 / 0.55);
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-success: var(--color-success);
+  --color-success-soft: var(--color-success-soft);
+  --color-warning: var(--color-warning);
+  --color-warning-soft: var(--color-warning-soft);
+  --color-danger: var(--color-danger);
+  --color-danger-soft: var(--color-danger-soft);
+  --color-bg: var(--color-bg);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-surface-active: var(--color-surface-active);
+  --color-sidebar: var(--color-sidebar);
+  --color-border: var(--color-border);
+  --color-border-muted: var(--color-border-muted);
+  --color-border-focus: var(--color-border-focus);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-icon: var(--color-icon);
+  --color-icon-muted: var(--color-icon-muted);
+  --color-overlay: var(--color-overlay);
+}
