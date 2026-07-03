@@ -54,7 +54,7 @@ export function TaskCard(task: Task) {
               <h3
                 class="text-sm line-through font-semibold mb-1"
               >
-                تماس با جمشید
+                ${task.title}
               </h3>
             </div>
           </div>
