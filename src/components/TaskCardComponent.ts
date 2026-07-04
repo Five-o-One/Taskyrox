@@ -7,7 +7,7 @@ export function TaskCard(task: Task) {
     return `
     <!-- TaskCardComponent -->
       <div
-        class="relative w-full h-fit border border-border py-3 px-4 rounded-xl overflow-hidden"
+        class="relative w-full h-fit border border-border bg-bg py-3 px-4 rounded-xl overflow-hidden"
       >
         ${PriorityNavColor(task.priority)}
         <!-- checkbox and title ردیف بالا-->
@@ -38,7 +38,7 @@ export function TaskCard(task: Task) {
   } else {
     return `
           <div
-        class="relative w-full h-fit border border-borderColor py-3 px-4 rounded-xl overflow-hidden"
+        class="relative w-full h-fit border border-border bg-bg py-3 px-4 rounded-xl overflow-hidden"
       >
         ${PriorityNavColor(task.priority)}
         <!-- checkbox and title ردیف بالا-->
@@ -54,7 +54,7 @@ export function TaskCard(task: Task) {
               <h3
                 class="text-sm line-through font-semibold mb-1"
               >
-                تماس با جمشید
+                ${task.title}
               </h3>
             </div>
           </div>
