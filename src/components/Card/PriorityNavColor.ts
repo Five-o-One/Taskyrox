@@ -1,7 +1,7 @@
 import type { priority } from "../../types/task";
 
-export function PriorityNavColor(taskPrioriy: priority) {
-  switch (taskPrioriy) {
+export function PriorityNavColor(taskPriority: priority) {
+  switch (taskPriority) {
     case "LOW":
       return `
   <div

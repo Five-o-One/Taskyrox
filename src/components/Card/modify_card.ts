@@ -1,3 +1,4 @@
+import { TestDic } from "../../dic/task";
 import { SelectPriority } from "./select_priority";
 
 export function Modifycard(isselected: boolean) {
@@ -44,7 +45,7 @@ export function Modifycard(isselected: boolean) {
             disabled
             class="text-xs md:text-sm font-semibold text-primary-soft bg-primary px-4 py-1.5 rounded-md"
           >
-            اضافه کردن تسک
+          ${TestDic.saveTitle}
           </button>
         </div>
       </div>
