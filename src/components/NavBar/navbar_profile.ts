@@ -1,8 +1,5 @@
-export function NavProfile(
-  name: string,
-  date: string,
-  avatarUrl: string,
-): string {
+import type { NavProfile } from "../../types/navbar_profile";
+export function NavProfile({ avatarUrl, date, name }: NavProfile): string {
   return `
   <div class="max-w-58 flex flex-row gap-3">
     <img src="${avatarUrl}" alt="profile" class="size-14 rounded-full object-contain">
