@@ -1,4 +1,4 @@
-import type { Task } from "../types/task";
+import type { Task } from "../../types/task";
 import { PriorityNavColor } from "./PriorityNavColor";
 import { ColorPriorityPiece } from "./PriortiySpanColor";
 

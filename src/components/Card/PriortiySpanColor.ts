@@ -1,4 +1,4 @@
-import type { priority } from "../types/task";
+import type { priority } from "../../types/task";
 
 export function ColorPriorityPiece(taskPrioriy: priority) {
   switch (taskPrioriy) {
