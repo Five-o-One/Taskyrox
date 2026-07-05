@@ -1,5 +1,7 @@
 import type { Task } from "../types/task";
 import { iconGen } from "../utils/icon_generator";
+import { DoneCardComponent } from "./Card/done_card";
+import { UnDoneCardComponent } from "./Card/undone_card";
 import { ListTask } from "./listTask";
 
 //! test data
@@ -15,7 +17,7 @@ const testData : Task[] = [
 export function MainContent() {
   return `
     <div class="flex flex-col w-full h-screen p-4 bg-bg md:w-4/5">
-    <div class="w-full h-full p-4 overflow-auto">${ListTask(false , testData)}</div>
-    <div class="w-full h-full p-4 overflow-auto">${ListTask(true , testData)}</div>
+    <div class="w-full h-full p-4 overflow-auto">${UnDoneCardComponent(true,testData[2])}</div>
+    <div class="w-full h-full p-4 overflow-auto">${DoneCardComponent(true , testData[4])}</div>
     </div>`;
 }
