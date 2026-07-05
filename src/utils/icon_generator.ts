@@ -21,6 +21,7 @@ import squareBold from '../assets/icons/square-bold.svg?raw'
 import sun from '../assets/icons/sun-light.svg?raw'
 import sunBold from '../assets/icons/sun-bold.svg?raw'
 import tag from '../assets/icons/tag-right.svg?raw'
+import trash from '../assets/icons/trash-light.svg?raw'
 import user from '../assets/icons/user-light.svg?raw'
 import userBold from '../assets/icons/user-bold.svg?raw'
 import xmark from '../assets/icons/xmark.svg?raw'
@@ -49,10 +50,11 @@ const icons = {
     sun,
     sunBold,
     tag,
+    trash,
     user,
     userBold,
-    xmark,
-}
+    xmark
+} as const
 
 type IconName = keyof typeof icons
 export function iconGen(n: IconName, c: string): string {

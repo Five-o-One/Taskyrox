@@ -1,8 +1,10 @@
 import type { Task } from "../../types/task";
+import { iconGen } from "../../utils/icon_generator";
+import { EditButtonDiv } from "./edit_btn_div";
 import { PriorityNavColor } from "./PriorityNavColor";
-import { ColorPriorityPiece } from "./PriortiySpanColor";
+import { ColorPriorityPiece } from "./PrioritySpanColor";
 
-export function UnDoneCardComponent(task: Task) {
+export function UnDoneCardComponent(isbtnselected: boolean, task: Task) {
   return /* html */ `
         <!-- TaskCardComponent -->
           <div
@@ -23,8 +25,11 @@ export function UnDoneCardComponent(task: Task) {
                   </div>
                   <!-- button left -->
                   <button>
-                  <img class="rotate-90" src="../src/assets/icons/menu-light.svg" alt="more-Option" />
+                  ${iconGen("menu", "rotate-90 fill-icon")}
                   </button>
+                  <div class="absolute left-6 bottom-6 md:bottom-1">
+                  ${isbtnselected ? EditButtonDiv() : " "}
+                  </div>
             </div>
             <!-- description -->
             <div class="pr-8 mt-4">

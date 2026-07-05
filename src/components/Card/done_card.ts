@@ -1,8 +1,10 @@
 import type { Task } from "../../types/task";
+import { iconGen } from "../../utils/icon_generator";
+import { EditButtonDiv } from "./edit_btn_div";
 import { PriorityNavColor } from "./PriorityNavColor";
 
-export function DoneCardComponent(task: Task) {
-  return `
+export function DoneCardComponent(isbtnselected: boolean, task: Task) {
+  return /* html */ `
   <div
           class="relative w-full h-fit border border-border bg-bg py-3 px-4 rounded-xl overflow-hidden"
         >
@@ -26,8 +28,11 @@ export function DoneCardComponent(task: Task) {
             </div>
             <!-- button left -->
             <button>
-              <img class="rotate-90" src="./src/assets/icons/menu-light.svg" alt="more-Option" />
+            ${iconGen("menu", "rotate-90 fill-icon")}
             </button>
+            <div class="absolute left-10 top-1/2 -translate-y-1/2">
+                  ${isbtnselected ? EditButtonDiv() : " "}
+                  </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { ColorPriorityPiece } from "./PriortiySpanColor";
+import { ColorPriorityPiece } from "./PrioritySpanColor";
 
 export function SelectPriority() {
   return /* html */ `

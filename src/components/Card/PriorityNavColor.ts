@@ -10,7 +10,6 @@ export function PriorityNavColor(taskPriority: priority) {
         ></div>
         
   `;
-      break;
     case "MEDIUM":
       return `
   <div
@@ -19,7 +18,6 @@ export function PriorityNavColor(taskPriority: priority) {
         ></div>
         
   `;
-      break;
     case "HIGH":
       return `
   <div
@@ -28,6 +26,5 @@ export function PriorityNavColor(taskPriority: priority) {
         ></div>
         
   `;
-      break;
   }
 }
