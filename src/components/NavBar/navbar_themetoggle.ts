@@ -1,7 +1,7 @@
 export function NavThemeToggle(): string {
   return `
-  <div class="flex flex-row w-full bg-surface p-1 rounded-lg gap-0.5">
-    <label class="flex flex-row items-center gap-1.5 w-full py-1.5 rounded-md bg-bg dark:bg-none cursor-pointer">
+  <div class="flex flex-row w-full bg-surface rounded-lg gap-0.5">
+    <label class="flex flex-row items-center justify-center gap-1.5 w-full py-2 rounded-md bg-bg dark:bg-none cursor-pointer">
       <input type="radio" name="theme" id="theme-light" class="hidden" checked />
 
       <svg class="size-4 text-text" viewBox="0 0 24 24" fill="none">
@@ -18,7 +18,7 @@ export function NavThemeToggle(): string {
       </span>
     </label>
 
-    <label class="flex flex-row items-center gap-1.5 w-full py-1.5 rounded-md cursor-pointer dark:bg-surface bg-none">
+    <label class="flex flex-row items-center justify-center gap-1.5 w-full py-2 rounded-md cursor-pointer dark:bg-surface bg-none">
       <input type="radio" name="theme" id="theme-dark" class="hidden" />
 
       <svg class="size-4 text-text-muted" viewBox="0 0 24 24" fill="none">
