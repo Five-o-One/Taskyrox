@@ -1,12 +1,13 @@
-import type { priority } from "../types/task";
+import { TestDic } from "../../dic/task";
+import type { priority } from "../../types/task";
 
-export function ColorPriorityPiece(taskPrioriy: priority) {
-  switch (taskPrioriy) {
+export function ColorPriorityPiece(taskPriority: priority) {
+  switch (taskPriority) {
     case "HIGH":
       return `
                 <span
                 class="bg-danger-soft items-center text-[10px] font-semibold w-fit text-danger py-0.5 px-2 rounded-sm"
-                >بالا</span
+                >${TestDic.highPriorityTitle}</span
               >
   `;
       break;
@@ -14,7 +15,7 @@ export function ColorPriorityPiece(taskPrioriy: priority) {
       return `
                 <span
                 class="bg-warning-soft items-center text-[10px] font-semibold w-fit text-warning py-0.5 px-2 rounded-sm"
-                >متوسط</span
+                >${TestDic.mediumPriorityTitle}</span
               >
   `;
       break;
@@ -22,7 +23,7 @@ export function ColorPriorityPiece(taskPrioriy: priority) {
       return `
                 <span
                 class="bg-success-soft items-center text-[10px] font-semibold w-fit text-success py-0.5 px-2 rounded-sm"
-                >پایین</span
+                >${TestDic.lowPriorityTitle}</span
               >
   `;
       break;

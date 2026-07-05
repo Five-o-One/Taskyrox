@@ -1,4 +1,5 @@
 import type { Task } from "../types/task";
+import { iconGen } from "../utils/icon_generator";
 import { ListTask } from "./listTask";
 
 //! test data
@@ -13,6 +14,7 @@ const testData : Task[] = [
 
 export function MainContent() {
   return `
+${iconGen("calendarBold", "w-6 h-6 hover:fill-blue-400 fill-red-400 hover:scale-90")}
     <div class="flex flex-col w-full h-screen p-4 bg-bg md:w-4/5">
     <div class="w-full h-full p-4 overflow-auto">${ListTask(false , testData)}</div>
     <div class="w-full h-full p-4 overflow-auto">${ListTask(true , testData)}</div>

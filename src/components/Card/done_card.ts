@@ -1,0 +1,35 @@
+import type { Task } from "../../types/task";
+import { PriorityNavColor } from "./PriorityNavColor";
+
+export function DoneCardComponent(task: Task) {
+  return `
+  <div
+          class="relative w-full h-fit border border-border bg-bg py-3 px-4 rounded-xl overflow-hidden"
+        >
+          ${PriorityNavColor(task.priority)}
+          <!-- checkbox and title ردیف بالا-->
+          <div class="flex justify-between items-start">
+            <!-- right -->
+            <div class="flex items-center gap-4">
+              <input
+                checked
+                class="border border-border w-5 h-5"
+                type="checkbox"
+              />
+              <div class="flex flex-col md:flex-row gap-1 md:gap-3">
+                <h3
+                  class="text-sm line-through font-semibold mb-1"
+                >
+                  ${task.title}
+                </h3>
+              </div>
+            </div>
+            <!-- button left -->
+            <button>
+              <img class="rotate-90" src="./src/assets/icons/menu-light.svg" alt="more-Option" />
+            </button>
+          </div>
+        </div>
+      </div>
+  `;
+}
