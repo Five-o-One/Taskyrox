@@ -7,4 +7,5 @@ export const TestDic = {
   mediumPriorityTitle: "متوسط",
   lowPriorityTitle: "پایین",
   saveTitle: "ذخیره",
+  addingNewTaskTitle: "افزودن وظیفه جدید",
 };
