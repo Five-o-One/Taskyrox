@@ -1,13 +1,13 @@
 import type { NavBarItem } from "../../types/navbar_item";
 import { NavBarMainItem } from "./navbar_mainitem";
 const items: NavBarItem[] = [
-  { itemIcon: "", itemId: "0", itemLabel: "خانه" },
-  { itemIcon: "", itemId: "1", itemLabel: "تسک ها" },
-  { itemIcon: "", itemId: "2", itemLabel: "تقویم" },
-  { itemIcon: "", itemId: "3", itemLabel: "گزارشات" },
-  { itemIcon: "", itemId: "4", itemLabel: "تنظیمات" },
-  { itemIcon: "", itemId: "5", itemLabel: "پشتیبانی" },
-  { itemIcon: "", itemId: "6", itemLabel: "پروفایل" },
+  { itemIcon: "home", itemId: "0", itemLabel: "خانه" },
+  { itemIcon: "checklist", itemId: "1", itemLabel: "تسک ها" },
+  { itemIcon: "calendar", itemId: "2", itemLabel: "تقویم" },
+  { itemIcon: "info", itemId: "3", itemLabel: "گزارشات" },
+  { itemIcon: "settings", itemId: "4", itemLabel: "تنظیمات" },
+  { itemIcon: "user", itemId: "5", itemLabel: "پشتیبانی" },
+  { itemIcon: "userBold", itemId: "6", itemLabel: "پروفایل" },
 ];
 export function NavBarItem(): string {
   return `
