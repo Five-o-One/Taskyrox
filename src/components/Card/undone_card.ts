@@ -1,6 +1,6 @@
 import type { Task } from "../../types/task";
 import { PriorityNavColor } from "./PriorityNavColor";
-import { ColorPriorityPiece } from "./PriortiySpanColor";
+import { ColorPriorityPiece } from "./PrioritySpanColor";
 
 export function UnDoneCardComponent(task: Task) {
   return /* html */ `

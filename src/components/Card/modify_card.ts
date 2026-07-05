@@ -1,7 +1,9 @@
 import { TestDic } from "../../dic/task";
+import type { Task } from "../../types/task";
+import { iconGen } from "../../utils/icon_generator";
 import { SelectPriority } from "./select_priority";
 
-export function Modifycard(isselected: boolean) {
+export function Modifycard(isselected: boolean, task: Task) {
   return /* html */ `
           <div
         id="Creating-Task"
@@ -12,10 +14,12 @@ export function Modifycard(isselected: boolean) {
             class="border-none outline-none font-semibold text-sm md:text-[1rem] md:font-bold"
             placeholder="نام تسک"
             type="text"
+            value="${task.title}"
           />
           <textarea
             class="outline-none resize-none text-xs md:text-sm font-normal"
             placeholder="توضیحات"
+            value="${task.description}"
             name=""
             id=""
           ></textarea>
@@ -24,9 +28,9 @@ export function Modifycard(isselected: boolean) {
           <button
             class="mb-6 flex flex-row justify-center items-center py-1 px-2 border border-border rounded-sm gap-1"
           >
-            <img class="rotate-90" src="../src/assets/icons/tag-right.svg" alt="tag-icon" />
+          ${isselected ? iconGen("tag", "rotate-90") : iconGen("tag", "")}
             <span class="text-xs font-semibold text-text-secondary"
-              >تگها</span
+              >${TestDic.tagTitle}</span
             >
           </button>
           ${isselected ? SelectPriority() : ""}
@@ -35,11 +39,7 @@ export function Modifycard(isselected: boolean) {
           class="border-t w-full p-4 gap-1.5 flex flex-row justify-end border-border"
         >
           <button>
-            <img
-              class="bg-bg-elevated rounded-md w-8 h-8 shadow"
-              src="../src/assets/icons/xmark.svg"
-              alt="close_Cross"
-            />
+            ${iconGen("xmark", "bg-bg-elevated rounded-md w-8 h-8 shadow")}
           </button>
           <button
             disabled

@@ -1,4 +1,5 @@
 import type { Task } from "../../types/task";
+import { iconGen } from "../../utils/icon_generator";
 import { PriorityNavColor } from "./PriorityNavColor";
 
 export function DoneCardComponent(task: Task) {
@@ -26,7 +27,7 @@ export function DoneCardComponent(task: Task) {
             </div>
             <!-- button left -->
             <button>
-              <img class="rotate-90" src="./src/assets/icons/menu-light.svg" alt="more-Option" />
+            ${iconGen("menu", "rotate-90")}
             </button>
           </div>
         </div>

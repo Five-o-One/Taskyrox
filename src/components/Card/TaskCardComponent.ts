@@ -20,7 +20,7 @@ export function TaskCard(
       `;
     case "Edit":
       return `
-      ${Modifycard(editState.tagBtnSelected)}
+      ${Modifycard(editState.tagBtnSelected, task)}
       `;
   }
 }

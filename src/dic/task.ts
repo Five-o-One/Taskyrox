@@ -8,4 +8,5 @@ export const TestDic = {
   lowPriorityTitle: "پایین",
   saveTitle: "ذخیره",
   addingNewTaskTitle: "افزودن وظیفه جدید",
+  tagTitle: "تگ ها",
 };
