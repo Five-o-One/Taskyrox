@@ -17,7 +17,7 @@ export function TaskCard(
   switch (state) {
     case "Done":
       return /* html */ ` 
-        ${DoneCardComponent(task)}
+        ${DoneCardComponent(optionState.optionBtnSelected, task)}
           `;
     case "NotDone":
       return `
