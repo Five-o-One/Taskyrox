@@ -8,6 +8,10 @@ const items: NavBarItem[] = [
   { itemIcon: "", itemId: "4", itemLabel: "تنظیمات" },
   { itemIcon: "", itemId: "5", itemLabel: "پشتیبانی" },
   { itemIcon: "", itemId: "6", itemLabel: "پروفایل" },
+
+
+
+  
 ];
 export function NavBarItem(): string {
   return `
