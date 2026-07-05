@@ -13,7 +13,6 @@ export function NavThemeToggle(): string {
           stroke-linecap="round"
         />
       </svg>
-
       <span class="text-sm font-semibold text-text">
         روشن
       </span>
