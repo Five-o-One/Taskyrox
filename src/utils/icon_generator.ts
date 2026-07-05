@@ -52,7 +52,7 @@ const icons = {
     user,
     userBold,
     xmark,
-}
+} as const
 
 type IconName = keyof typeof icons
 export function iconGen(n: IconName, c: string): string {
