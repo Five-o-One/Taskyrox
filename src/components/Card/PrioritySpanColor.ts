@@ -10,7 +10,6 @@ export function ColorPriorityPiece(taskPriority: priority) {
                 >${TestDic.highPriorityTitle}</span
               >
   `;
-      break;
     case "MEDIUM":
       return `
                 <span
@@ -18,7 +17,6 @@ export function ColorPriorityPiece(taskPriority: priority) {
                 >${TestDic.mediumPriorityTitle}</span
               >
   `;
-      break;
     case "LOW":
       return `
                 <span
@@ -26,6 +24,5 @@ export function ColorPriorityPiece(taskPriority: priority) {
                 >${TestDic.lowPriorityTitle}</span
               >
   `;
-      break;
   }
 }
