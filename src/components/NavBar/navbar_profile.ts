@@ -1,4 +1,4 @@
-import type { NavProfile } from "../../types/navbar_profile";
+import type { NavProfile } from "../../types/navbar";
 export function NavProfile({ avatarUrl, date, name }: NavProfile): string {
   return `
   <div class="max-w-58 flex flex-row gap-3">

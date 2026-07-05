@@ -1,3 +1,3 @@
 export const navbarState = {
-  openPageId: "0",
+  openPageId: 0,
 };

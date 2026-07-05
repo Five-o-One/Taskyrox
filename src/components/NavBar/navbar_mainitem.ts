@@ -1,4 +1,4 @@
-import type { NavBarItem } from "../../types/navbar_item";
+import type { NavBarItem } from "../../types/navbar";
 import { navbarState } from "../../state/navbar_state";
 import { iconGen } from "../../utils/icon_generator";
 export function NavBarMainItem({
