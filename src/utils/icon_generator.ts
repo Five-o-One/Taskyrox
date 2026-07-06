@@ -1,3 +1,11 @@
+/**
+ * Icon generation utility module.
+ *
+ * This module exports a typed collection of raw SVG icon markup strings and
+ * a helper function that injects a CSS class into the root SVG element before
+ * rendering. It is intended for use when dynamically inserting inline SVG
+ * markup into the UI.
+ */
 import calendar from '../assets/icons/calendar-light.svg?raw'
 import calendarBold from '../assets/icons/calendar-bold.svg?raw'
 import checklist from '../assets/icons/checklist-light.svg?raw'
@@ -56,7 +64,21 @@ const icons = {
     xmark
 } as const
 
+/**
+ * A union type of all supported icon keys.
+ *
+ * This type is derived from the keys of the `icons` collection and ensures the
+ * icon generator only accepts valid icon names.
+ */
 export type IconName = keyof typeof icons
+
+/**
+ * Generate the raw SVG markup for the specified icon and inject a CSS class
+ * into the root `<svg>` element.
+ * @param n - The icon name to retrieve from the supported icon collection.
+ * @param c - The CSS class string to assign to the root `<svg>` element.
+ * @returns The raw SVG markup for the requested icon, with the class applied.
+ */
 export function iconGen(n: IconName, c: string): string {
     return icons[n].replace('<svg', `<svg class="${c}"`)
 }
