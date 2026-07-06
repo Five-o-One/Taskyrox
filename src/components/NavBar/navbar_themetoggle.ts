@@ -1,4 +1,4 @@
-export function NavThemeToggle(): string {
+export function NavBarThemeToggle(): string {
   return `
   <div class="flex flex-row w-full bg-surface rounded-lg gap-0.5">
     <label class="flex flex-row items-center justify-center gap-1.5 w-full py-2 rounded-md bg-bg dark:bg-none cursor-pointer">
