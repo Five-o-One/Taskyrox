@@ -1,8 +1,8 @@
 import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
 import { EditButtonDiv } from "./edit_btn_div";
-import { PriorityNavColor } from "./PriorityNavColor";
-import { ColorPriorityPiece } from "./PrioritySpanColor";
+import { PriorityNavColor } from "./priority_nav_color";
+import { ColorPriorityPiece } from "./priority_span_color";
 
 export function UnDoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened;

@@ -1,6 +1,5 @@
 import { cardState } from "../state/card_state";
 import type { Task } from "../types/task";
-import { iconGen } from "../utils/icon_generator";
 import { ListTask } from "./listTask";
 
 //! test data
