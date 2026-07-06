@@ -6,7 +6,7 @@ import { DoneCardComponent } from "./done_card";
 import { Modifycard } from "./modify_card";
 import { UnDoneCardComponent } from "./undone_card";
 
-export function TaskCard(
+export function Card(
   state: TaskCardState,
   task: Task,
 ) {
