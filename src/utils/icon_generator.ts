@@ -56,7 +56,7 @@ const icons = {
     xmark
 } as const
 
-type IconName = keyof typeof icons
+export type IconName = keyof typeof icons
 export function iconGen(n: IconName, c: string): string {
     return icons[n].replace('<svg', `<svg class="${c}"`)
 }
