@@ -4,10 +4,10 @@ const items: NavBarItem[] = [
   { itemIcon: "home", itemId: 0, itemLabel: "خانه" },
   { itemIcon: "checklist", itemId: 1, itemLabel: "تسک ها" },
   { itemIcon: "calendar", itemId: 2, itemLabel: "تقویم" },
-  { itemIcon: "info", itemId: 3, itemLabel: "گزارشات" },
+  { itemIcon: "square", itemId: 3, itemLabel: "گزارشات" },
   { itemIcon: "settings", itemId: 4, itemLabel: "تنظیمات" },
-  { itemIcon: "user", itemId: 5, itemLabel: "پشتیبانی" },
-  { itemIcon: "userBold", itemId: 6, itemLabel: "پروفایل" },
+  { itemIcon: "info", itemId: 5, itemLabel: "پشتیبانی" },
+  { itemIcon: "user", itemId: 6, itemLabel: "پروفایل" },
 ];
 export function NavBarItem(): string {
   return `
