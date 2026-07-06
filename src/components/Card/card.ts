@@ -1,31 +1,27 @@
 import type { Task } from "../../types/task";
 import type {
-  EditCardState,
   TaskCardState,
-  OptionBtnState,
-} from "../../types/task_card_state";
+} from "../../types/card_state";
 import { DoneCardComponent } from "./done_card";
 import { Modifycard } from "./modify_card";
 import { UnDoneCardComponent } from "./undone_card";
 
-export function TaskCard(
-  editState: EditCardState,
+export function Card(
   state: TaskCardState,
   task: Task,
-  optionState: OptionBtnState,
 ) {
   switch (state) {
     case "Done":
       return /* html */ ` 
-        ${DoneCardComponent(optionState.optionBtnSelected, task)}
+        ${DoneCardComponent(task)}
           `;
     case "NotDone":
       return `
-      ${UnDoneCardComponent(optionState.optionBtnSelected, task)}
+      ${UnDoneCardComponent(task)}
       `;
     case "Edit":
       return `
-      ${Modifycard(editState.tagBtnSelected, task)}
+      ${Modifycard( task)}
       `;
   }
 }

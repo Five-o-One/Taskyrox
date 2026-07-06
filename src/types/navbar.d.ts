@@ -1,3 +1,5 @@
+import type { IconName } from "../utils/icon_generator";
+
 export interface NavBarProfile {
   username: string;
   date: string;
@@ -5,6 +7,6 @@ export interface NavBarProfile {
 }
 export interface NavBarItem {
   itemId: number;
-  itemIcon: string;
+  itemIcon: IconName;
   itemLabel: string;
 }

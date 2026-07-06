@@ -3,7 +3,8 @@ import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
 import { SelectPriority } from "./select_priority";
 
-export function Modifycard(isselected: boolean, task: Task) {
+export function Modifycard(task: Task) {
+  const isselected = task.state.isTagmenuOpened;
   return /* html */ `
           <div
         id="Creating-Task"
@@ -11,7 +12,7 @@ export function Modifycard(isselected: boolean, task: Task) {
       >
         <div class="flex flex-col p-4 gap-2">
           <input
-            class="border-none outline-none font-semibold text-sm md:text-[1rem] md:font-bold"
+            class="border-none outline-none font-semibold text-sm md:text-[1rem] md:font-bold text-text"
             placeholder="نام تسک"
             type="text"
             value="${task.title}"
