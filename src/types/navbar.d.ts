@@ -1,5 +1,5 @@
-export interface NavProfile {
-  name: string;
+export interface NavBarProfile {
+  username: string;
   date: string;
   avatarUrl: string;
 }
@@ -8,4 +8,3 @@ export interface NavBarItem {
   itemIcon: string;
   itemLabel: string;
 }
-// تننتن;
