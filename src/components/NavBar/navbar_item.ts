@@ -1,7 +1,7 @@
 import type { NavBarItem } from "../../types/navbar";
 import { appState } from "../../state/app_state";
 import { iconGen } from "../../utils/icon_generator";
-export function NavBarMainItem({
+export function NavBarItem({
   itemId,
   itemIcon,
   itemLabel,

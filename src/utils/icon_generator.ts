@@ -80,5 +80,6 @@ export type IconName = keyof typeof icons
  * @returns The raw SVG markup for the requested icon, with the class applied.
  */
 export function iconGen(n: IconName, c: string): string {
+    
     return icons[n].replace('<svg', `<svg class="${c}"`)
 }

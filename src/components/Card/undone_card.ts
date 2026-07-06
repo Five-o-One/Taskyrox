@@ -18,7 +18,7 @@ export function UnDoneCardComponent(task: Task) {
               <div class="flex items-start gap-4">
               <input class="border border-border w-5 h-5" type="checkbox" />
               <div class="flex flex-col md:flex-row gap-1 md:gap-3">
-                  <h3 class="text-sm font-semibold mb-1">
+                  <h3 class="text-sm font-semibold mb-1 text-text">
                   ${task.title}
                   </h3>
                   ${ColorPriorityPiece(task.priority)}
@@ -34,7 +34,7 @@ export function UnDoneCardComponent(task: Task) {
             </div>
             <!-- description -->
             <div class="pr-8 mt-4">
-              <p class="text-text-secondary font-normal text-xs">
+              <p class="text-text-secondary font-normal text-xs text-text-secondary">
               ${task.description}
               </p>
             </div>

@@ -12,7 +12,7 @@ export function Modifycard(task: Task) {
       >
         <div class="flex flex-col p-4 gap-2">
           <input
-            class="border-none outline-none font-semibold text-sm md:text-[1rem] md:font-bold"
+            class="border-none outline-none font-semibold text-sm md:text-[1rem] md:font-bold text-text"
             placeholder="نام تسک"
             type="text"
             value="${task.title}"
