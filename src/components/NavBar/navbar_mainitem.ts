@@ -9,7 +9,7 @@ export function NavBarMainItem({
   const isActive: boolean = appState.openPageId === itemId;
   const iconClasses = `size-5 object-contain dark:fill-text ${isActive ? "fill-primary" : "fill-text-muted"}`;
   return `
-  <div id="${itemId}" class="w-full flex flex-row items-center gap-4 py-2 pr-1  rounded-lg ${isActive ? "bg-primary-soft" : ""}">
+  <div id="${itemId}" class="cursor-pointer select-none w-full flex flex-row items-center gap-4 py-2 pr-1  rounded-lg ${isActive ? "bg-primary-soft" : ""}">
     ${iconGen(itemIcon, iconClasses)}
     <span class="text-sm ${isActive ? "text-primary-hover font-bold" : "text-text-muted font-semibold"}">${itemLabel}</span>
   </div>
