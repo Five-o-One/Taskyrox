@@ -1,9 +1,10 @@
 import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
 import { EditButtonDiv } from "./edit_btn_div";
-import { PriorityNavColor } from "./PriorityNavColor";
+import { PriorityNavColor } from "./priority_nav_color";
 
-export function DoneCardComponent(isbtnselected: boolean, task: Task) {
+export function DoneCardComponent(task: Task) {
+  const isbtnselected = task.state.isOptionOpened;
   return /* html */ `
   <div
           class="relative w-full h-fit border border-border bg-bg py-3 px-4 rounded-xl overflow-hidden"

@@ -1,4 +1,6 @@
-export function EmptyComponent() {
+import { TestDic } from "../../dic/task";
+
+export function AddNewTask() {
   return `
         <!-- EmptyStateComponent -->
       <div
@@ -7,7 +9,7 @@ export function EmptyComponent() {
       >
         <button class="flex text-primary font-semibold text-sm gap-2">
           <img class="w-6 h-6" src="../src/assets/" alt="Add-Pic" />
-          <span>افزودن وظیفه جدید</span>
+          <span>${TestDic.addingNewTaskTitle}</span>
         </button>
       </div>
     `;

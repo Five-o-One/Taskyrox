@@ -3,7 +3,8 @@ import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
 import { SelectPriority } from "./select_priority";
 
-export function Modifycard(isselected: boolean, task: Task) {
+export function Modifycard(task: Task) {
+  const isselected = task.state.isTagmenuOpened;
   return /* html */ `
           <div
         id="Creating-Task"
