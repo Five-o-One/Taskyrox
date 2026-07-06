@@ -4,7 +4,8 @@ import { EditButtonDiv } from "./edit_btn_div";
 import { PriorityNavColor } from "./PriorityNavColor";
 import { ColorPriorityPiece } from "./PrioritySpanColor";
 
-export function UnDoneCardComponent(isbtnselected: boolean, task: Task) {
+export function UnDoneCardComponent(task: Task) {
+  const isbtnselected = task.state.isOptionOpened;
   return /* html */ `
         <!-- TaskCardComponent -->
           <div
