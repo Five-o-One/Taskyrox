@@ -20,10 +20,9 @@ export function Modifycard(task: Task) {
           <textarea
             class="outline-none resize-none text-xs md:text-sm font-normal"
             placeholder="توضیحات"
-            value="${task.description}"
             name=""
             id=""
-          ></textarea>
+          >${task.description}</textarea>
         </div>
         <div class="p-4 pt-2 pb-6">
           <button
@@ -39,7 +38,7 @@ export function Modifycard(task: Task) {
         <div
           class="border-t w-full p-4 gap-1.5 flex flex-row justify-end border-border"
         >
-          <button>
+          <button id="closeModifyCardBtn">
             ${iconGen("xmark", "bg-bg-elevated rounded-md w-8 h-8 shadow")}
           </button>
           <button
