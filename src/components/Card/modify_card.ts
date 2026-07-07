@@ -26,7 +26,8 @@ export function Modifycard(task: Task) {
         </div>
         <div class="p-4 pt-2 pb-6">
           <button
-            class="mb-6 flex flex-row justify-center items-center py-1 px-2 border border-border rounded-sm gap-1"
+            id="TagMenuBtn"
+            class="cursor-pointer active:scale-90 mb-6 flex flex-row justify-center items-center py-1 px-2 border border-border rounded-sm gap-1"
           >
           ${isselected ? iconGen("tag", "rotate-90") : iconGen("tag", "")}
             <span class="text-xs font-semibold text-text-secondary"
@@ -38,7 +39,7 @@ export function Modifycard(task: Task) {
         <div
           class="border-t w-full p-4 gap-1.5 flex flex-row justify-end border-border"
         >
-          <button id="closeModifyCardBtn">
+          <button id="closeModifyCardBtn" class="cursor-pointer active:scale-90">
             ${iconGen("xmark", "bg-bg-elevated rounded-md w-8 h-8 shadow")}
           </button>
           <button
