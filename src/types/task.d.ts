@@ -8,5 +8,7 @@ export interface Task {
   description: string;
   isDone: boolean;
   priority: priority;
+  createAt: string;
+  editAt: string;
   state: CardState;
 }
