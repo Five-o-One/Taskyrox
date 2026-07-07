@@ -5,6 +5,7 @@ import { PriorityNavColor } from "./priority_nav_color";
 
 /**
  * creates a completed task card.
+ * checkbox checked
  * @param task contains the task details.
  * @returns completed task card HTML.
  */
