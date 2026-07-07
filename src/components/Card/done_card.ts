@@ -3,6 +3,12 @@ import { iconGen } from "../../utils/icon_generator";
 import { EditButtonDiv } from "./edit_btn_div";
 import { PriorityNavColor } from "./priority_nav_color";
 
+/**
+ * creates a completed task card.
+ * @param task contains the task details.
+ * @returns completed task card HTML.
+ */
+
 export function DoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened;
   return `
