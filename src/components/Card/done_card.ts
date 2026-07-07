@@ -4,9 +4,8 @@ import { EditButtonDiv } from "./edit_btn_div";
 import { PriorityNavColor } from "./priority_nav_color";
 
 /**
- * creates a completed task card.
- * checkbox checked
- * @param task contains the task details.
+ * Creates a completed task card.
+ * @param task Shows the task as completed with a checked checkbox and a strikethrough title.
  * @returns completed task card HTML.
  */
 
