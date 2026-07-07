@@ -1,6 +1,6 @@
 import { cardState } from "../state/card_state";
 import type { Task } from "../types/task";
-import { ListTask } from "./listTask";
+import { ListTask } from "./list_task";
 
 //! FAKE DATA
 const testData: Task[] = [
