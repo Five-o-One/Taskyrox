@@ -1,6 +1,7 @@
 import { TestDic } from "../../dic/task";
 import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
+import { ColorPriorityPiece } from "./priority_span_color";
 import { SelectPriority } from "./select_priority";
 
 export function Modifycard(task: Task) {
@@ -31,7 +32,7 @@ export function Modifycard(task: Task) {
           >
           ${isselected ? iconGen("tag", "rotate-90") : iconGen("tag", "")}
             <span class="text-xs font-semibold text-text-secondary"
-              >${TestDic.tagTitle}</span
+              >${task.priority ? ColorPriorityPiece(task.priority) : TestDic.tagTitle}</span
             >
           </button>
           ${isselected ? SelectPriority() : ""}
