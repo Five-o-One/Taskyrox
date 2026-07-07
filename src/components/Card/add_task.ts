@@ -6,7 +6,6 @@ import { iconGen } from "../../utils/icon_generator";
  * 
  * @returns This component creates the UI for adding a new task. 
  * It uses `TestDic` for the button's title and `iconGen` for generating icons with the determined appearance.
- *       
  */
 
 export function AddNewTask() {
