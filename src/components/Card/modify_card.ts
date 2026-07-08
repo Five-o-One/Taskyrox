@@ -5,7 +5,7 @@ import { ColorPriorityPiece } from './priority_span_color'
 import { SelectPriority } from './select_priority'
 
 export function Modifycard(task: Task) {
-  const isselected = task.state.isTagmenuOpened
+  const isselected = task.state.isTagMenuOpened
   return /* HTML */ `
     <div
       id="Creating-Task"
@@ -46,8 +46,8 @@ ${task.description}</textarea>
           ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
-          id = "saveTaskBtn"
-          class="cursor-pointer active:scale-90 text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
+          id="saveTaskBtn"
+          class="text-primary-soft bg-primary cursor-pointer rounded-md px-4 py-1.5 text-xs font-semibold active:scale-90 md:text-sm"
         >
           ${TestDic.saveTitle}
         </button>

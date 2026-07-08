@@ -1,5 +1,4 @@
-import type { Task } from "../types/task";
-
+import type { Task } from '../types/task'
 
 export const currentTask: Task = {
   id: Date.now(),
@@ -10,5 +9,5 @@ export const currentTask: Task = {
   createAt: new Date().toISOString(),
   editAt: new Date().toISOString(),
 
-  state: { isTagmenuOpened: false } as any,
+  state: { isTagMenuOpened: false },
 }

@@ -12,9 +12,8 @@ import { ColorPriorityPiece } from './priority_span_color'
  */
 
 export function UnDoneCardComponent(task: Task) {
-  const isbtnselected = task.state.isOptionOpened
+  const isBtnSelected = task.state.isOptionOpened
   return /* HTML */ `
-    <!-- TaskCardComponent -->
     <div
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
@@ -30,9 +29,14 @@ export function UnDoneCardComponent(task: Task) {
           </div>
         </div>
         <!-- button left -->
-        <button>${iconGen('menu', 'rotate-90 fill-icon')}</button>
-        <div class="absolute bottom-6 left-6 md:bottom-1">
-          ${isbtnselected ? EditButtonDiv() : ' '}
+        <div id="option-btn-${task.id}">
+          ${iconGen('menu', 'rotate-90 fill-icon cursor-pointer')}
+        </div>
+        <div
+          id="option-menu-${task.id}"
+          class="absolute bottom-6 left-6 md:bottom-1"
+        >
+          ${isBtnSelected ? EditButtonDiv() : ' '}
         </div>
       </div>
       <!-- description -->
