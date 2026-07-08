@@ -4,6 +4,14 @@ import { iconGen } from '../../utils/icon_generator'
 import { ColorPriorityPiece } from './priority_span_color'
 import { SelectPriority } from './select_priority'
 
+/**
+ * Creates an edit form for a task.
+ * Displays the task title, description, priority selector, close button, and save button.
+ * @param task The task object that contains the task title, description, priority, and state.
+ * @returns Task edit form HTML.
+ * The save button is disabled.
+ */
+
 export function Modifycard(task: Task) {
   const isselected = task.state.isTagmenuOpened
   return /* HTML */ `
