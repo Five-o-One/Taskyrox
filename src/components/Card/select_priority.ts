@@ -1,5 +1,12 @@
 import { ColorPriorityPiece } from './priority_span_color'
 
+/**
+ * Creates the priority selection menu for a task.
+ * Shows low, medium, and high priority options.
+ * Used in the edit form when the user wants to select or change the task priority.
+ * @returns Priority selection menu HTML.
+ */
+
 export function SelectPriority() {
   return /* HTML */ `
     <div
