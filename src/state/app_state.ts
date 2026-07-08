@@ -1,14 +1,14 @@
-import type { AppState } from "../types/app_state";
-import { getTodayPersianDate } from "../core/date";
+import type { AppState } from '../types/app_state'
+import { getTodayPersianDate } from '../core/date'
 export const appState: AppState = {
   openPageId: 0,
   navbarProfile: {
-    avatarUrl: "",
-    date: "",
-    username: "",
+    avatarUrl: '',
+    date: '',
+    username: '',
   },
-  theme: "light",
+  theme: 'light',
   isNavbarOpen: false,
-};
+}
 
-appState.navbarProfile.date = getTodayPersianDate();
+appState.navbarProfile.date = getTodayPersianDate()

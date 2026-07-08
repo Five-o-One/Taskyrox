@@ -1,13 +1,17 @@
-import { iconGen } from "../../utils/icon_generator";
+import { iconGen } from '../../utils/icon_generator'
 
 export function NavProfileAvatar(avatarUrl: string): string {
-  if (avatarUrl != "") {
-    return `<img src="${avatarUrl}" alt="profile" class="size-14 rounded-full object-cover shrink-0" />`;
+  if (avatarUrl != '') {
+    return /* HTML */ `<img
+      src="${avatarUrl}"
+      alt="profile"
+      class="size-14 shrink-0 rounded-full object-cover"
+    />`
   }
 
-  return `
-  <div class="size-14 rounded-full flex items-center justify-center shrink-0">
-    ${iconGen("userBold", "size-7 fill-text-muted")}
-  </div>
-  `;
+  return /* HTML */ `
+    <div class="flex size-14 shrink-0 items-center justify-center rounded-full">
+      ${iconGen('userBold', 'size-7 fill-text-muted')}
+    </div>
+  `
 }
