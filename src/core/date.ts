@@ -1,12 +1,12 @@
 export function getTodayPersianDate(): string {
-  const formatter = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const formatter = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 
-  const [year, , day, , month, , weekday] = formatter.formatToParts(new Date());
+  const [year, , day, , month, , weekday] = formatter.formatToParts(new Date())
 
-  return `${weekday?.value}، ${month?.value} ${day?.value} ${year?.value}`;
+  return `${weekday?.value}، ${month?.value} ${day?.value} ${year?.value}`
 }

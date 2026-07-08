@@ -1,30 +1,27 @@
-import type { priority } from "../../types/task";
+import type { priority } from '../../types/task'
 
 export function PriorityNavColor(taskPriority: priority) {
   switch (taskPriority) {
-    case "LOW":
-      return `
-  <div
+    case 'LOW':
+      return /* HTML */ `
+        <div
           id="priorityColorID"
-          class="absolute top-0 right-0 bg-success h-full w-1 rounded-lg"
+          class="bg-success absolute top-0 right-0 h-full w-1 rounded-lg"
         ></div>
-        
-  `;
-    case "MEDIUM":
-      return `
-  <div
+      `
+    case 'MEDIUM':
+      return /* HTML */ `
+        <div
           id="priorityColorID"
-          class="absolute top-0 right-0 bg-warning h-full w-1 rounded-lg"
+          class="bg-warning absolute top-0 right-0 h-full w-1 rounded-lg"
         ></div>
-        
-  `;
-    case "HIGH":
-      return `
-  <div
+      `
+    case 'HIGH':
+      return /* HTML */ `
+        <div
           id="priorityColorID"
-          class="absolute top-0 right-0 bg-danger h-full w-1 rounded-lg"
+          class="bg-danger absolute top-0 right-0 h-full w-1 rounded-lg"
         ></div>
-        
-  `;
+      `
   }
 }

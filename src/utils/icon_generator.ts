@@ -35,33 +35,33 @@ import userBold from '../assets/icons/user-bold.svg?raw'
 import xmark from '../assets/icons/xmark.svg?raw'
 
 const icons = {
-    calendar,
-    calendarBold,
-    checklist,
-    checklistBold,
-    home,
-    homeBold,
-    info,
-    infoBold,
-    logout,
-    logoutBold,
-    menu,
-    menuBold,
-    moon,
-    moonBold,
-    pen,
-    penBold,
-    settings,
-    settingsBold,
-    square,
-    squareBold,
-    sun,
-    sunBold,
-    tag,
-    trash,
-    user,
-    userBold,
-    xmark
+  calendar,
+  calendarBold,
+  checklist,
+  checklistBold,
+  home,
+  homeBold,
+  info,
+  infoBold,
+  logout,
+  logoutBold,
+  menu,
+  menuBold,
+  moon,
+  moonBold,
+  pen,
+  penBold,
+  settings,
+  settingsBold,
+  square,
+  squareBold,
+  sun,
+  sunBold,
+  tag,
+  trash,
+  user,
+  userBold,
+  xmark,
 } as const
 
 /**
@@ -80,6 +80,5 @@ export type IconName = keyof typeof icons
  * @returns The raw SVG markup for the requested icon, with the class applied.
  */
 export function iconGen(n: IconName, c: string): string {
-    
-    return icons[n].replace('<svg', `<svg class="${c}"`)
+  return icons[n].replace('<svg', `<svg class="${c}"`)
 }
