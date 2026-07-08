@@ -1,12 +1,18 @@
 export const TestDic = {
-  titleListNotDone: "تسک های امروز",
-  subTittleNotDone: (n: number | string) => `${n} تسک را باید انجام دهید.`,
-  titleListDone: "تسک های انحام شده",
+  titleListNotDone: 'تسک های امروز',
+  subTittleNotDone: (n: number | string) => {
+    if (n === 0) {
+      return 'هیچ تسکی نداری'
+    } else {
+      return `${n} تسک را باید انجام دهید.`
+    }
+  },
+  titleListDone: 'تسک های انحام شده',
   subTittleDone: (n: number | string) => `${n} تسک انجام شده است.`,
-  highPriorityTitle: "بالا",
-  mediumPriorityTitle: "متوسط",
-  lowPriorityTitle: "پایین",
-  saveTitle: "ذخیره",
-  addingNewTaskTitle: "افزودن وظیفه جدید",
-  tagTitle: "تگ ها",
-};
+  highPriorityTitle: 'بالا',
+  mediumPriorityTitle: 'متوسط',
+  lowPriorityTitle: 'پایین',
+  saveTitle: 'ذخیره',
+  addingNewTaskTitle: 'افزودن وظیفه جدید',
+  tagTitle: 'تگ ها',
+}

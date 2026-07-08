@@ -1,7 +1,10 @@
-import { Body } from "./components/body";
-import "./styles/global.css";
+import { Body } from './components/body'
+import { themeToggleEvent } from './events/theme_event'
 
-const app = document.getElementById("app") as HTMLElement;
+import './styles/global.css'
+
+const app = document.getElementById('app') as HTMLElement
 if (app) {
-  app.innerHTML = Body();
+  app.innerHTML = Body()
 }
+themeToggleEvent()
