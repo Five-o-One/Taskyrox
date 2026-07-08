@@ -4,6 +4,13 @@ import { EditButtonDiv } from './edit_btn_div'
 import { PriorityNavColor } from './priority_nav_color'
 import { ColorPriorityPiece } from './priority_span_color'
 
+/**
+ * Creates an unfinished task card.
+ * Checkbox NOT checked
+ * @param task contains the task title, description, priority, and state.
+ * @returns Unfinished task card HTML.
+ */
+
 export function UnDoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened
   return /* HTML */ `

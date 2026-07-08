@@ -3,6 +3,12 @@ import { iconGen } from '../../utils/icon_generator'
 import { EditButtonDiv } from './edit_btn_div'
 import { PriorityNavColor } from './priority_nav_color'
 
+/**
+ * Creates a completed task card.
+ * @param task Shows the task as completed with a checked checkbox and a strikethrough title.
+ * @returns completed task card HTML.
+ */
+
 export function DoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened
   return /* HTML */ `
