@@ -1,5 +1,5 @@
 import { Body } from './components/body'
-import { themeToggleEvent } from './events/theme_event'
+import registry from './events/REGISTRY'
 import { appState } from './state/app_state'
 
 import './styles/global.css'
@@ -13,4 +13,4 @@ app.setAttribute('data-theme', appState.theme)
 if (app) {
   app.innerHTML = Body()
 }
-themeToggleEvent()
+registry()
