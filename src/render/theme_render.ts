@@ -1,8 +1,9 @@
 import { appState } from '../state/app_state'
 
 export function themeRender() {
-  const body = document.getElementById('body') as HTMLElement
-  if (body) {
-    body.setAttribute('data-theme', appState.theme)
+  const app = document.getElementById('app') as HTMLElement
+  if (app) {
+    app.setAttribute('data-theme', appState.theme)
+    localStorage.setItem('theme', appState.theme)
   }
 }
