@@ -1,7 +1,9 @@
 import { AddTask } from '../core/add_task'
 import { CloseBtn } from '../core/close_caard'
 import { PrSelector } from '../core/priority'
+import { SaveDataBtn } from '../core/save_task'
 import { TagMenu } from '../core/tag_menu'
+import { currentTask } from '../state/current_task'
 
 export function clickedOnAddEvent() {
   document.addEventListener('click', (event) => {
@@ -18,6 +20,20 @@ export function clickedOnAddEvent() {
       return
     }
     if (PrSelector(target)) {
+      return
+    }
+    document.addEventListener("input", (event) => {
+  const target = event.target as HTMLInputElement | HTMLTextAreaElement;
+
+  if (target.id === "taskTitle") {
+    currentTask.title = target.value;
+  }
+
+  if (target.id === "taskDescription") {
+    currentTask.description = target.value;
+  }
+});
+    if(SaveDataBtn(target)){
       return
     }
   })
