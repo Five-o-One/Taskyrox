@@ -1,74 +1,23 @@
-import { AddNewTask } from "../components/Card/add_task";
-import { Modifycard } from "../components/Card/modify_card";
-import type { Task } from "../types/task";
-
-const currentTask: Task = {
-  id: Date.now(),
-  title: "",
-  description: "",
-  isDone: false,
-  priority: "",
-  createAt: new Date().toISOString(),
-  editAt: new Date().toISOString(),
-
-  state: { isTagmenuOpened: false } as any,
-};
-
-function renderModifyCard() {
-  const card = document.querySelector("#Creating-Task");
-
-  if (card) {
-    card.outerHTML = Modifycard(currentTask);
-  }
-}
+import { AddTask } from "../core/add_task";
+import { CloseBtn } from "../core/close_caard";
+import { PrSelector } from "../core/priority";
+import { TagMenu } from "../core/tag_menu";
 
 export function clickedOnAddEvent() {
-  document.addEventListener("click", (event: MouseEvent) => {
+  document.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    const addBtn = target.closest("#NewTaskCard");
-    if (addBtn) {
-      addBtn.outerHTML = Modifycard(currentTask);
-      return;
-    }//render
-    const tagMenuBtn = target.closest("#TagMenuBtn");
-    if (tagMenuBtn) {
-      currentTask.state.isTagmenuOpened = !currentTask.state.isTagmenuOpened;
-       //core
-      renderModifyCard();
-
+    if (AddTask(target)) {
       return;
     }
-    const closeBtn = target.closest("#closeModifyCardBtn");
-    if (closeBtn) {
-      currentTask.state.isTagmenuOpened = false;
-
-      const modifyCardEl = target.closest("#Creating-Task");
-
-      if (modifyCardEl) {
-        modifyCardEl.outerHTML = AddNewTask();
-      }
-
+    if (target.closest("#TagMenuBtn")) {
+      TagMenu();
       return;
     }
-    const lowbtn = target.closest("#lowPriorityBtn");
-    if (lowbtn) {
-      currentTask.priority = "LOW";
-      currentTask.state.isTagmenuOpened = false;
-      renderModifyCard();
+    if (target.closest("#closeModifyCardBtn")) {
+      CloseBtn(target);
       return;
     }
-    const mediumBtn = target.closest("#mediumPriorityBtn");
-    if (mediumBtn) {
-      currentTask.priority = "MEDIUM";
-      currentTask.state.isTagmenuOpened = false;
-      renderModifyCard();
-      return;
-    }
-    const highBtn = target.closest("#highPriorityBtn");
-    if (highBtn) {
-      currentTask.priority = "HIGH";
-      currentTask.state.isTagmenuOpened = false;
-      renderModifyCard();
+    if (PrSelector(target)) {
       return;
     }
   });
