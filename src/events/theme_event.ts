@@ -6,13 +6,13 @@ export function themeToggleEvent() {
 
   lightRadio?.addEventListener('change', () => {
     if (lightRadio.checked) {
-      themeToggle()
+      themeToggle('light')
     }
   })
 
   darkRadio?.addEventListener('change', () => {
     if (darkRadio.checked) {
-      themeToggle()
+      themeToggle('dark')
     }
   })
 }
