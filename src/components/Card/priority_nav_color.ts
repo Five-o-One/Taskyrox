@@ -1,5 +1,12 @@
 import type { priority } from '../../types/task'
 
+/**
+ * Creates the priority color bar for a task card.
+ * Displays a different color based on the task priority (`LOW`, `MEDIUM`, `HIGH`).
+ * @param taskPriority The priority level of the task.
+ * @returns Priority color bar HTML.
+ */
+
 export function PriorityNavColor(taskPriority: priority) {
   switch (taskPriority) {
     case 'LOW':
