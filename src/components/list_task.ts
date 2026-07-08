@@ -4,7 +4,9 @@ import { AddNewTask } from './Card/add_task'
 import { Card } from './Card/card'
 
 const EmptyPage = () => /* HTML */ `
-  <div class="flex h-full w-full flex-col items-center justify-center gap-4">
+  <div
+    class="flex h-full w-full flex-col items-center justify-center gap-4 select-none"
+  >
     <img src="/public/images/empty.svg" alt="empty" />
     <div class="flex flex-col items-center justify-center gap-4 text-center">
       <span class="text-text-secondary text-md"
