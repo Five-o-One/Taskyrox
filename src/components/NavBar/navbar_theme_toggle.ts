@@ -1,4 +1,7 @@
+import { appState } from '../../state/app_state'
+
 export function NavBarThemeToggle(): string {
+  const isLight = appState.theme === 'light'
   return /* HTML */ `
     <div
       id="theme_toggle"
@@ -12,7 +15,7 @@ export function NavBarThemeToggle(): string {
           name="theme"
           id="theme-light"
           class="hidden"
-          checked
+          ${isLight ? 'checked' : ''}
         />
 
         <svg class="text-text size-4" viewBox="0 0 24 24" fill="none">
@@ -30,7 +33,13 @@ export function NavBarThemeToggle(): string {
       <label
         class="dark:bg-surface flex w-full cursor-pointer flex-row items-center justify-center gap-1.5 rounded-md bg-none py-2"
       >
-        <input type="radio" name="theme" id="theme-dark" class="hidden" />
+        <input
+          type="radio"
+          name="theme"
+          id="theme-dark"
+          class="hidden"
+          ${isLight ? '' : 'checked'}
+        />
 
         <svg class="text-text-muted size-4" viewBox="0 0 24 24" fill="none">
           <path

@@ -8,6 +8,7 @@ import type { theme } from './types/app_state'
 const app = document.getElementById('app') as HTMLElement
 app.classList.add('bg-bg')
 appState.theme = (localStorage.getItem('theme') as theme) || 'light'
+console.log('appState.theme', appState.theme)
 app.setAttribute('data-theme', appState.theme)
 if (app) {
   app.innerHTML = Body()
