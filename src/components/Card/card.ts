@@ -11,10 +11,6 @@ import { UnDoneCardComponent } from './undone_card'
  * @returns HTML string for the selected task card component.
  */
 
-export function Card(
-  state: TaskCardState,
-  task: Task,
-) {
 export function Card(state: TaskCardState, task: Task) {
   switch (state) {
     case 'Done':
