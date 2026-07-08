@@ -1,7 +1,7 @@
-import { TestDic } from '../dic/task'
-import type { Task } from '../types/task'
-import { AddNewTask } from './Card/add_task'
-import { Card } from './Card/card'
+import { TestDic } from '../../dic/task'
+import type { Task } from '../../types/task'
+import { AddNewTask } from './add_task'
+import { Card } from './card'
 
 const EmptyPage = () => /* HTML */ `
   <div
