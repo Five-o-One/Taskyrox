@@ -13,6 +13,7 @@ export function Modifycard(task: Task) {
     >
       <div class="flex flex-col gap-2 p-4">
         <input
+          id="taskTitle"
           class="text-text border-none text-sm font-semibold outline-none md:text-[1rem] md:font-bold"
           placeholder="نام تسک"
           type="text"
@@ -22,7 +23,7 @@ export function Modifycard(task: Task) {
           class="resize-none text-xs font-normal outline-none md:text-sm"
           placeholder="توضیحات"
           name=""
-          id=""
+          id="taskDescription"
         >
 ${task.description}</textarea>
       </div>
@@ -45,8 +46,8 @@ ${task.description}</textarea>
           ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
-          disabled
-          class="text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
+          id = "saveTaskBtn"
+          class="cursor-pointer active:scale-90 text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
         >
           ${TestDic.saveTitle}
         </button>
