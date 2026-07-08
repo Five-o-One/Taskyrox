@@ -1,6 +1,7 @@
 import { TestDic } from "../../dic/task";
 import type { Task } from "../../types/task";
 import { iconGen } from "../../utils/icon_generator";
+import { ColorPriorityPiece } from "./priority_span_color";
 import { SelectPriority } from "./select_priority";
 
 export function Modifycard(task: Task) {
@@ -20,18 +21,18 @@ export function Modifycard(task: Task) {
           <textarea
             class="outline-none resize-none text-xs md:text-sm font-normal"
             placeholder="توضیحات"
-            value="${task.description}"
             name=""
             id=""
-          ></textarea>
+          >${task.description}</textarea>
         </div>
         <div class="p-4 pt-2 pb-6">
           <button
-            class="mb-6 flex flex-row justify-center items-center py-1 px-2 border border-border rounded-sm gap-1"
+            id="TagMenuBtn"
+            class="cursor-pointer active:scale-90 mb-6 flex flex-row justify-center items-center py-1 px-2 border border-border rounded-sm gap-1"
           >
           ${isselected ? iconGen("tag", "rotate-90") : iconGen("tag", "")}
             <span class="text-xs font-semibold text-text-secondary"
-              >${TestDic.tagTitle}</span
+              >${task.priority ? ColorPriorityPiece(task.priority) : TestDic.tagTitle}</span
             >
           </button>
           ${isselected ? SelectPriority() : ""}
@@ -39,7 +40,7 @@ export function Modifycard(task: Task) {
         <div
           class="border-t w-full p-4 gap-1.5 flex flex-row justify-end border-border"
         >
-          <button>
+          <button id="closeModifyCardBtn" class="cursor-pointer active:scale-90">
             ${iconGen("xmark", "bg-bg-elevated rounded-md w-8 h-8 shadow")}
           </button>
           <button

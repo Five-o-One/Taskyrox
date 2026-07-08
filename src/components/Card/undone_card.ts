@@ -34,7 +34,7 @@ export function UnDoneCardComponent(task: Task) {
             </div>
             <!-- description -->
             <div class="pr-8 mt-4">
-              <p class="text-text-secondary font-normal text-xs text-text-secondary">
+              <p class="text-text-secondary font-normal text-xs">
               ${task.description}
               </p>
             </div>
