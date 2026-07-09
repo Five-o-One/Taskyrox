@@ -1,15 +1,15 @@
 import { toggleNavbar } from '../core/menu_toggle'
+import { appState } from '../state/app_state'
 
 export function navbarMobileEvent() {
-  // پیدا کردن دکمه همبرگری با آیدی که در کامپوننت دادی
   const menuOpen = document.getElementById('menu-open')
   const menuClose = document.getElementById('menu-close')
 
   menuOpen?.addEventListener('click', () => {
-    toggleNavbar()
+    if (!appState.isNavbarOpen) toggleNavbar()
   })
 
   menuClose?.addEventListener('click', () => {
-    toggleNavbar()
+    if (appState.isNavbarOpen) toggleNavbar()
   })
 }
