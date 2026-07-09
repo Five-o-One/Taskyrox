@@ -7,7 +7,7 @@ export function NavBarItem({
   itemLabel,
 }: NavBarItem): string {
   const isActive: boolean = appState.openPageId === itemId
-  const iconClasses = `size-5 object-contain dark:fill-text ${isActive ? 'fill-primary' : 'fill-text-muted'}`
+  const iconClasses = `size-5 object-contain ${isActive ? 'fill-primary' : 'fill-text-muted'}`
   return /* HTML */ `
     <div
       id="${itemId}"
