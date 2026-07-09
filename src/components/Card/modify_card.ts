@@ -1,3 +1,4 @@
+import { isCurrentTaskValid } from '../../core/save_btn_disabled'
 import { TestDic } from '../../dic/task'
 import type { Task } from '../../types/task'
 import { iconGen } from '../../utils/icon_generator'
@@ -6,6 +7,7 @@ import { SelectPriority } from './select_priority'
 
 export function Modifycard(task: Task) {
   const isselected = task.state.isTagmenuOpened
+  const disabled = !isCurrentTaskValid();
   return /* HTML */ `
     <div
       id="Creating-Task"
@@ -46,6 +48,7 @@ ${task.description}</textarea>
           ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
+          ${disabled ? "disabled" : ""}
           id = "saveTaskBtn"
           class="cursor-pointer active:scale-90 text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
         >
