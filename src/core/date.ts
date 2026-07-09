@@ -1,3 +1,5 @@
+import { appState } from '../state/app_state'
+
 export function getTodayPersianDate(): string {
   const formatter = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
     weekday: 'long',
@@ -10,3 +12,5 @@ export function getTodayPersianDate(): string {
 
   return `${weekday?.value}، ${month?.value} ${day?.value} ${year?.value}`
 }
+
+appState.navbarProfile.date = getTodayPersianDate()

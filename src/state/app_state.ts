@@ -1,5 +1,5 @@
 import type { AppState } from '../types/app_state'
-import { getTodayPersianDate } from '../core/date'
+
 export const appState: AppState = {
   openPageId: 0,
   navbarProfile: {
@@ -10,5 +10,3 @@ export const appState: AppState = {
   theme: 'light',
   isNavbarOpen: false,
 }
-
-appState.navbarProfile.date = getTodayPersianDate()
