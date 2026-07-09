@@ -1,5 +1,6 @@
 import { AddTask } from '../core/add_task'
 import { CloseBtn } from '../core/close_caard'
+// import { OptionMenu } from '../core/option_menu'
 import { PrSelector } from '../core/priority'
 import { SaveDataBtn } from '../core/save_task'
 import { TagMenu } from '../core/tag_menu'
@@ -11,6 +12,10 @@ export function clickedOnAddEvent() {
     if (AddTask(target)) {
       return
     }
+    // if (target.closest('#OptionMenuBtn')) {
+    //   OptionMenu()
+    //   return
+    // }
     if (target.closest('#TagMenuBtn')) {
       TagMenu()
       return
@@ -33,7 +38,7 @@ export function clickedOnAddEvent() {
         currentTask.description = target.value
       }
     })
-    if (target.closest("#saveTaskBtn")) {
+    if (target.closest('#saveTaskBtn')) {
       SaveDataBtn(currentTask)
       return
     }
