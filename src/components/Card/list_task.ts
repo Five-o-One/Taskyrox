@@ -1,4 +1,4 @@
-import { TestDic } from '../../dic/task'
+import {FaDic} from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { AddNewTask } from './add_task'
 import { Card } from './card'
@@ -35,10 +35,10 @@ export function ListTask(isDone: boolean, list: Task[]) {
     return /* HTML */ `<div class="flex h-full w-full flex-col">
       <div class="mb-4 flex flex-col space-y-4">
         <span class="text-text text-lg font-bold"
-          >${TestDic.titleListNotDone}</span
+          >${FaDic.titleListNotDone}</span
         >
         <span class="text-text-secondary text-sm"
-          >${TestDic.subTittleNotDone(tasks.length)}</span
+          >${FaDic.subTittleNotDone(tasks.length)}</span
         >
         ${AddNewTask()}
       </div>
@@ -49,8 +49,8 @@ export function ListTask(isDone: boolean, list: Task[]) {
     return /* HTML */ tasksDone.length !== 0
       ? `<div class="flex flex-col w-full h-full">
         <div class="flex flex-col mb-4 space-y-4">
-        <span class="font-bold text-lg text-text">${TestDic.titleListDone}</span>
-        <span class="text-sm text-text-secondary">${TestDic.subTittleDone(tasksDone.length)}</span>
+        <span class="font-bold text-lg text-text">${FaDic.titleListDone}</span>
+        <span class="text-sm text-text-secondary">${FaDic.subTittleDone(tasksDone.length)}</span>
         </div>
         <div class="space-y-2 overflow-auto max-h-52">
     ${tasksDone.map((task) => `${Card('Done', task)}`).join('')}
