@@ -1,5 +1,6 @@
 import type { Task } from "../types/task";
 
+export const tasksState : Task[] = []
 
 export const currentTask: Task = {
   id: Date.now(),

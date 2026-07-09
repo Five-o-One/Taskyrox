@@ -1,4 +1,4 @@
-import { currentTask } from '../state/current_task'
+import { currentTask } from '../state/task_state'
 
 export function isCurrentTaskValid() {
   return (
