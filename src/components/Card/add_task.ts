@@ -1,11 +1,11 @@
-import { TestDic } from '../../dic/task'
+import {FaDic} from '../../dic/fa'
 import { iconGen } from '../../utils/icon_generator'
 
 
 /**
  * 
  * @returns This component creates the UI for adding a new task. 
- * It uses `TestDic` for the button's title and `iconGen` for generating icons with the determined appearance.
+ * It uses `FaDic` for the button's title and `iconGen` for generating icons with the determined appearance.
  */
 
 export function AddNewTask() {
@@ -18,7 +18,7 @@ export function AddNewTask() {
         class="text-primary flex cursor-pointer gap-2 text-sm font-semibold select-none"
       >
         ${iconGen('xmark', 'w-4 h-4 fill-primary rotate-45')}
-        <span>${TestDic.addingNewTaskTitle}</span>
+        <span>${FaDic.addingNewTaskTitle}</span>
       </button>
     </div>
   `

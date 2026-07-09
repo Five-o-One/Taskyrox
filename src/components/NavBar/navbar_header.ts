@@ -3,7 +3,7 @@
  * @returns the header that contains menu button and logo.
  */
 
-import { FaDic } from "../../dic/FA";
+import { FaDic } from "../../dic/fa";
 
 export function NavbarMobileHeader(): string {
   return /* HTML */ `
