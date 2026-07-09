@@ -44,3 +44,13 @@ export function clickedOnAddEvent() {
     }
   })
 }
+
+export function CardDeleteEvent() {
+  document
+    .querySelectorAll<HTMLElement>('[data-key^="remove-"]')
+    .forEach((btn) => {
+      btn.addEventListener('click', (e: Event) => {
+        console.log(e.currentTarget)
+      })
+    })
+}
