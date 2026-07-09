@@ -3,6 +3,15 @@ import type { Task } from '../../types/task'
 import { AddNewTask } from './add_task'
 import { Card } from './card'
 
+/**
+ * Creates the task list section from the provided tasks.
+ * Separates tasks into done and not-done groups and shows the correct list based on the selected state.
+ * Also displays the add-task section and empty state for the not-done list.
+ * @param isDone Determines whether the done or not-done task list should be shown.
+ * @param list The full list of tasks.
+ * @returns Task list HTML.
+ */
+
 const EmptyPage = () => /* HTML */ `
   <div
     class="flex h-full w-full flex-col items-center justify-center gap-4 select-none"
