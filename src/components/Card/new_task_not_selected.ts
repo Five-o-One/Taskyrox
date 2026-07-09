@@ -1,6 +1,10 @@
 import { TestDic } from '../../dic/task'
 import { iconGen } from '../../utils/icon_generator'
 
+/**
+ * This component must be deleted.
+ */
+
 export function NewTaskComponenet() {
   return /* HTML */ `
     <!-- EmptyStateComponent -->
