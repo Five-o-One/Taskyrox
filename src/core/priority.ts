@@ -1,10 +1,12 @@
 import { renderModifyCard } from '../render/modify_render'
 import { currentTask } from '../state/current_task'
-import type { priority, Task } from '../types/task'
+import type { Task } from '../types/task'
+import { SaveTasks } from './task_storage'
 
 export function SelectPrBtn(priority: Task['priority']) {
   currentTask.priority = priority
   currentTask.state.isTagmenuOpened = false
+  SaveTasks(currentTask)
   renderModifyCard()
 }
 
