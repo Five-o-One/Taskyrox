@@ -1,5 +1,11 @@
 import { appState } from '../../state/app_state'
 
+/**
+ * Creates the theme toggle section in the navigation bar.
+ * Displays light and dark theme options and activates the selected one based on the current theme in `appState`.
+ * @returns Theme toggle HTML.
+ */
+
 export function NavBarThemeToggle(): string {
   const isLight = appState.theme === 'light'
   return /* HTML */ `

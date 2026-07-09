@@ -1,6 +1,13 @@
 import { TestDic } from '../../dic/task'
 import type { priority } from '../../types/task'
 
+/**
+ * Creates the priority label for a task.
+ * Displays a different label and color based on the task priority (`HIGH`, `MEDIUM`, `LOW`).
+ * @param taskPriority The priority level of the task.
+ * @returns Priority label HTML.
+ */
+
 export function ColorPriorityPiece(taskPriority: priority) {
   switch (taskPriority) {
     case 'HIGH':

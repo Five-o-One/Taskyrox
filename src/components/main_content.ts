@@ -1,5 +1,9 @@
 import { ListTask } from './Card/list_task'
 
+/**
+ * This function contains the main content.
+ */
+
 export function MainContent() {
   return /* HTML */ ` <div
     class="bg-bg flex h-full w-full flex-col justify-around p-4 md:w-4/5"
