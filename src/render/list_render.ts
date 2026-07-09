@@ -1,12 +1,15 @@
 import { ListTask } from '../components/Card/list_task'
-import { getTasks } from '../core/task_storage'
+import { tasksState } from '../state/task_state'
 
 export function renderTaskList() {
-  const taskList = document.querySelector("#taskList");//listtaskneed to be changed
+  const notDone = document.querySelector('#notDoneTasks')
+  const done = document.querySelector('#doneTasks')
 
-  if (!taskList) return;
+  if (notDone) {
+    notDone.innerHTML = ListTask(false, tasksState)
+  }
 
-  const tasks = getTasks();
-
-  taskList.innerHTML = ListTask(false, tasks);
+  if (done) {
+    done.innerHTML = ListTask(true, tasksState)
+  }
 }
