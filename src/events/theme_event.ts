@@ -1,18 +1,12 @@
 import { themeToggle } from '../core/theme_toggle'
 
 export function themeToggleEvent() {
-  const lightRadio = document.getElementById('theme-light') as HTMLInputElement
-  const darkRadio = document.getElementById('theme-dark') as HTMLInputElement
+  document.querySelectorAll<HTMLInputElement>('input[name="theme"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+      if (!radio.checked) return
 
-  lightRadio?.addEventListener('change', () => {
-    if (lightRadio.checked) {
-      themeToggle('light')
-    }
-  })
-
-  darkRadio?.addEventListener('change', () => {
-    if (darkRadio.checked) {
-      themeToggle('dark')
-    }
+      const mode = radio.dataset.themeOption === 'dark' ? 'dark' : 'light'
+      themeToggle(mode)
+    })
   })
 }

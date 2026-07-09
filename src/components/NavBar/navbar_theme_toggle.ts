@@ -13,8 +13,8 @@ export function NavBarThemeToggle(): string {
         <input
           type="radio"
           name="theme"
-          id="theme-light"
           class="hidden"
+          data-theme-option="light"
           ${isLight ? 'checked' : ''}
         />
 
@@ -36,8 +36,8 @@ export function NavBarThemeToggle(): string {
         <input
           type="radio"
           name="theme"
-          id="theme-dark"
           class="hidden"
+          data-theme-option="dark"
           ${isLight ? '' : 'checked'}
         />
 
