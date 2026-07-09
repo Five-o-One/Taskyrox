@@ -1,13 +1,17 @@
-import { currentTask } from "../state/current_task";
-import { SaveTasks } from "./task_storage";
-
+import { renderTaskList } from '../render/list_render'
+import { currentTask } from '../state/current_task'
+import { saveTask } from './task_storage'
 
 export function SaveDataBtn(target: HTMLElement): boolean {
-  const btn = target.closest("#saveTaskBtn");
+  const btn = target.closest('#saveTaskBtn')
 
-  if (!btn) return false;
+  if (!btn) return false
 
-  SaveTasks(currentTask);
+  saveTask({
+    ...currentTask,
+  })
 
-  return true;
+  renderTaskList();
+
+  return true
 }
