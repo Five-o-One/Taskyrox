@@ -3,6 +3,11 @@ import { NavBar } from './navbar'
 import { NavbarMobileHeader } from './NavBar/navbar_header'
 import { NavbarMobile } from './NavBar/navbar_moblie'
 
+/**
+ * The initial structure is shown here.
+ * @returns the whole components.
+ */
+
 export function Body() {
   return /* HTML */ `
     ${NavbarMobileHeader()}
