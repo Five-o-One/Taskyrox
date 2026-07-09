@@ -1,12 +1,16 @@
-import { iconGen } from '../../utils/icon_generator'
-
 export function NavbarMobileHeader(): string {
-  return `
-  <div class="w-full flex items-center gap-4 p-4 m-4 bg-bg-elevated rounded-lg md:hidden">
-    <div class="size-6 cursor-pointer">
-      ${iconGen('menu', 'size-6 fill-text rotate-90')}
+  return /* HTML */ `
+    <div
+      class="bg-bg-elevated flex w-full items-center gap-4 rounded-lg p-4 md:hidden lg:hidden"
+    >
+      <div id="menu-open" class="flex flex-col space-y-2">
+        <div class="bg-text h-px w-5"></div>
+        <div class="bg-text h-px w-5"></div>
+        <div class="bg-text h-px w-5"></div>
+      </div>
+      <span class="text-text flex-1 text-center text-lg font-semibold"
+        >کوئرا لیست</span
+      >
     </div>
-    <span class="text-lg font-semibold text-text flex-1 text-center">کوئرا لیست</span>
-  </div>
   `
 }
