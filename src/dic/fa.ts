@@ -16,4 +16,5 @@ export const FaDic = {
   addingNewTaskTitle: 'افزودن وظیفه جدید',
   tagTitle: 'تگ ها',
   appName: 'کوئرا لیست',
+  emptyStateTitle:'چه کارهایی امروز برای انجام داری؟'
 }
