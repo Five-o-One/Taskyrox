@@ -1,5 +1,3 @@
-import { tasksState } from '../../state/task_state'
-import type { Task } from '../../types/task'
 import { iconGen } from '../../utils/icon_generator'
 
 /**
@@ -19,7 +17,10 @@ export function EditButtonDiv(id: number) {
         ${iconGen('trash', 'fill-icon')}
       </div>
       <div class="bg-border h-5 w-px rounded-2xl"></div>
-      <div class="cursor-pointer select-none active:scale-90">
+      <div
+        data-key="edit-${id}"
+        class="cursor-pointer select-none active:scale-90"
+      >
         ${iconGen('pen', 'fill-icon')}
       </div>
     </div>

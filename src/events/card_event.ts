@@ -62,9 +62,9 @@ export function CardDeleteEvent() {
     .forEach((btn) => {
       btn.addEventListener('click', (e: Event) => {
         //todo
-        // const target = e.currentTarget
-        // removeCard(e)
-        console.log(e.currentTarget)
+        const target = e.currentTarget as HTMLElement
+        const id = Number(target.dataset.key!.replace('remove-', ''))
+        removeCard(id)
       })
     })
 }
