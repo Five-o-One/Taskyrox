@@ -31,7 +31,7 @@ export function UnDoneCardComponent(task: Task) {
           </div>
         </div>
         <!-- button left -->
-        <button id="OptionMenuBtn">
+        <button data-key="option-${task.id}">
           ${iconGen('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute bottom-6 left-6 md:bottom-1">

@@ -26,7 +26,7 @@ export function DoneCardComponent(task: Task) {
             </h3>
           </div>
         </div>
-        <button id="OptionMenuBtn">
+        <button data-key="option-${task.id}">
           ${iconGen('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute top-1/2 left-10 -translate-y-1/2">
