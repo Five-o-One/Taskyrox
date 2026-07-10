@@ -1,3 +1,5 @@
+import { tasksState } from '../../state/task_state'
+import type { Task } from '../../types/task'
 import { iconGen } from '../../utils/icon_generator'
 
 /**
@@ -5,12 +7,15 @@ import { iconGen } from '../../utils/icon_generator'
  * @returns Task action menu HTML.
  */
 
-export function EditButtonDiv() {
+export function EditButtonDiv(id: number) {
   return /* HTML */ `
     <div
       class="border-border bg-bg flex flex-row gap-2.5 rounded-lg border p-1.5 shadow"
     >
-      <div class="cursor-pointer select-none active:scale-90">
+      <div
+        data-key="remove-${id}"
+        class="cursor-pointer select-none active:scale-90"
+      >
         ${iconGen('trash', 'fill-icon')}
       </div>
       <div class="bg-border h-5 w-px rounded-2xl"></div>

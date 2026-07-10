@@ -1,6 +1,7 @@
 import { AddTask } from '../core/add_task'
 import { CloseBtn } from '../core/close_caard'
 import { PrSelector } from '../core/priority'
+import { removeCard } from '../core/remove_card'
 import { SaveDataBtn } from '../core/save_task'
 import { TagMenu } from '../core/tag_menu'
 import { currentTask } from '../state/task_state'
@@ -60,6 +61,9 @@ export function CardDeleteEvent() {
     .querySelectorAll<HTMLElement>('[data-key^="remove-"]')
     .forEach((btn) => {
       btn.addEventListener('click', (e: Event) => {
+        //todo
+        // const target = e.currentTarget
+        // removeCard(e)
         console.log(e.currentTarget)
       })
     })
