@@ -25,13 +25,13 @@ export function Modifycard(task: Task) {
         <input
           id="taskTitle"
           class="text-text border-none text-sm font-semibold outline-none md:text-[1rem] md:font-bold"
-          placeholder="نام تسک"
+          placeholder="${FaDic.taskTitlePlaceholder}"
           type="text"
           value="${task.title}"
         />
         <textarea
           class="resize-none text-xs font-normal outline-none md:text-sm"
-          placeholder="توضیحات"
+          placeholder="${FaDic.taskDescriptionPlaceholder}"
           name=""
           id="taskDescription"
         >
