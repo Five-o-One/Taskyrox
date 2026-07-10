@@ -27,3 +27,8 @@ export function getTasks(): Task[] {
     return []
   }
 }
+
+export function saveTasks(tasks: Task[]) {
+  localStorage.setItem(STORAGE_KEY, '')
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+}

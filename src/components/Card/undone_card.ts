@@ -35,7 +35,7 @@ export function UnDoneCardComponent(task: Task) {
           ${iconGen('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute bottom-6 left-6 md:bottom-1">
-          ${isbtnselected ? EditButtonDiv() : ' '}
+          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
         </div>
       </div>
       <!-- description -->

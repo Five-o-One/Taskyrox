@@ -30,7 +30,7 @@ export function DoneCardComponent(task: Task) {
           ${iconGen('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute top-1/2 left-10 -translate-y-1/2">
-          ${isbtnselected ? EditButtonDiv() : ' '}
+          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
         </div>
       </div>
     </div>
