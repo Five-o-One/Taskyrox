@@ -22,7 +22,7 @@ const EmptyPage = () => /* HTML */ `
         >${FaDic.emptyStateTitle}</span
       >
       <span class="text-text-muted text-sm"
-        >${FaDic.emptyStateDescription}</span
+        >${FaDic.emptyStateDescription}</span 
       >
     </div>
   </div>
