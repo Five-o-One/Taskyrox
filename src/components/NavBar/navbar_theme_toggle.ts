@@ -1,3 +1,4 @@
+import { FaDic } from '../../dic/fa'
 import { appState } from '../../state/app_state'
 
 /**
@@ -36,7 +37,7 @@ export function NavBarThemeToggle(): string {
             stroke-linecap="round"
           />
         </svg>
-        <span class="text-sm transition-all has-checked:font-bold"> روشن </span>
+        <span class="text-sm transition-all has-checked:font-bold"> ${FaDic.navbarLightThemeTitle} </span>
       </label>
 
       <label
@@ -52,7 +53,7 @@ export function NavBarThemeToggle(): string {
         <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" />
         </svg>
-        <span class="has-checkedfont-bold text-sm transition-all"> تاریک </span>
+        <span class="has-checked:font-bold text-sm transition-all"> ${FaDic.navbarDarkThemeTitle} </span>
       </label>
     </div>
   `

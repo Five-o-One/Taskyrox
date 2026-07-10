@@ -1,3 +1,4 @@
+import { FaDic } from '../../dic/fa'
 import type { NavBarItem } from '../../types/navbar'
 import { NavBarItem as Item } from './navbar_item'
 
@@ -9,13 +10,13 @@ import { NavBarItem as Item } from './navbar_item'
  */
 
 const items: NavBarItem[] = [
-  { itemIcon: 'home', itemId: 0, itemLabel: 'خانه' },
-  { itemIcon: 'checklist', itemId: 1, itemLabel: 'تسک ها' },
-  { itemIcon: 'calendar', itemId: 2, itemLabel: 'تقویم' },
-  { itemIcon: 'square', itemId: 3, itemLabel: 'گزارشات' },
-  { itemIcon: 'settings', itemId: 4, itemLabel: 'تنظیمات' },
-  { itemIcon: 'info', itemId: 5, itemLabel: 'پشتیبانی' },
-  { itemIcon: 'user', itemId: 6, itemLabel: 'پروفایل' },
+  { itemIcon: 'home', itemId: 0, itemLabel: FaDic.navbarHomeTitle},
+  { itemIcon: 'checklist', itemId: 1, itemLabel: FaDic.navbarTasksTitle},
+  { itemIcon: 'calendar', itemId: 2, itemLabel: FaDic.navbarCalendarTitle},
+  { itemIcon: 'square', itemId: 3, itemLabel: FaDic.navbarReportsTitle},
+  { itemIcon: 'settings', itemId: 4, itemLabel: FaDic.navbarSettingsTitle},
+  { itemIcon: 'info', itemId: 5, itemLabel: FaDic.navbarSupportTitle},
+  { itemIcon: 'user', itemId: 6, itemLabel: FaDic.navbarProfileTitle},
 ]
 export function NavBarList(): string {
   return /* HTML */ `

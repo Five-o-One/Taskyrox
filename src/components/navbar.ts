@@ -1,3 +1,4 @@
+import { FaDic } from '../dic/fa'
 import { NavBarItem } from './NavBar/navbar_item'
 import { NavBarList } from './NavBar/navbar_list'
 import { NavBarProfile } from './NavBar/navbar_profile'
@@ -20,7 +21,7 @@ export function NavBar() {
         <div
           class="bg-border from-bg-elevated via-border to-bg-elevated mx-auto h-px w-full bg-linear-to-r"
         ></div>
-        ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: 'خروج' })}
+        ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle })}
       </div>
     </navbar>
   `

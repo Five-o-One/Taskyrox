@@ -19,10 +19,10 @@ const EmptyPage = () => /* HTML */ `
     <img src="/public/images/empty.svg" alt="empty" />
     <div class="flex flex-col items-center justify-center gap-4 text-center">
       <span class="text-text-secondary text-md"
-        >چه کارهایی امروز برای انجام داری؟</span
+        >${FaDic.emptyStateTitle}</span
       >
       <span class="text-text-muted text-sm"
-        >میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</span
+        >${FaDic.emptyStateDescription}</span 
       >
     </div>
   </div>
