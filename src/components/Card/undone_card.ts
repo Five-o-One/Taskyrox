@@ -24,7 +24,7 @@ export function UnDoneCardComponent(task: Task) {
       <div class="flex items-start justify-between">
         <!-- right -->
         <div class="flex items-start gap-4">
-          <input class="border-border h-5 w-5 border" type="checkbox" />
+          <input data-key="check-${task.id}" class="border-border h-5 w-5 border" type="checkbox" />
           <div class="flex flex-col gap-1 md:flex-row md:gap-3">
             <h3 class="text-text mb-1 text-sm font-semibold">${task.title}</h3>
             ${ColorPriorityPiece(task.priority)}

@@ -19,7 +19,12 @@ export function DoneCardComponent(task: Task) {
       ${PriorityNavColor(task.priority)}
       <div class="flex items-start justify-between">
         <div class="flex items-center gap-4">
-          <input checked class="border-border h-5 w-5 border" type="checkbox" />
+          <input
+            data-key="check-${task.id}"
+            checked
+            class="border-border h-5 w-5 border"
+            type="checkbox"
+          />
           <div class="flex flex-col gap-1 md:flex-row md:gap-3">
             <h3 class="text-text mb-1 text-sm font-semibold line-through">
               ${task.title}
