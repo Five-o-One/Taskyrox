@@ -11,5 +11,5 @@ export const currentTask: Task = {
   createAt: new Date().toISOString(),
   editAt: new Date().toISOString(),
 
-  state: { isTagmenuOpened: false, isOptionOpened: true } as any,
+  state: { isTagmenuOpened: false, isOptionOpened: false } as any,
 }

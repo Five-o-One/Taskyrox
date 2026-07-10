@@ -1,7 +1,14 @@
-// import { renderCard } from '../render/undone_card_render'
-// import { currentTask } from '../state/task_state'
+import { renderTaskList } from '../render/list_render'
+import { tasksState } from '../state/task_state'
 
-// export function OptionMenu() {
-//   currentTask.state.isOptionOpened = !currentTask.state.isOptionOpened
-//   renderCard()
-// }
+export function toggleOptionMenu(id: number) {
+  tasksState.forEach((task) => {
+    if (task.id === id) {
+      task.state.isOptionOpened = !task.state.isOptionOpened
+    } else {
+      task.state.isOptionOpened = false
+    }
+  })
+
+  renderTaskList()
+}

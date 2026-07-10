@@ -1,5 +1,6 @@
 import { AddTask } from '../core/add_task'
 import { CloseBtn } from '../core/close_caard'
+import { toggleOptionMenu } from '../core/option_menu'
 import { PrSelector } from '../core/priority'
 import { removeCard } from '../core/remove_card'
 import { SaveDataBtn } from '../core/save_task'
@@ -61,10 +62,25 @@ export function CardDeleteEvent() {
     .querySelectorAll<HTMLElement>('[data-key^="remove-"]')
     .forEach((btn) => {
       btn.addEventListener('click', (e: Event) => {
+        e.preventDefault()
         //todo
         const target = e.currentTarget as HTMLElement
         const id = Number(target.dataset.key!.replace('remove-', ''))
         removeCard(id)
+      })
+    })
+}
+export function CardOptionEvent() {
+  document
+    .querySelectorAll<HTMLElement>('[data-key^="option-"]')
+    .forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        const target = e.currentTarget as HTMLElement
+
+        const id = Number(target.dataset.key!.replace('option-', ''))
+
+        toggleOptionMenu(id)
       })
     })
 }
