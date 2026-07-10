@@ -16,6 +16,7 @@ export function UnDoneCardComponent(task: Task) {
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
+      id="unDoneCard"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
       ${PriorityNavColor(task.priority)}
@@ -30,9 +31,11 @@ export function UnDoneCardComponent(task: Task) {
           </div>
         </div>
         <!-- button left -->
-        <button>${iconGen('menu', 'rotate-90 fill-icon')}</button>
+        <button id="OptionMenuBtn">
+          ${iconGen('menu', 'rotate-90 fill-icon')}
+        </button>
         <div class="absolute bottom-6 left-6 md:bottom-1">
-          ${isbtnselected ? EditButtonDiv() : ' '}
+          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
         </div>
       </div>
       <!-- description -->

@@ -1,13 +1,13 @@
 import { Body } from './components/body'
+import { init } from './events/init'
 import registry from './events/REGISTRY'
 import { appState } from './state/app_state'
 
 import './styles/global.css'
-import type { theme } from './types/app_state'
 
+init()
 const app = document.getElementById('app') as HTMLElement
 app.classList.add('bg-bg')
-appState.theme = (localStorage.getItem('theme') as theme) || 'light'
 console.log('appState.theme', appState.theme)
 app.setAttribute('data-theme', appState.theme)
 if (app) {

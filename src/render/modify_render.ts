@@ -1,6 +1,5 @@
 import { Modifycard } from '../components/Card/modify_card'
-import { currentTask } from '../state/current_task'
-
+import { currentTask } from '../state/task_state'
 
 export function renderModifyCard() {
   const card = document.querySelector('#Creating-Task')

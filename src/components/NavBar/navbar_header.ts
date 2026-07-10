@@ -1,3 +1,10 @@
+/**
+ * This function contains a header which is shown only in mobile.
+ * @returns the header that contains menu button and logo.
+ */
+
+import { FaDic } from "../../dic/fa";
+
 export function NavbarMobileHeader(): string {
   return /* HTML */ `
     <div
@@ -9,7 +16,7 @@ export function NavbarMobileHeader(): string {
         <div class="bg-text h-px w-5"></div>
       </div>
       <span class="text-text flex-1 text-center text-lg font-semibold"
-        >کوئرا لیست</span
+        >${FaDic.appName}</span
       >
     </div>
   `

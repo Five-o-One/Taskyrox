@@ -1,6 +1,16 @@
 import type { NavBarItem } from '../../types/navbar'
 import { appState } from '../../state/app_state'
 import { iconGen } from '../../utils/icon_generator'
+
+/**
+ * Creates a single navbar item.
+ * Displays the item icon and label, and applies active or inactive styles based on `appState`.
+ * @param itemId The unique id of the navbar item.
+ * @param itemIcon The icon name of the navbar item.
+ * @param itemLabel The display label of the navbar item.
+ * @returns Navigation bar item HTML.
+ */
+
 export function NavBarItem({
   itemId,
   itemIcon,

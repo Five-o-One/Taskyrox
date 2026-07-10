@@ -2,6 +2,12 @@ import { NavBarList } from './navbar_list'
 import { NavBarThemeToggle } from './navbar_theme_toggle'
 import { NavBarItem } from './navbar_item'
 
+/**
+ * Creates the mobile version of the navigation bar.
+ * Displays the mobile menu overlay, navigation items, theme toggle, and logout item.
+ * @returns Mobile navigation bar HTML.
+ */
+
 export function NavbarMobile(): string {
   return /* HTML */ `
     <div

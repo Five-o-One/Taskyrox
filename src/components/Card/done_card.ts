@@ -13,6 +13,7 @@ export function DoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened
   return /* HTML */ `
     <div
+      id="DoneCard"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
       ${PriorityNavColor(task.priority)}
@@ -25,9 +26,11 @@ export function DoneCardComponent(task: Task) {
             </h3>
           </div>
         </div>
-        <button>${iconGen('menu', 'rotate-90 fill-icon')}</button>
+        <button id="OptionMenuBtn">
+          ${iconGen('menu', 'rotate-90 fill-icon')}
+        </button>
         <div class="absolute top-1/2 left-10 -translate-y-1/2">
-          ${isbtnselected ? EditButtonDiv() : ' '}
+          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
         </div>
       </div>
     </div>

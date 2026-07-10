@@ -1,4 +1,4 @@
-export const TestDic = {
+export const FaDic = {
   titleListNotDone: 'تسک های امروز',
   subTittleNotDone: (n: number | string) => {
     if (n === 0) {
@@ -15,4 +15,5 @@ export const TestDic = {
   saveTitle: 'ذخیره',
   addingNewTaskTitle: 'افزودن وظیفه جدید',
   tagTitle: 'تگ ها',
+  appName: 'کوئرا لیست',
 }
