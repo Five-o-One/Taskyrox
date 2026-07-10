@@ -1,9 +1,17 @@
 import { isCurrentTaskValid } from '../../core/save_btn_disabled'
-import { TestDic } from '../../dic/task'
+import {FaDic} from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { iconGen } from '../../utils/icon_generator'
 import { ColorPriorityPiece } from './priority_span_color'
 import { SelectPriority } from './select_priority'
+
+/**
+ * Creates an edit form for a task.
+ * Displays the task title, description, priority selector, close button, and save button.
+ * @param task The task object that contains the task title, description, priority, and state.
+ * @returns Task edit form HTML.
+ * The save button is disabled.
+ */
 
 export function Modifycard(task: Task) {
   const isselected = task.state.isTagmenuOpened
@@ -36,7 +44,7 @@ ${task.description}</textarea>
         >
           ${isselected ? iconGen('tag', 'rotate-90') : iconGen('tag', '')}
           <span class="text-text-secondary text-xs font-semibold"
-            >${task.priority ? ColorPriorityPiece(task.priority) : TestDic.tagTitle}</span
+            >${task.priority ? ColorPriorityPiece(task.priority) : FaDic.tagTitle}</span
           >
         </button>
         ${isselected ? SelectPriority() : ''}
@@ -52,7 +60,7 @@ ${task.description}</textarea>
           id = "saveTaskBtn"
           class="cursor-pointer active:scale-90 text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
         >
-          ${TestDic.saveTitle}
+          ${FaDic.saveTitle}
         </button>
       </div>
     </div>

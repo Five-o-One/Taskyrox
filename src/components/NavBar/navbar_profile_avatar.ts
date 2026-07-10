@@ -1,5 +1,12 @@
 import { iconGen } from '../../utils/icon_generator'
 
+/**
+ * Creates the user avatar for the navigation profile.
+ * Displays the user's image if available, otherwise shows a default user icon.
+ * @param avatarUrl The user's avatar image URL.
+ * @returns Avatar HTML.
+ */
+
 export function NavProfileAvatar(avatarUrl: string): string {
   if (avatarUrl != '') {
     return /* HTML */ `<img

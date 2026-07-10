@@ -1,6 +1,10 @@
 import { tasksState } from '../state/task_state'
 import { ListTask } from './Card/list_task'
 
+/**
+ * This function contains the main content.
+ */
+
 export function MainContent() {
   const tasks = tasksState
   return /* HTML */ ` <div

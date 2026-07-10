@@ -1,5 +1,10 @@
 import { iconGen } from '../../utils/icon_generator'
 
+/**
+ * Creates the edit and delete buttons for a task card.
+ * @returns Task action menu HTML.
+ */
+
 export function EditButtonDiv() {
   return /* HTML */ `
     <div

@@ -1,5 +1,13 @@
 import type { NavBarItem } from '../../types/navbar'
 import { NavBarItem as Item } from './navbar_item'
+
+/**
+ * Creates the main navigation item list.
+ * Used to display the middle section of the sidebar navigation.
+ * Renders all navbar items using the predefined navbar items array and `NavBarItem`.
+ * @returns Navigation item list HTML.
+ */
+
 const items: NavBarItem[] = [
   { itemIcon: 'home', itemId: 0, itemLabel: 'خانه' },
   { itemIcon: 'checklist', itemId: 1, itemLabel: 'تسک ها' },
