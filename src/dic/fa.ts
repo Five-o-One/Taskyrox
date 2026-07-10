@@ -16,5 +16,16 @@ export const FaDic = {
   addingNewTaskTitle: 'افزودن وظیفه جدید',
   tagTitle: 'تگ ها',
   appName: 'کوئرا لیست',
-  emptyStateTitle:'چه کارهایی امروز برای انجام داری؟'
-}
+  emptyStateTitle:'چه کارهایی امروز برای انجام داری؟',
+  emptyStateDescription: 'میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!',
+  taskTitlePlaceholder:'نام تسک',
+  taskDescriptionPlaceholder:'توضیحات',
+  logoutTitle:'خروج',
+  navbarHomeTitle: 'خانه',
+  navbarTasksTitle: 'تسک ها',
+  navbarCalendarTitle: 'تقویم',
+  navbarReportsTitle: 'گزارشات',
+  navbarSettingsTitle: 'تنظیمات',
+  navbarSupportTitle: 'پشتیبانی',
+  navbarProfileTitle: 'پروفایل',
+
