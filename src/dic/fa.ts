@@ -27,5 +27,8 @@ export const FaDic = {
   navbarReportsTitle: 'گزارشات',
   navbarSettingsTitle: 'تنظیمات',
   navbarSupportTitle: 'پشتیبانی',
-  navbarProfileTitle: 'پروفایل'
+  navbarProfileTitle: 'پروفایل',
+  navbarLightThemeTitle:'روشن',
+  navbarDarkThemeTitle:'خاموش',
+  navbarGreeting:'سلام'
 }
