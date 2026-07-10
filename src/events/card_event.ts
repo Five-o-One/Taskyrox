@@ -5,6 +5,7 @@ import { PrSelector } from '../core/priority'
 import { removeCard } from '../core/remove_card'
 import { SaveDataBtn } from '../core/save_task'
 import { TagMenu } from '../core/tag_menu'
+import { toggleTask } from '../core/toggle_task'
 import { currentTask } from '../state/task_state'
 
 let isCardEventsBound = false
@@ -83,4 +84,18 @@ export function CardOptionEvent() {
         toggleOptionMenu(id)
       })
     })
+}
+
+export function CardCheckEvent() {
+  document
+    .querySelectorAll<HTMLElement>('[data-key^="check-"]')
+    .forEach((checkbox) => {
+      checkbox.addEventListener("change", (e) => {
+        const target = e.currentTarget as HTMLElement;
+
+        const id = Number(target.dataset.key!.replace("check-", ""));
+
+        toggleTask(id);
+      });
+    });
 }
