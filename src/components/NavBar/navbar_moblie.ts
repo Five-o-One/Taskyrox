@@ -1,6 +1,7 @@
 import { NavBarList } from './navbar_list'
 import { NavBarThemeToggle } from './navbar_theme_toggle'
 import { NavBarItem } from './navbar_item'
+import { FaDic } from '../../dic/fa'
 
 /**
  * Creates the mobile version of the navigation bar.
@@ -20,7 +21,7 @@ export function NavbarMobile(): string {
       class="bg-sidebar border-border-muted fixed inset-y-0 right-0 z-50 flex h-full w-72 translate-x-full transform flex-col gap-6 border-l p-5 shadow-2xl transition-transform duration-300"
     >
       <div class="flex items-center justify-between">
-        <span class="text-text text-lg font-bold">کوئرا لیست</span>
+        <span class="text-text text-lg font-bold">${FaDic.appName}</span>
         <button
           id="menu-close"
           class="text-icon active:bg-surface-active rounded-full p-2 transition-colors"
@@ -49,7 +50,7 @@ export function NavbarMobile(): string {
           <div
             class="bg-border from-bg-elevated via-border to-bg-elevated mx-auto h-px w-full bg-linear-to-r"
           ></div>
-          ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: 'خروج' })}
+          ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle })}
         </div>
       </div>
     </aside>
