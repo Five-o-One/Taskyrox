@@ -19,7 +19,7 @@ export function Card(state: TaskCardState, task: Task) {
       return `
       ${UnDoneCardComponent(task)}
       `
-    case 'Edit':
+    default:
       return `
       ${Modifycard(task)}
       `

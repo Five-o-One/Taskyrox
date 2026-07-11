@@ -13,7 +13,7 @@ export function DoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened
   return /* HTML */ `
     <div
-      id="DoneCard"
+      id="taskCard-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
       ${PriorityNavColor(task.priority)}

@@ -16,7 +16,7 @@ export function UnDoneCardComponent(task: Task) {
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
-      id="unDoneCard"
+      id="taskCard-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
       ${PriorityNavColor(task.priority)}
@@ -24,7 +24,11 @@ export function UnDoneCardComponent(task: Task) {
       <div class="flex items-start justify-between">
         <!-- right -->
         <div class="flex items-start gap-4">
-          <input data-key="check-${task.id}" class="border-border h-5 w-5 border" type="checkbox" />
+          <input
+            data-key="check-${task.id}"
+            class="border-border h-5 w-5 border"
+            type="checkbox"
+          />
           <div class="flex flex-col gap-1 md:flex-row md:gap-3">
             <h3 class="text-text mb-1 text-sm font-semibold">${task.title}</h3>
             ${ColorPriorityPiece(task.priority)}
