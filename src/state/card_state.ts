@@ -1,9 +1,9 @@
-import type { CardState } from "../types/card_state";
+import type { CardState } from '../types/card_state'
 
 export const cardState: CardState = {
-  cardState:"",
+  cardState: '',
   isTagmenuOpened: false,
   isOptionOpened: false,
   btnDisabled: false,
-  prioritySelected: "",
-};
+  prioritySelected: '',
+}

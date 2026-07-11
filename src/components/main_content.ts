@@ -1,27 +1,20 @@
-import { cardState } from "../state/card_state";
-import type { Task } from "../types/task";
-import { ListTask } from "./listTask";
+import { tasksState } from '../state/task_state'
+import { ListTask } from './Card/list_task'
+import { NavBarProfile } from './NavBar/navbar_profile'
 
-//! test data
-const testData : Task[] = [
-  { id: 1, title: "خرید مواد غذایی", description: "خرید میوه، سبزیجات و لبنیات برای هفته", isDone: false, priority: "HIGH", state: cardState },
-  { id: 2, title: "بررسی گزارش مالی", description: "تحلیل صورت‌حساب‌های ماه گذشته و ارائه به مدیر", isDone: true, priority: "HIGH", state: cardState },
-  { id: 3, title: "تماس با پشتیبانی", description: "پیگیری وضعیت تیکت ثبت شده برای سرویس اینترنت", isDone: false, priority: "MEDIUM", state: cardState },
-  { id: 4, title: "مطالعه کتاب", description: "خواندن دو فصل از کتاب جدید در مورد مدیریت زمان", isDone: false, priority: "LOW", state: cardState },
-  { id: 5, title: "برنامه‌ریزی سفر", description: "رزرو هتل و بررسی مسیرهای دسترسی به مقصد", isDone: false, priority: "MEDIUM", state: cardState },
-  { id: 6, title: "آپدیت وب‌سایت", description: "اصلاح بخش فوتر و تغییر فونت‌های عنوان اصلی", isDone: true, priority: "HIGH", state: cardState },
-  { id: 7, title: "جلسه با تیم فنی", description: "بررسی باگ‌های گزارش شده در نسخه جدید اپلیکیشن", isDone: false, priority: "HIGH", state: cardState },
-  { id: 8, title: "ورزش روزانه", description: "۳۰ دقیقه پیاده‌روی سریع در پارک نزدیک خانه", isDone: true, priority: "LOW", state: cardState },
-  { id: 9, title: "ارسال ایمیل به مشتری", description: "پاسخ به سوالات مشتری در مورد نحوه استفاده از پنل", isDone: false, priority: "MEDIUM", state: cardState },
-  { id: 10, title: "تمیزکاری میز کار", description: "مرتب کردن فایل‌های کاغذی و پاکسازی کیبورد", isDone: false, priority: "LOW", state: cardState }
-]
-
-//! test data end
+/**
+ * This function contains the main content.
+ */
 
 export function MainContent() {
-  return `
-    <div class="flex flex-col justify-around w-full h-full p-4 bg-bg md:w-4/5">
-    <div class="w-full h-full p-4">${ListTask(false , testData)}</div>
-    <div class="w-full h-full p-4">${ListTask(true , testData)}</div>
-    </div>`;
+  const tasks = tasksState
+  return /* HTML */ ` <div
+    class="bg-bg flex h-full w-full flex-col justify-around p-4 md:w-4/5"
+  >
+    <div class="mb-16 block md:hidden">${NavBarProfile()}</div>
+    <div id="notDoneTasks" class="h-1/2 w-full p-4">
+      ${ListTask(false, tasks)}
+    </div>
+    <div id="doneTasks" class="h-1/2 w-full p-4">${ListTask(true, tasks)}</div>
+  </div>`
 }

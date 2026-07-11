@@ -1,28 +1,35 @@
-import { TestDic } from "../../dic/task";
-import type { priority } from "../../types/task";
+import {FaDic} from '../../dic/fa'
+import type { priority } from '../../types/task'
+
+/**
+ * Creates the priority label for a task.
+ * Displays a different label and color based on the task priority (`HIGH`, `MEDIUM`, `LOW`).
+ * @param taskPriority The priority level of the task.
+ * @returns Priority label HTML.
+ */
 
 export function ColorPriorityPiece(taskPriority: priority) {
   switch (taskPriority) {
-    case "HIGH":
-      return `
-                <span
-                class="bg-danger-soft items-center text-[10px] font-semibold w-fit text-danger py-0.5 px-2 rounded-sm"
-                >${TestDic.highPriorityTitle}</span
-              >
-  `;
-    case "MEDIUM":
-      return `
-                <span
-                class="bg-warning-soft items-center text-[10px] font-semibold w-fit text-warning py-0.5 px-2 rounded-sm"
-                >${TestDic.mediumPriorityTitle}</span
-              >
-  `;
-    case "LOW":
-      return `
-                <span
-                class="bg-success-soft items-center text-[10px] font-semibold w-fit text-success py-0.5 px-2 rounded-sm"
-                >${TestDic.lowPriorityTitle}</span
-              >
-  `;
+    case 'HIGH':
+      return /* HTML */ `
+        <span
+          class="bg-danger-soft text-danger w-fit items-center rounded-sm px-2 py-0.5 text-[10px] font-semibold"
+          >${FaDic.highPriorityTitle}</span
+        >
+      `
+    case 'MEDIUM':
+      return /* HTML */ `
+        <span
+          class="bg-warning-soft text-warning w-fit items-center rounded-sm px-2 py-0.5 text-[10px] font-semibold"
+          >${FaDic.mediumPriorityTitle}</span
+        >
+      `
+    case 'LOW':
+      return /* HTML */ `
+        <span
+          class="bg-success-soft text-success w-fit items-center rounded-sm px-2 py-0.5 text-[10px] font-semibold"
+          >${FaDic.lowPriorityTitle}</span
+        >
+      `
   }
 }

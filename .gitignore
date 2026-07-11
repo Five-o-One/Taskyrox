@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# DATA
+MOCK_*
+eslint.config.mjs
