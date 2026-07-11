@@ -11,7 +11,7 @@ export function EditTask(id: number): void {
   currentTask.priority = task.priority
   currentTask.isDone = task.isDone
   currentTask.createAt = task.createAt
-  currentTask.editAt = task.editAt
+  currentTask.editAt = new Date().toISOString()
   currentTask.state.isTagmenuOpened = false
   currentTask.state.isOptionOpened = false
 
