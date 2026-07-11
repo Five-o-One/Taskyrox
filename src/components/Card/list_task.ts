@@ -2,7 +2,7 @@ import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { AddNewTask } from './add_task'
 import { Card } from './card'
-import ImgEmpty from '../../../public/images/empty.svg'
+import ImgEmpty from '../../assets/images/empty.svg'
 
 /**
  * Render task list HTML for the current view.
