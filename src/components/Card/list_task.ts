@@ -2,6 +2,7 @@ import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { AddNewTask } from './add_task'
 import { Card } from './card'
+import ImgEmpty from '../../../public/images/empty.svg'
 
 /**
  * Render task list HTML for the current view.
@@ -24,7 +25,7 @@ const EmptyPage = () => /* HTML */ `
       class="border-border bg-bg hover:border-primary flex w-full max-w-sm flex-col items-center justify-center gap-4 rounded-3xl border border-dashed p-6 transition"
     >
       <img
-        src="/public/images/empty.svg"
+        src="${ImgEmpty}"
         alt="Create a new task"
         class="h-40 w-40 object-contain"
       />

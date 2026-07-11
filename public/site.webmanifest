@@ -1,6 +1,6 @@
 {
-  "name": "Taskyrox",
-  "short_name": "Taskyrox",
+  "name": "MyWebSite",
+  "short_name": "MySite",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#0a0d12",
-  "background_color": "#0a0d12",
+  "theme_color": "#D8DDF6",
+  "background_color": "#4F46E5",
   "display": "standalone"
 }
