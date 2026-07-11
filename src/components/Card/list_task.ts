@@ -16,7 +16,7 @@ import { Card } from './card'
 
 const EmptyPage = () => /* HTML */ `
   <div
-    class="relative -top-36 flex h-full w-full flex-col items-center justify-center select-none lg:-top-10"
+    class="relative flex h-full w-full flex-col items-center justify-center select-none lg:-top-10"
   >
     <button
       id="NewTaskCard"
