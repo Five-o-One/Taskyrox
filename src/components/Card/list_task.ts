@@ -1,4 +1,4 @@
-import {FaDic} from '../../dic/fa'
+import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { AddNewTask } from './add_task'
 import { Card } from './card'
@@ -18,11 +18,9 @@ const EmptyPage = () => /* HTML */ `
   >
     <img src="/public/images/empty.svg" alt="empty" />
     <div class="flex flex-col items-center justify-center gap-4 text-center">
-      <span class="text-text-secondary text-md"
-        >${FaDic.emptyStateTitle}</span
-      >
+      <span class="text-text-secondary text-md">${FaDic.emptyStateTitle}</span>
       <span class="text-text-muted text-sm"
-        >${FaDic.emptyStateDescription}</span 
+        >${FaDic.emptyStateDescription}</span
       >
     </div>
   </div>
@@ -32,7 +30,7 @@ export function ListTask(isDone: boolean, list: Task[]) {
   const tasks: Task[] = list.filter((t) => !t.isDone)
   const tasksDone: Task[] = list.filter((t) => t.isDone)
   if (!isDone) {
-    return /* HTML */ `<div class="flex h-full w-full flex-col">
+    return /* HTML */ `<div class="flex h-full max-h-full w-full flex-col">
       <div class="mb-4 flex flex-col space-y-4">
         <span class="text-text text-lg font-bold"
           >${FaDic.titleListNotDone}</span
@@ -43,16 +41,16 @@ export function ListTask(isDone: boolean, list: Task[]) {
         ${AddNewTask()}
       </div>
 
-      ${tasks.length !== 0 ? `<div class="space-y-2 overflow-auto max-h-52"> ${tasks.map((task) => Card('NotDone', task)).join('')} </div>` : EmptyPage()}
+      ${tasks.length !== 0 ? `<div class="space-y-2 overflow-auto"> ${tasks.map((task) => Card('NotDone', task)).join('')} </div>` : EmptyPage()}
     </div>`
   } else {
     return /* HTML */ tasksDone.length !== 0
-      ? `<div class="flex flex-col w-full h-full">
+      ? `<div class="flex flex-col w-full h-full max-h-full">
         <div class="flex flex-col mb-4 space-y-4">
         <span class="font-bold text-lg text-text">${FaDic.titleListDone}</span>
         <span class="text-sm text-text-secondary">${FaDic.subTittleDone(tasksDone.length)}</span>
         </div>
-        <div class="space-y-2 overflow-auto max-h-52">
+        <div class="space-y-2 overflow-auto">
     ${tasksDone.map((task) => `${Card('Done', task)}`).join('')}
         </div>
         </div>`

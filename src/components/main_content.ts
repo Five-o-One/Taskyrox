@@ -10,7 +10,9 @@ export function MainContent() {
   return /* HTML */ ` <div
     class="bg-bg flex h-full w-full flex-col justify-around p-4 md:w-4/5"
   >
-    <div id="notDoneTasks" class="h-full w-full p-4">${ListTask(false, tasks)}</div>
-    <div id="doneTasks" class="h-full w-full p-4">${ListTask(true, tasks)}</div>
+    <div id="notDoneTasks" class="h-1/2 w-full p-4">
+      ${ListTask(false, tasks)}
+    </div>
+    <div id="doneTasks" class="h-1/2 w-full p-4">${ListTask(true, tasks)}</div>
   </div>`
 }
