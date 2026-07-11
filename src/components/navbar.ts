@@ -13,7 +13,7 @@ import { NavBarThemeToggle } from './NavBar/navbar_theme_toggle'
 export function NavBar() {
   return /* HTML */ `
     <navbar
-      class="bg-bg-elevated shadow-icon-muted m-4 hidden h-11/12 w-full flex-col justify-around rounded-lg p-4 transition-all duration-500 shadow-sm hover:shadow-md md:flex md:max-w-1/5"
+      class="bg-bg-elevated m-4 hidden h-11/12 w-full flex-col justify-around rounded-lg p-4 transition-all duration-500 shadow-md  md:flex md:max-w-1/5"
     >
       ${NavBarProfile()} ${NavBarList()}
       <div class="flex flex-col gap-2">
