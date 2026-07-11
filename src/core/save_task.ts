@@ -3,7 +3,7 @@ import { currentTask, tasksState } from '../state/task_state'
 import type { Task } from '../types/task'
 import { resetCurrentTask } from './reset_current_task'
 import { isCurrentTaskValid } from './save_btn_disabled'
-import { saveTask } from './task_storage'
+import { saveTasks } from './task_storage'
 
 export function SaveDataBtn() {
   if (!isCurrentTaskValid()) {
@@ -14,9 +14,15 @@ export function SaveDataBtn() {
     ...currentTask,
     state: { ...currentTask.state },
   }
-
-  tasksState.push(taskToSave)
-  saveTask(taskToSave)
+  const existingIndex = tasksState.findIndex(
+    (task) => task.id === taskToSave.id,
+  )
+  if (existingIndex !== -1) {
+    tasksState[existingIndex] = taskToSave
+  } else {
+    tasksState.push(taskToSave)
+  }
+  saveTasks(tasksState)
 
   renderTaskList()
   resetCurrentTask()

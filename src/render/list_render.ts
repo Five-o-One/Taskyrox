@@ -2,6 +2,7 @@ import { ListTask } from '../components/Card/list_task'
 import {
   CardCheckEvent,
   CardDeleteEvent,
+  CardEditEvent,
   CardOptionEvent,
 } from '../events/card_event'
 import { tasksState } from '../state/task_state'
@@ -21,6 +22,7 @@ export function renderTaskList() {
   CardDeleteEvent()
   CardOptionEvent()
   CardCheckEvent()
+  CardEditEvent()
 }
 
 export function renderTaskCard(id: number) {
@@ -40,4 +42,5 @@ export function renderTaskCard(id: number) {
   CardDeleteEvent()
   CardOptionEvent()
   CardCheckEvent()
+  CardEditEvent()
 }

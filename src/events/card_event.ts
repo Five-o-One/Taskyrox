@@ -7,7 +7,7 @@ import { SaveDataBtn } from '../core/save_task'
 import { TagMenu } from '../core/tag_menu'
 import { toggleTask } from '../core/toggle_task'
 import { currentTask } from '../state/task_state'
-
+import { EditTask } from '../core/edit_task'
 let isCardEventsBound = false
 
 function handleTaskInput(event: Event) {
@@ -90,12 +90,25 @@ export function CardCheckEvent() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="check-"]')
     .forEach((checkbox) => {
-      checkbox.addEventListener("change", (e) => {
-        const target = e.currentTarget as HTMLElement;
+      checkbox.addEventListener('change', (e) => {
+        const target = e.currentTarget as HTMLElement
 
-        const id = Number(target.dataset.key!.replace("check-", ""));
+        const id = Number(target.dataset.key!.replace('check-', ''))
 
-        toggleTask(id);
-      });
-    });
+        toggleTask(id)
+      })
+    })
+}
+
+export function CardEditEvent() {
+  document
+    .querySelectorAll<HTMLElement>('[data-key^="edit-"]')
+    .forEach((btn) => {
+      btn.addEventListener('click', (e: Event) => {
+        e.preventDefault()
+        const target = e.currentTarget as HTMLElement
+        const id = Number(target.dataset.key!.replace('edit-', ''))
+        EditTask(id)
+      })
+    })
 }
