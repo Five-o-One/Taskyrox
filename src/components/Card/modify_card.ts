@@ -1,5 +1,5 @@
 import { isCurrentTaskValid } from '../../core/save_btn_disabled'
-import {FaDic} from '../../dic/fa'
+import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
 import { iconGen } from '../../utils/icon_generator'
 import { ColorPriorityPiece } from './priority_span_color'
@@ -13,9 +13,11 @@ import { SelectPriority } from './select_priority'
  * The save button is disabled.
  */
 
-export function Modifycard(task: Task) {
-  const isselected = task.state.isTagmenuOpened
-  const disabled = !isCurrentTaskValid();
+export function Modifycard(task: Task, startRotated = false) {
+  const isSelected = task.state.isTagmenuOpened
+  const disabled = !isCurrentTaskValid()
+  const iconWrapperClass = `transition-transform duration-300 ease-in-out origin-center${startRotated ? ' rotate-90' : ''}`
+
   return /* HTML */ `
     <div
       id="Creating-Task"
@@ -42,12 +44,14 @@ ${task.description}</textarea>
           id="TagMenuBtn"
           class="border-border mb-6 flex cursor-pointer flex-row items-center justify-center gap-1 rounded-sm border px-2 py-1 active:scale-90"
         >
-          ${isselected ? iconGen('tag', 'rotate-90') : iconGen('tag', '')}
+          <div id="tagIcon" class="${iconWrapperClass}">
+            ${iconGen('tag', 'shrink-0')}
+          </div>
           <span class="text-text-secondary text-xs font-semibold"
             >${task.priority ? ColorPriorityPiece(task.priority) : FaDic.tagTitle}</span
           >
         </button>
-        ${isselected ? SelectPriority() : ''}
+        ${isSelected ? SelectPriority() : ''}
       </div>
       <div
         class="border-border flex w-full flex-row justify-end gap-1.5 border-t p-4"
@@ -56,9 +60,9 @@ ${task.description}</textarea>
           ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
-          ${disabled ? "disabled" : ""}
-          id = "saveTaskBtn"
-          class="cursor-pointer active:scale-90 text-primary-soft bg-primary rounded-md px-4 py-1.5 text-xs font-semibold md:text-sm"
+          ${disabled ? 'disabled' : ''}
+          id="saveTaskBtn"
+          class="text-primary-soft bg-primary cursor-pointer rounded-md px-4 py-1.5 text-xs font-semibold active:scale-90 md:text-sm"
         >
           ${FaDic.saveTitle}
         </button>
