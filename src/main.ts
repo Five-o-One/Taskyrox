@@ -8,7 +8,6 @@ import './styles/global.css'
 init()
 const app = document.getElementById('app') as HTMLElement
 app.classList.add('bg-bg')
-console.log('appState.theme', appState.theme)
 app.setAttribute('data-theme', appState.theme)
 if (app) {
   app.innerHTML = Body()
