@@ -1,46 +1,58 @@
 # Taskyrox
 
-Taskyrox is a modern, lightweight task manager built with TypeScript, Vite, and Tailwind CSS. It provides a clean interface for adding, editing, and tracking tasks with priority and theme support.
+Taskyrox is a lightweight, responsive task manager built with TypeScript, Vite, and Tailwind CSS. It runs entirely in the browser and stores tasks and theme preferences in `localStorage`.
 
-## Key Features
+The current interface is Persian and uses a right-to-left layout.
 
-- Create and save tasks with title, description, and priority
-- Mark tasks as done and manage unfinished tasks
-- Persistent task storage using browser localStorage
-- Light and dark theme toggle
-- Responsive UI built with Tailwind CSS
-- Organized in modular TypeScript components and event handlers
+## Features
+
+- Create tasks with a title, description, and priority
+- Edit and delete existing tasks
+- Mark tasks as complete or incomplete
+- View unfinished and completed tasks separately
+- Persist tasks between browser sessions
+- Switch between light and dark themes
+- Use responsive desktop and mobile navigation
+- Display dates using the Persian calendar
 
 ## Tech Stack
 
-- TypeScript
-- Vite
-- Tailwind CSS
+- TypeScript 6
+- Vite 8
+- Tailwind CSS 4
 - Prettier
+- pnpm
 
 ## Getting Started
 
-### Install dependencies
+### Requirements
+
+- Node.js
+- pnpm
+
+### Installation
 
 ```bash
 pnpm install
 ```
 
-### Run development server
+### Development
 
 ```bash
 pnpm dev
 ```
 
-Then open the local URL shown by Vite in your browser.
+Open the local URL displayed by Vite.
 
-### Build for production
+### Production Build
 
 ```bash
 pnpm build
 ```
 
-### Preview production build
+The command type-checks the project and creates the production bundle.
+
+### Preview
 
 ```bash
 pnpm preview
@@ -48,28 +60,61 @@ pnpm preview
 
 ## Project Structure
 
-- `src/main.ts` — app bootstrap and layout rendering
-- `src/components/` — UI components, navigation, and task cards
-- `src/core/` — task logic, validation, storage, theme control
-- `src/events/` — event registration and handlers
-- `src/render/` — DOM rendering utilities
-- `src/state/` — application and task state definitions
-- `src/types/` — TypeScript type definitions
-- `src/styles/global.css` — global styling
+```text
+Taskyrox/
+├── doc/                 Project and function documentation
+├── public/              Favicons, manifest, and public assets
+├── src/
+│   ├── assets/          Fonts, icons, and images
+│   ├── components/      HTML-rendering UI components
+│   ├── core/            Task, storage, theme, and menu logic
+│   ├── dic/             Persian and English UI dictionaries
+│   ├── events/          DOM event registration and handlers
+│   ├── render/          DOM update functions
+│   ├── state/           Shared application and task state
+│   ├── styles/          Global styles and theme variables
+│   ├── types/           TypeScript declarations
+│   ├── utils/           SVG icon utilities
+│   └── main.ts          Application entry point
+├── index.html           HTML shell
+├── package.json         Dependencies and scripts
+├── tsconfig.json        TypeScript configuration
+└── vite.config.ts       Vite and Tailwind configuration
+```
 
-## Notes
+## How It Works
 
-- Tasks are stored in the browser using `localStorage`, so they persist between refreshes.
-- The current codebase is designed for a simple SPA without an external backend.
+1. `src/main.ts` loads saved state and mounts the application.
+2. Components return HTML template strings.
+3. Event handlers call functions in `src/core/`.
+4. Core functions update shared state and browser storage.
+5. Functions in `src/render/` refresh the affected DOM sections.
 
-## Contribution
+Tasks are stored under the `tasks` key and the selected theme under the `theme` key in browser `localStorage`.
 
-Contributions are welcome. To contribute:
+## Documentation
 
-1. Fork the repository
-2. Create a feature branch
-3. Open a pull request with a clear description of your changes
+Detailed architecture, data models, user flows, DOM contracts, file descriptions, and function references are available in:
+
+- [`doc/PROJECT_DOCUMENTATION.md`](doc/PROJECT_DOCUMENTATION.md)
+
+## Current Scope
+
+- The application has no backend or external database.
+- Navigation and logout entries are currently visual only.
+- Profile information is currently hard-coded.
+- Persian is the active interface language; an English dictionary exists but no language switcher is implemented.
+- Automated tests are not currently included.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Install dependencies with `pnpm install`.
+4. Make and verify your changes.
+5. Run `pnpm build`.
+6. Open a pull request with a clear description.
 
 ## License
 
-This project is currently unlicensed.
+See the [`LICENSE`](LICENSE) file.

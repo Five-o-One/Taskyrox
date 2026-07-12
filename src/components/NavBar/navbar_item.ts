@@ -17,13 +17,12 @@ export function NavBarItem({
   itemLabel,
 }: NavBarItem): string {
   const isActive: boolean = appState.openPageId === itemId
-  const iconClasses = `size-5 object-contain ${isActive ? 'fill-primary' : 'fill-text-muted'}`
   return /* HTML */ `
     <div
       id="${itemId}"
-      class="${isActive ? 'bg-primary-soft' : ''} flex w-full cursor-pointer flex-row items-center gap-4 rounded-lg py-2 pr-1 select-none"
+      class="group ${isActive ? 'bg-primary-soft' : ''} flex w-full cursor-pointer flex-row items-center gap-4 rounded-lg py-2 pr-1 select-none"
     >
-      ${iconGen(itemIcon, iconClasses)}
+      ${iconGen(itemIcon, `size-5 object-contain ${isActive ? 'fill-primary' : 'fill-text-muted'}  duration-300 transition-discrete ease-in group-hover:-translate-y-2 group-hover:rotate-45`)}
       <span
         class="${isActive ? 'text-primary-hover font-bold' : 'text-text-muted font-semibold'} text-sm"
         >${itemLabel}</span
