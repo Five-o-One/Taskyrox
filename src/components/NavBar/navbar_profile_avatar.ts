@@ -8,17 +8,25 @@ import { iconGen } from '../../utils/icon_generator'
  */
 
 export function NavProfileAvatar(avatarUrl: string): string {
-  if (avatarUrl != '') {
-    return /* HTML */ `<img
-      src="${avatarUrl}"
-      alt="profile"
-      class="size-14 shrink-0 rounded-full object-cover"
-    />`
-  }
+  const hasAvatar = avatarUrl.trim() !== ''
+
+  const img = hasAvatar
+    ? /* HTML */ `<img
+        id="filledImageProfile"
+        src="${avatarUrl}"
+        alt="profile"
+        class="size-14 shrink-0 rounded-full object-cover"
+      />`
+    : /* HTML */ `
+        <div
+          id="emptyImageProfile"
+          class="flex size-14 shrink-0 items-center justify-center rounded-full"
+        >
+          ${iconGen('userBold', 'size-7 fill-text-muted')}
+        </div>
+      `
 
   return /* HTML */ `
-    <div class="flex size-14 shrink-0 items-center justify-center rounded-full">
-      ${iconGen('userBold', 'size-7 fill-text-muted')}
-    </div>
+    <div id="imageProfile" class="cursor-pointer">${img}</div>
   `
 }
