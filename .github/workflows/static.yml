@@ -1,5 +1,6 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Taskyrox
+name: Deploy static content to Pages
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -33,11 +34,11 @@ jobs:
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: lts/*
-          cache: 'pnpm'
+          cache: 'npm'
       - name: Install dependencies
-        run: pnpm ci
+        run: npm ci
       - name: Build
-        run: pnpm build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - name: Upload artifact
