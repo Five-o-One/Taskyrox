@@ -12,7 +12,7 @@ export function Body() {
   return /* HTML */ `
     ${NavbarMobileHeader()}
     <main
-      class="bg-bg container mx-auto flex h-screen w-full flex-row items-center justify-center overflow-hidden"
+      class="bg-bg container mx-auto flex h-screen w-full flex-row items-center justify-center"
     >
       ${NavbarMobile()} ${NavBar()} ${MainContent()}
     </main>
