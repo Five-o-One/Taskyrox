@@ -62,7 +62,7 @@ ${task.description}</textarea>
         <button
           ${disabled ? 'disabled' : ''}
           id="saveTaskBtn"
-          class="text-primary-soft bg-primary cursor-pointer rounded-md px-4 py-1.5 text-xs font-semibold active:scale-90 md:text-sm"
+          class="text-primary-soft bg-primary disabled:bg-bg-elevated disabled:text-text-disabled cursor-pointer rounded-md px-4 py-1.5 text-xs font-semibold active:scale-90 disabled:cursor-not-allowed disabled:active:scale-100 md:text-sm"
         >
           ${FaDic.saveTitle}
         </button>

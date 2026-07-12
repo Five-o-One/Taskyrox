@@ -15,7 +15,7 @@ export function renderModifyCard() {
       const tagIcon = newCard?.querySelector('#tagIcon') as HTMLElement | null
 
       if (tagIcon) {
-        tagIcon.classList.toggle('rotate-90', false)
+        tagIcon.classList.toggle('rotate-90', currentTask.state.isTagmenuOpened)
       }
     })
 
