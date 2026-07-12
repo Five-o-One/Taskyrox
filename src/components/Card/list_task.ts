@@ -17,7 +17,7 @@ import ImgEmpty from '../../assets/images/empty.svg'
 
 const EmptyPage = () => /* HTML */ `
   <div
-    class="relative flex h-full w-full flex-col items-center justify-center select-none lg:-top-10"
+    class="relative flex h-full w-full flex-col items-center justify-center select-none"
   >
     <button
       id="NewTaskCard"
