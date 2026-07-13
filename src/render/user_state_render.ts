@@ -12,7 +12,7 @@ export function usernameEditor_render() {
   if (!zones) return
   zones.forEach((zone) => {
     zone.outerHTML = UsernameZone()
-    usernameSave_event()
-    usernameEdit_event()
   })
+  usernameSave_event()
+  usernameEdit_event()
 }
