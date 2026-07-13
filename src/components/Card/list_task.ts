@@ -20,7 +20,7 @@ const EmptyPage = () => /* HTML */ `
     class="relative flex h-full w-full flex-col items-center justify-center select-none"
   >
     <button
-      id="NewTaskCard"
+      data-key="new-task-card"
       type="button"
       class="border-border bg-bg hover:border-primary flex w-full max-w-sm flex-col items-center justify-center gap-4 rounded-3xl border border-dashed p-6 transition"
     >

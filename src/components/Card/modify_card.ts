@@ -20,12 +20,12 @@ export function Modifycard(task: Task, startRotated = false) {
 
   return /* HTML */ `
     <div
-      id="Creating-Task"
+      data-key="creating-task"
       class="border-border h-fit w-full overflow-hidden rounded-xl border shadow"
     >
       <div class="flex flex-col gap-2 p-4">
         <input
-          id="taskTitle"
+          data-key="task-title"
           class="text-text border-none text-sm font-semibold outline-none md:text-[1rem] md:font-bold"
           placeholder="${FaDic.taskTitlePlaceholder}"
           type="text"
@@ -35,16 +35,16 @@ export function Modifycard(task: Task, startRotated = false) {
           class="resize-none text-xs font-normal outline-none md:text-sm"
           placeholder="${FaDic.taskDescriptionPlaceholder}"
           name=""
-          id="taskDescription"
+          data-key="task-description"
         >
 ${task.description}</textarea>
       </div>
       <div class="p-4 pt-2 pb-6">
         <button
-          id="TagMenuBtn"
+          data-key="tag-menu-button"
           class="border-border mb-6 flex cursor-pointer flex-row items-center justify-center gap-1 rounded-sm border px-2 py-1 active:scale-90"
         >
-          <div id="tagIcon" class="${iconWrapperClass}">
+          <div data-key="tag-icon" class="${iconWrapperClass}">
             ${iconGen('tag', 'shrink-0')}
           </div>
           <span class="text-text-secondary text-xs font-semibold"
@@ -56,12 +56,15 @@ ${task.description}</textarea>
       <div
         class="border-border flex w-full flex-row justify-end gap-1.5 border-t p-4"
       >
-        <button id="closeModifyCardBtn" class="cursor-pointer active:scale-90">
+        <button
+          data-key="close-modify-card-button"
+          class="cursor-pointer active:scale-90"
+        >
           ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
           ${disabled ? 'disabled' : ''}
-          id="saveTaskBtn"
+          data-key="save-task-button"
           class="text-primary-soft bg-primary disabled:bg-bg-elevated disabled:text-text-disabled cursor-pointer rounded-md px-4 py-1.5 text-xs font-semibold active:scale-90 disabled:cursor-not-allowed disabled:active:scale-100 md:text-sm"
         >
           ${FaDic.saveTitle}

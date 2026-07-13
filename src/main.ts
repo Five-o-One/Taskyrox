@@ -6,10 +6,10 @@ import { appState } from './state/app_state'
 import './styles/global.css'
 
 init()
-const app = document.getElementById('app') as HTMLElement
-app.classList.add('bg-bg')
-app.setAttribute('data-theme', appState.theme)
+const app = document.querySelector<HTMLElement>('[data-key="app"]')
 if (app) {
+  app.classList.add('bg-bg')
+  app.setAttribute('data-theme', appState.theme)
   app.innerHTML = Body()
 }
 registry()

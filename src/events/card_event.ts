@@ -13,11 +13,11 @@ let isCardEventsBound = false
 function handleTaskInput(event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
 
-  if (target.id === 'taskTitle') {
+  if (target.dataset.key === 'task-title') {
     currentTask.title = target.value
   }
 
-  if (target.id === 'taskDescription') {
+  if (target.dataset.key === 'task-description') {
     currentTask.description = target.value
   }
 }
@@ -29,12 +29,12 @@ function handleCardClick(event: MouseEvent) {
     return
   }
 
-  if (target.closest('#TagMenuBtn')) {
+  if (target.closest('[data-key="tag-menu-button"]')) {
     TagMenu()
     return
   }
 
-  if (target.closest('#closeModifyCardBtn')) {
+  if (target.closest('[data-key="close-modify-card-button"]')) {
     CloseBtn(target)
     return
   }
@@ -43,7 +43,7 @@ function handleCardClick(event: MouseEvent) {
     return
   }
 
-  if (target.closest('#saveTaskBtn')) {
+  if (target.closest('[data-key="save-task-button"]')) {
     SaveDataBtn()
   }
 }

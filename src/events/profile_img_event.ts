@@ -18,16 +18,16 @@ async function fileToBase64(file: File): Promise<string> {
 }
 
 export function ProfileImgEvent() {
-  const profileImg = document.querySelector(
-    '#imageProfile',
-  ) as HTMLElement | null
+  const profileImages = document.querySelectorAll<HTMLElement>(
+    '[data-key^="profile-image-"]',
+  )
 
-  if (profileImg) {
+  profileImages.forEach((profileImg) => {
     profileImg.addEventListener('click', async () => {
       const profileAvatar = await window.showOpenFilePicker()
       const file = await profileAvatar[0].getFile()
       const base64 = await fileToBase64(file)
       imgCore(base64)
     })
-  }
+  })
 }

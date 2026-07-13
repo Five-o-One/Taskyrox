@@ -1,8 +1,12 @@
 import { appState } from '../state/app_state'
 
 export function menuRender() {
-  const sidebar = document.getElementById('navbar-main')
-  const overlay = document.getElementById('menu-overlay')
+  const sidebar = document.querySelector<HTMLElement>(
+    '[data-key="navbar-main"]',
+  )
+  const overlay = document.querySelector<HTMLElement>(
+    '[data-key="menu-overlay"]',
+  )
 
   if (!sidebar || !overlay) return
 

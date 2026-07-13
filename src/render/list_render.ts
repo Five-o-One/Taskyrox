@@ -9,8 +9,8 @@ import { tasksState } from '../state/task_state'
 import { Card } from '../components/Card/card'
 
 export function renderTaskList() {
-  const notDone = document.querySelector('#notDoneTasks')
-  const done = document.querySelector('#doneTasks')
+  const notDone = document.querySelector('[data-key="not-done-tasks"]')
+  const done = document.querySelector('[data-key="done-tasks"]')
 
   if (notDone) {
     notDone.innerHTML = ListTask(false, tasksState)
@@ -31,7 +31,9 @@ export function renderTaskCard(id: number) {
     return
   }
 
-  const cardWrapper = document.querySelector<HTMLElement>(`#taskCard-${id}`)
+  const cardWrapper = document.querySelector<HTMLElement>(
+    `[data-key="task-card-${id}"]`,
+  )
   if (!cardWrapper) {
     return
   }
