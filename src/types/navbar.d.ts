@@ -4,6 +4,7 @@ export interface NavBarProfile {
   username: string
   date: string
   avatarUrl: string
+  isUsernameEditable: boolean
 }
 export interface NavBarItem {
   itemId: number
