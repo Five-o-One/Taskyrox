@@ -9,10 +9,17 @@ import { toggleTask } from '../core/toggle_task'
 import { currentTask } from '../state/task_state'
 import { editTask } from '../core/edit_task'
 import { isCurrentTaskValid } from '../core/save_btn_disabled'
+import { getTaskValidationMessages } from '../core/validate_task'
+import {
+  showValidationTooltip_render,
+  hideValidationTooltip_render,
+} from '../render/error_tooltip_render'
+
 let isCardEventsBound = false
 
 /**
- * Synchronizes task title and description inputs with the current task state.
+ * Synchronizes task title and description inputs with the current task state,
+ * and keeps the save button's disabled state in sync as the user types.
  * @param event The delegated document input event.
  */
 function taskInput_event(event: Event) {
@@ -42,6 +49,7 @@ function taskInput_event(event: Event) {
 
 /**
  * Routes delegated task-card clicks to the matching task action.
+ * Blocks saving and shows the validation tooltip when required fields are missing.
  * @param event The delegated document click event.
  */
 function taskCardClick_event(event: MouseEvent) {
@@ -65,9 +73,45 @@ function taskCardClick_event(event: MouseEvent) {
     return
   }
 
-  if (target.closest('[data-key="save-task-button"]')) {
+  const saveBtn = target.closest(
+    '[data-key="save-task-button"]',
+  ) as HTMLElement | null
+
+  if (saveBtn) {
+    const messages = getTaskValidationMessages()
+
+    if (messages.length > 0) {
+      showValidationTooltip_render(saveBtn, messages)
+      return
+    }
+
     saveCurrentTask()
   }
+}
+
+/**
+ * Shows the validation tooltip above the save button while the pointer hovers over it.
+ * @param event The delegated document mouseover event.
+ */
+function taskSaveMouseOver_event(event: MouseEvent) {
+  const target = event.target as HTMLElement
+  const saveBtn = target.closest(
+    '[data-key="save-task-button"]',
+  ) as HTMLElement | null
+  if (!saveBtn) return
+
+  showValidationTooltip_render(saveBtn, getTaskValidationMessages())
+}
+
+/**
+ * Hides the validation tooltip when the pointer leaves the save button.
+ * @param event The delegated document mouseout event.
+ */
+function taskSaveMouseOut_event(event: MouseEvent) {
+  const target = event.target as HTMLElement
+  if (!target.closest('[data-key="save-task-button"]')) return
+
+  hideValidationTooltip_render()
 }
 
 /**
@@ -81,6 +125,8 @@ export function taskCardInteractions_event() {
   isCardEventsBound = true
   document.addEventListener('input', taskInput_event)
   document.addEventListener('click', taskCardClick_event)
+  document.addEventListener('mouseover', taskSaveMouseOver_event)
+  document.addEventListener('mouseout', taskSaveMouseOut_event)
 }
 
 /**

@@ -12,7 +12,7 @@ import { TaskPriorityBadge } from './priority_span_color'
  */
 export function UndoneTaskCard(task: Task) {
   const isOptionMenuOpen = task.state.isOptionOpened
-  const description = task.description !== ''
+
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
@@ -43,7 +43,7 @@ export function UndoneTaskCard(task: Task) {
         </div>
       </div>
       <!-- description -->
-      <div class="${description ? '' : 'hidden'} mt-4 pr-8">
+      <div class="mt-4 pr-8">
         <p class="text-text-secondary text-xs font-normal">
           ${task.description}
         </p>
