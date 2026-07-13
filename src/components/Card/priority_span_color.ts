@@ -7,7 +7,6 @@ import type { priority } from '../../types/task'
  * @param taskPriority The priority level of the task.
  * @returns Priority label HTML.
  */
-
 export function TaskPriorityBadge(taskPriority: priority) {
   switch (taskPriority) {
     case 'HIGH':

@@ -4,6 +4,9 @@ import {
   usernameSave_event,
 } from '../events/username_event'
 
+/**
+ * Re-renders the username area and binds its current interaction events.
+ */
 export function usernameEditor_render() {
   const zone = document.querySelector<HTMLElement>('[data-key="name-zone"]')
   if (!zone) return

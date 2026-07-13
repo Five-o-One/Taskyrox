@@ -4,9 +4,9 @@ import { generateIcon } from '../../utils/icon_generator'
  * Creates the user avatar for the navigation profile.
  * Displays the user's image if available, otherwise shows a default user icon.
  * @param avatarUrl The user's avatar image URL.
+ * @param scope The desktop or mobile profile scope.
  * @returns Avatar HTML.
  */
-
 export function NavBarProfileAvatar(
   avatarUrl: string,
   scope: 'desktop' | 'mobile' = 'desktop',

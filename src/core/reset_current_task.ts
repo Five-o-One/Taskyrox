@@ -1,5 +1,8 @@
 import { currentTask } from '../state/task_state'
 
+/**
+ * Resets the shared task editor state for a new task.
+ */
 export function resetCurrentTask() {
   currentTask.id = Date.now()
   currentTask.title = ''

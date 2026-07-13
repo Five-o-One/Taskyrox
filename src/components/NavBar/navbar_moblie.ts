@@ -8,7 +8,6 @@ import { FaDic } from '../../dic/fa'
  * Displays the mobile menu overlay, navigation items, theme toggle, and logout item.
  * @returns Mobile navigation bar HTML.
  */
-
 export function NavbarMobile(): string {
   return /* HTML */ `
     <div

@@ -5,6 +5,10 @@ import { resetCurrentTask } from './reset_current_task'
 import { isCurrentTaskValid } from './save_btn_disabled'
 import { saveTasks } from './task_storage'
 
+/**
+ * Creates or updates the current task and persists the task collection.
+ * @returns Whether the task passed validation and was saved.
+ */
 export function saveCurrentTask() {
   if (!isCurrentTaskValid()) {
     return false

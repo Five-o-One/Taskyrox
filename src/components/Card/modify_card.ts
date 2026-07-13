@@ -12,7 +12,6 @@ import { PrioritySelector } from './select_priority'
  * @returns Task edit form HTML.
  * The save button is disabled.
  */
-
 export function ModifyTaskCard(task: Task, startRotated = false) {
   const isSelected = task.state.isTagmenuOpened
   const disabled = !isCurrentTaskValid()

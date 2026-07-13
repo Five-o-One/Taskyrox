@@ -2,9 +2,9 @@ import { FaDic } from '../../dic/fa'
 import { generateIcon } from '../../utils/icon_generator'
 
 /**
- * This component must be deleted.
+ * Creates the legacy unselected task placeholder.
+ * @returns Unselected task-card HTML.
  */
-
 export function UnselectedTaskCard() {
   return /* HTML */ `
     <!-- EmptyStateComponent -->

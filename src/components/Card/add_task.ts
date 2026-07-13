@@ -2,11 +2,9 @@ import { FaDic } from '../../dic/fa'
 import { generateIcon } from '../../utils/icon_generator'
 
 /**
- *
- * @returns This component creates the UI for adding a new task.
- * It uses `FaDic` for the button's title and `generateIcon` for generating icons with the determined appearance.
+ * Creates the compact card used to start adding a new task.
+ * @returns Add-task card HTML.
  */
-
 export function AddTaskCard() {
   return /* HTML */ `
     <div

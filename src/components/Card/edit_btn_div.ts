@@ -2,9 +2,9 @@ import { generateIcon } from '../../utils/icon_generator'
 
 /**
  * Creates the edit and delete buttons for a task card.
+ * @param id The identifier used in the action control data keys.
  * @returns Task action menu HTML.
  */
-
 export function TaskActions(id: number) {
   return /* HTML */ `
     <div

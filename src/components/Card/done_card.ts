@@ -8,7 +8,6 @@ import { TaskPriorityBar } from './priority_nav_color'
  * @param task Shows the task as completed with a checked checkbox and a strikethrough title.
  * @returns completed task card HTML.
  */
-
 export function DoneTaskCard(task: Task) {
   const isOptionMenuOpen = task.state.isOptionOpened
   return /* HTML */ `

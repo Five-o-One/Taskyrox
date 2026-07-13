@@ -5,6 +5,9 @@ import { profileImageSelection_event } from './profile_img_event'
 import { themeToggle_event } from './theme_event'
 import { usernameEdit_event } from './username_event'
 
+/**
+ * Registers application-level event handlers and performs the first task render.
+ */
 export default function eventRegistry_event() {
   taskCardInteractions_event()
   themeToggle_event()

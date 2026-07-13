@@ -3,6 +3,9 @@ import {
   saveProfileImage,
 } from '../core/profile_img'
 
+/**
+ * Opens the file picker when a profile avatar is clicked and saves the image.
+ */
 export function profileImageSelection_event() {
   const profileImages = document.querySelectorAll<HTMLElement>(
     '[data-key^="profile-image-"]',

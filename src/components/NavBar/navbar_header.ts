@@ -1,10 +1,9 @@
-/**
- * This function contains a header which is shown only in mobile.
- * @returns the header that contains menu button and logo.
- */
-
 import { FaDic } from '../../dic/fa'
 
+/**
+ * Creates the mobile-only header with the menu control and application name.
+ * @returns The mobile header HTML.
+ */
 export function NavbarMobileHeader(): string {
   return /* HTML */ `
     <div

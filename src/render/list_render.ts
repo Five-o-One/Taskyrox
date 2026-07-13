@@ -8,6 +8,9 @@ import {
 import { tasksState } from '../state/task_state'
 import { TaskCard } from '../components/Card/card'
 
+/**
+ * Renders the completed and incomplete task sections and binds card events.
+ */
 export function taskList_render() {
   const notDone = document.querySelector('[data-key="not-done-tasks"]')
   const done = document.querySelector('[data-key="done-tasks"]')
@@ -25,6 +28,10 @@ export function taskList_render() {
   taskEdit_event()
 }
 
+/**
+ * Renders one task card from the latest task state and rebinds its events.
+ * @param id The identifier of the task card to refresh.
+ */
 export function taskCard_render(id: number) {
   const task = tasksState.find((taskItem) => taskItem.id === id)
   if (!task) {

@@ -3,6 +3,9 @@ import { currentTask } from '../state/task_state'
 
 let previousTagMenuOpened = false
 
+/**
+ * Refreshes the active task editor and animates the priority menu icon.
+ */
 export function modifyTaskCard_render() {
   const card = document.querySelector('[data-key="creating-task"]')
 

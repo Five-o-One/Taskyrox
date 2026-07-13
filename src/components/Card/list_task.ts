@@ -5,16 +5,9 @@ import { TaskCard } from './card'
 import ImgEmpty from '../../assets/images/empty.svg'
 
 /**
- * Render task list HTML for the current view.
- *
- * - When `isDone` is false, shows the not-done task list or an empty state.
- * - When `isDone` is true, shows completed tasks.
- *
- * @param isDone Whether the done tasks view is active.
- * @param list All tasks from the application state.
- * @returns HTML string for the task list section.
+ * Creates the empty state shown when there are no incomplete tasks.
+ * @returns Empty task-list HTML.
  */
-
 const EmptyTaskList = () => /* HTML */ `
   <div
     class="relative flex h-full w-full flex-col items-center justify-center select-none"
@@ -41,6 +34,11 @@ const EmptyTaskList = () => /* HTML */ `
   </div>
 `
 
+/**
+ * Creates the incomplete-task section.
+ * @param tasks The incomplete tasks to display.
+ * @returns Incomplete task-list HTML.
+ */
 const UndoneTaskList = (tasks: Task[]) => /* HTML */ `
   <div class="flex h-full max-h-full w-full flex-col">
     <div class="mb-4 flex flex-col space-y-4">
@@ -57,6 +55,11 @@ const UndoneTaskList = (tasks: Task[]) => /* HTML */ `
   </div>
 `
 
+/**
+ * Creates the completed-task section.
+ * @param tasksDone The completed tasks to display.
+ * @returns Completed task-list HTML.
+ */
 const DoneTaskList = (tasksDone: Task[]) => /* HTML */ `
   <div class="flex h-full max-h-full w-full flex-col">
     <div class="mb-4 flex flex-col space-y-4">
@@ -72,6 +75,12 @@ const DoneTaskList = (tasksDone: Task[]) => /* HTML */ `
   </div>
 `
 
+/**
+ * Creates the requested completed or incomplete task-list view.
+ * @param isDone Whether the completed-task view should be returned.
+ * @param list All tasks from application state.
+ * @returns Task-list HTML for the requested view.
+ */
 export function TaskList(isDone: boolean, list: Task[]) {
   const undoneTasks: Task[] = list.filter((task) => !task.isDone)
   const doneTasks: Task[] = list.filter((task) => task.isDone)

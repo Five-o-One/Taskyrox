@@ -3,9 +3,9 @@ import { TaskList } from './Card/list_task'
 import { NavBarProfile } from './NavBar/navbar_profile'
 
 /**
- * This function contains the main content.
+ * Creates the main task content area for desktop and mobile layouts.
+ * @returns The main content HTML.
  */
-
 export function MainContent() {
   const tasks = tasksState
   return /* HTML */ ` <div

@@ -1,6 +1,11 @@
 import { profileImage_render } from '../render/profile_img_render'
 import { appState } from '../state/app_state'
 
+/**
+ * Reads a file and converts its contents to a Base64 data URL.
+ * @param file The image file selected by the user.
+ * @returns A promise containing the Base64 data URL.
+ */
 export async function convertFileToBase64(file: File): Promise<string> {
   return await new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -19,6 +24,10 @@ export async function convertFileToBase64(file: File): Promise<string> {
   })
 }
 
+/**
+ * Stores the profile image and refreshes all visible profile avatars.
+ * @param base64 The Base64 data URL of the selected image.
+ */
 export function saveProfileImage(base64: string) {
   appState.navbarProfile.avatarUrl = base64
   localStorage.setItem('user-img', base64)

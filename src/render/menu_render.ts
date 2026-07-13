@@ -1,5 +1,8 @@
 import { appState } from '../state/app_state'
 
+/**
+ * Applies the current mobile navigation state to the sidebar and overlay.
+ */
 export function mobileMenu_render() {
   const sidebar = document.querySelector<HTMLElement>(
     '[data-key="navbar-main"]',

@@ -1,5 +1,8 @@
 import { themeToggle } from '../core/theme_toggle'
 
+/**
+ * Binds theme radio inputs to the application theme state.
+ */
 export function themeToggle_event() {
   document
     .querySelectorAll<HTMLInputElement>('input[name="theme"]')

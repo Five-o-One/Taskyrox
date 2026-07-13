@@ -1,5 +1,10 @@
 export const EnDic = {
   titleListNotDone: "Today's Tasks",
+  /**
+   * Creates the English summary for incomplete tasks.
+   * @param taskCount The number of incomplete tasks.
+   * @returns The localized incomplete-task summary.
+   */
   getUndoneTaskSummary: (taskCount: number | string) => {
     if (taskCount === 0) {
       return 'You have no tasks.'
@@ -8,6 +13,11 @@ export const EnDic = {
     }
   },
   titleListDone: 'Completed Tasks',
+  /**
+   * Creates the English summary for completed tasks.
+   * @param taskCount The number of completed tasks.
+   * @returns The localized completed-task summary.
+   */
   getDoneTaskSummary: (taskCount: number | string) =>
     `${taskCount} tasks have been completed.`,
   highPriorityTitle: 'High',

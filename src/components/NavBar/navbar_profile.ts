@@ -3,11 +3,9 @@ import { appState } from '../../state/app_state'
 import { NavBarProfileAvatar } from './navbar_profile_avatar'
 
 /**
- * Creates the profile section of the navigation bar.
- * Displays the user's avatar, name, and current date using `appState.navbarProfile`.
- * @returns Navigation profile HTML.
+ * Creates the username display or editing controls from the current profile state.
+ * @returns Username area HTML.
  */
-
 export const UsernameZone = () => {
   const { username, isUsernameEditable } = appState.navbarProfile
   let out = isUsernameEditable
@@ -39,6 +37,11 @@ export const UsernameZone = () => {
   </div>`
 }
 
+/**
+ * Creates the navigation profile section with avatar, username, and date.
+ * @param scope The desktop or mobile profile scope.
+ * @returns Navigation profile HTML.
+ */
 export function NavBarProfile(scope: 'desktop' | 'mobile' = 'desktop'): string {
   const { avatarUrl, date } = appState.navbarProfile
   return /* HTML */ `

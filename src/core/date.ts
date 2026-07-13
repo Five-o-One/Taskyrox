@@ -1,3 +1,7 @@
+/**
+ * Formats today's date using the Persian calendar and locale.
+ * @returns The localized Persian date string.
+ */
 export function getTodayPersianDate(): string {
   const formatter = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
     weekday: 'long',

@@ -9,7 +9,6 @@ import { NavBarThemeToggle } from './NavBar/navbar_theme_toggle'
  * Displays the user profile, navigation list, theme toggle, and logout item.
  * @returns Navigation bar HTML.
  */
-
 export function NavBar() {
   return /* HTML */ `
     <navbar

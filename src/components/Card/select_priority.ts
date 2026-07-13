@@ -6,7 +6,6 @@ import { TaskPriorityBadge } from './priority_span_color'
  * Used in the edit form when the user wants to select or change the task priority.
  * @returns Priority selection menu HTML.
  */
-
 export function PrioritySelector() {
   return /* HTML */ `
     <div

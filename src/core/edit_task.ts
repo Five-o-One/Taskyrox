@@ -1,6 +1,10 @@
 import { editTaskCard_render } from '../render/edit_render'
 import { tasksState, currentTask } from '../state/task_state'
 
+/**
+ * Loads an existing task into the shared editor state and opens its editor.
+ * @param id The identifier of the task to edit.
+ */
 export function editTask(id: number): void {
   const task = tasksState.find((taskItem) => taskItem.id === id)
   if (!task) return

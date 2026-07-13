@@ -10,6 +10,10 @@ import { currentTask } from '../state/task_state'
 import { editTask } from '../core/edit_task'
 let isCardEventsBound = false
 
+/**
+ * Synchronizes task title and description inputs with the current task state.
+ * @param event The delegated document input event.
+ */
 function taskInput_event(event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
 
@@ -22,6 +26,10 @@ function taskInput_event(event: Event) {
   }
 }
 
+/**
+ * Routes delegated task-card clicks to the matching task action.
+ * @param event The delegated document click event.
+ */
 function taskCardClick_event(event: MouseEvent) {
   const target = event.target as HTMLElement
 
@@ -48,6 +56,9 @@ function taskCardClick_event(event: MouseEvent) {
   }
 }
 
+/**
+ * Registers delegated task editor interactions once for the document.
+ */
 export function taskCardInteractions_event() {
   if (isCardEventsBound) {
     return
@@ -58,6 +69,9 @@ export function taskCardInteractions_event() {
   document.addEventListener('click', taskCardClick_event)
 }
 
+/**
+ * Binds delete actions to all currently rendered task cards.
+ */
 export function taskDelete_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="remove-"]')
@@ -71,6 +85,10 @@ export function taskDelete_event() {
       })
     })
 }
+
+/**
+ * Binds option-menu toggles to all currently rendered task cards.
+ */
 export function taskOptions_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="option-"]')
@@ -86,6 +104,9 @@ export function taskOptions_event() {
     })
 }
 
+/**
+ * Binds completion toggles to all currently rendered task checkboxes.
+ */
 export function taskCheck_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="check-"]')
@@ -100,6 +121,9 @@ export function taskCheck_event() {
     })
 }
 
+/**
+ * Binds edit actions to all currently rendered task cards.
+ */
 export function taskEdit_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="edit-"]')

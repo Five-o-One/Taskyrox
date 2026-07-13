@@ -10,7 +10,6 @@ import { TaskPriorityBadge } from './priority_span_color'
  * @param task contains the task title, description, priority, and state.
  * @returns Unfinished task card HTML.
  */
-
 export function UndoneTaskCard(task: Task) {
   const isOptionMenuOpen = task.state.isOptionOpened
   return /* HTML */ `

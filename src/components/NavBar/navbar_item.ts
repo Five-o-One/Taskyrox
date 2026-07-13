@@ -10,7 +10,6 @@ import { generateIcon } from '../../utils/icon_generator'
  * @param itemLabel The display label of the navbar item.
  * @returns Navigation bar item HTML.
  */
-
 export function NavBarItem({
   itemId,
   itemIcon,
