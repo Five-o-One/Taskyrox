@@ -1,7 +1,7 @@
 import type { Task } from '../../types/task'
-import { iconGen } from '../../utils/icon_generator'
-import { EditButtonDiv } from './edit_btn_div'
-import { PriorityNavColor } from './priority_nav_color'
+import { generateIcon } from '../../utils/icon_generator'
+import { TaskActions } from './edit_btn_div'
+import { TaskPriorityBar } from './priority_nav_color'
 
 /**
  * Creates a completed task card.
@@ -9,14 +9,14 @@ import { PriorityNavColor } from './priority_nav_color'
  * @returns completed task card HTML.
  */
 
-export function DoneCardComponent(task: Task) {
-  const isbtnselected = task.state.isOptionOpened
+export function DoneTaskCard(task: Task) {
+  const isOptionMenuOpen = task.state.isOptionOpened
   return /* HTML */ `
     <div
       data-key="task-card-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
-      ${PriorityNavColor(task.priority, task.id)}
+      ${TaskPriorityBar(task.priority, task.id)}
       <div class="flex items-start justify-between">
         <div class="flex items-center gap-4">
           <input
@@ -32,10 +32,10 @@ export function DoneCardComponent(task: Task) {
           </div>
         </div>
         <button data-key="option-${task.id}">
-          ${iconGen('menu', 'rotate-90 fill-icon')}
+          ${generateIcon('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute top-1/2 left-10 -translate-y-1/2">
-          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
+          ${isOptionMenuOpen ? TaskActions(task.id) : ' '}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import {FaDic} from '../../dic/fa'
+import { FaDic } from '../../dic/fa'
 import type { priority } from '../../types/task'
 
 /**
@@ -8,7 +8,7 @@ import type { priority } from '../../types/task'
  * @returns Priority label HTML.
  */
 
-export function ColorPriorityPiece(taskPriority: priority) {
+export function TaskPriorityBadge(taskPriority: priority) {
   switch (taskPriority) {
     case 'HIGH':
       return /* HTML */ `

@@ -1,6 +1,6 @@
 import { appState } from '../state/app_state'
 
-export function menuRender() {
+export function mobileMenu_render() {
   const sidebar = document.querySelector<HTMLElement>(
     '[data-key="navbar-main"]',
   )

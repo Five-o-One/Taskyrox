@@ -1,13 +1,13 @@
-import { usernameZone } from '../components/NavBar/navbar_profile'
+import { UsernameZone } from '../components/NavBar/navbar_profile'
 import {
-  changeUserNameState,
-  changeUserNameStateSave,
+  usernameEdit_event,
+  usernameSave_event,
 } from '../events/username_event'
 
-export function changeUserStateRender() {
+export function usernameEditor_render() {
   const zone = document.querySelector<HTMLElement>('[data-key="name-zone"]')
   if (!zone) return
-  zone.outerHTML = usernameZone()
-  changeUserNameStateSave()
-  changeUserNameState()
+  zone.outerHTML = UsernameZone()
+  usernameSave_event()
+  usernameEdit_event()
 }

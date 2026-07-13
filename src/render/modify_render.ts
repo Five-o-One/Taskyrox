@@ -1,14 +1,14 @@
-import { Modifycard } from '../components/Card/modify_card'
+import { ModifyTaskCard } from '../components/Card/modify_card'
 import { currentTask } from '../state/task_state'
 
 let previousTagMenuOpened = false
 
-export function renderModifyCard() {
+export function modifyTaskCard_render() {
   const card = document.querySelector('[data-key="creating-task"]')
 
   if (card) {
     const startRotated = previousTagMenuOpened
-    card.outerHTML = Modifycard(currentTask, startRotated)
+    card.outerHTML = ModifyTaskCard(currentTask, startRotated)
 
     requestAnimationFrame(() => {
       const newCard = document.querySelector('[data-key="creating-task"]')

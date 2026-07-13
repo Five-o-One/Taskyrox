@@ -1,7 +1,7 @@
-import { renderModifyCard } from '../render/modify_render'
+import { modifyTaskCard_render } from '../render/modify_render'
 import { currentTask } from '../state/task_state'
 
-export function TagMenu(): void {
+export function togglePriorityMenu(): void {
   currentTask.state.isTagmenuOpened = !currentTask.state.isTagmenuOpened
-  renderModifyCard()
+  modifyTaskCard_render()
 }

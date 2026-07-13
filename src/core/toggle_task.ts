@@ -1,4 +1,4 @@
-import { renderTaskList } from '../render/list_render'
+import { taskList_render } from '../render/list_render'
 import { tasksState } from '../state/task_state'
 import { saveTasks } from './task_storage'
 
@@ -11,5 +11,5 @@ export function toggleTask(id: number) {
 
   saveTasks(tasksState)
 
-  renderTaskList()
+  taskList_render()
 }

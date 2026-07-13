@@ -7,7 +7,7 @@ import type { priority } from '../../types/task'
  * @returns Priority color bar HTML.
  */
 
-export function PriorityNavColor(taskPriority: priority, taskId: number) {
+export function TaskPriorityBar(taskPriority: priority, taskId: number) {
   switch (taskPriority) {
     case 'LOW':
       return /* HTML */ `

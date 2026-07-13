@@ -1,11 +1,11 @@
-import { changeUserStateRender } from '../render/user_state_render'
+import { usernameEditor_render } from '../render/user_state_render'
 import { appState } from '../state/app_state'
 
-export function changeUserState() {
+export function toggleUsernameEditor() {
   appState.navbarProfile.isUsernameEditable =
     !appState.navbarProfile.isUsernameEditable
 
-  changeUserStateRender()
+  usernameEditor_render()
 }
 
 export function saveUsername(username: string) {

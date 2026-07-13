@@ -1,14 +1,15 @@
 export const EnDic = {
   titleListNotDone: "Today's Tasks",
-  subTittleNotDone: (n: number | string) => {
-    if (n === 0) {
+  getUndoneTaskSummary: (taskCount: number | string) => {
+    if (taskCount === 0) {
       return 'You have no tasks.'
     } else {
-      return `You have ${n} tasks to complete.`
+      return `You have ${taskCount} tasks to complete.`
     }
   },
   titleListDone: 'Completed Tasks',
-  subTittleDone: (n: number | string) => `${n} tasks have been completed.`,
+  getDoneTaskSummary: (taskCount: number | string) =>
+    `${taskCount} tasks have been completed.`,
   highPriorityTitle: 'High',
   mediumPriorityTitle: 'Medium',
   lowPriorityTitle: 'Low',

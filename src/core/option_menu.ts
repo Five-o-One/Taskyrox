@@ -1,4 +1,4 @@
-import { renderTaskCard } from '../render/list_render'
+import { taskCard_render } from '../render/list_render'
 import { tasksState } from '../state/task_state'
 
 export function toggleOptionMenu(id: number) {
@@ -10,5 +10,5 @@ export function toggleOptionMenu(id: number) {
     }
   })
 
-  renderTaskCard(id)
+  taskCard_render(id)
 }

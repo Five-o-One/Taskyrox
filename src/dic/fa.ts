@@ -1,14 +1,15 @@
 export const FaDic = {
   titleListNotDone: 'تسک های امروز',
-  subTittleNotDone: (n: number | string) => {
-    if (n === 0) {
+  getUndoneTaskSummary: (taskCount: number | string) => {
+    if (taskCount === 0) {
       return 'هیچ تسکی نداری'
     } else {
-      return `${n} تسک را باید انجام دهید.`
+      return `${taskCount} تسک را باید انجام دهید.`
     }
   },
   titleListDone: 'تسک های انحام شده',
-  subTittleDone: (n: number | string) => `${n} تسک انجام شده است.`,
+  getDoneTaskSummary: (taskCount: number | string) =>
+    `${taskCount} تسک انجام شده است.`,
   highPriorityTitle: 'بالا',
   mediumPriorityTitle: 'متوسط',
   lowPriorityTitle: 'پایین',

@@ -1,8 +1,8 @@
-import { renderEditCard } from '../render/edit_render'
+import { editTaskCard_render } from '../render/edit_render'
 import { tasksState, currentTask } from '../state/task_state'
 
-export function EditTask(id: number): void {
-  const task = tasksState.find((t) => t.id === id)
+export function editTask(id: number): void {
+  const task = tasksState.find((taskItem) => taskItem.id === id)
   if (!task) return
 
   currentTask.id = task.id
@@ -17,5 +17,5 @@ export function EditTask(id: number): void {
 
   task.state.isOptionOpened = false
 
-  renderEditCard(id)
+  editTaskCard_render(id)
 }

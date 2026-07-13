@@ -1,4 +1,4 @@
-export function profileImgRender(base64: string) {
+export function profileImage_render(base64: string) {
   const userImages = document.querySelectorAll<HTMLElement>(
     '[data-key^="profile-image-"]',
   )

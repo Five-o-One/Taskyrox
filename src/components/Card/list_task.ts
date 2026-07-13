@@ -1,7 +1,7 @@
 import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
-import { AddNewTask } from './add_task'
-import { Card } from './card'
+import { AddTaskCard } from './add_task'
+import { TaskCard } from './card'
 import ImgEmpty from '../../assets/images/empty.svg'
 
 /**
@@ -15,7 +15,7 @@ import ImgEmpty from '../../assets/images/empty.svg'
  * @returns HTML string for the task list section.
  */
 
-const EmptyPage = () => /* HTML */ `
+const EmptyTaskList = () => /* HTML */ `
   <div
     class="relative flex h-full w-full flex-col items-center justify-center select-none"
   >
@@ -41,18 +41,18 @@ const EmptyPage = () => /* HTML */ `
   </div>
 `
 
-const NotDoneTaskList = (tasks: Task[]) => /* HTML */ `
+const UndoneTaskList = (tasks: Task[]) => /* HTML */ `
   <div class="flex h-full max-h-full w-full flex-col">
     <div class="mb-4 flex flex-col space-y-4">
       <span class="text-text text-lg font-bold">${FaDic.titleListNotDone}</span>
       <span class="text-text-secondary text-sm"
-        >${FaDic.subTittleNotDone(tasks.length)}</span
+        >${FaDic.getUndoneTaskSummary(tasks.length)}</span
       >
-      ${AddNewTask()}
+      ${AddTaskCard()}
     </div>
 
     <div class="space-y-2 overflow-auto">
-      ${tasks.map((task) => Card('NotDone', task)).join('')}
+      ${tasks.map((task) => TaskCard('NotDone', task)).join('')}
     </div>
   </div>
 `
@@ -62,25 +62,25 @@ const DoneTaskList = (tasksDone: Task[]) => /* HTML */ `
     <div class="mb-4 flex flex-col space-y-4">
       <span class="text-text text-lg font-bold">${FaDic.titleListDone}</span>
       <span class="text-text-secondary text-sm"
-        >${FaDic.subTittleDone(tasksDone.length)}</span
+        >${FaDic.getDoneTaskSummary(tasksDone.length)}</span
       >
     </div>
 
     <div class="space-y-2 overflow-auto">
-      ${tasksDone.map((task) => Card('Done', task)).join('')}
+      ${tasksDone.map((task) => TaskCard('Done', task)).join('')}
     </div>
   </div>
 `
 
-export function ListTask(isDone: boolean, list: Task[]) {
-  const tasks: Task[] = list.filter((t) => !t.isDone)
-  const tasksDone: Task[] = list.filter((t) => t.isDone)
+export function TaskList(isDone: boolean, list: Task[]) {
+  const undoneTasks: Task[] = list.filter((task) => !task.isDone)
+  const doneTasks: Task[] = list.filter((task) => task.isDone)
 
   if (isDone) {
-    return tasksDone.length !== 0 ? DoneTaskList(tasksDone) : ''
+    return doneTasks.length !== 0 ? DoneTaskList(doneTasks) : ''
   }
 
-  return tasks.length === 0
-    ? `<div class="flex h-full max-h-full w-full flex-col">${EmptyPage()}</div>`
-    : NotDoneTaskList(tasks)
+  return undoneTasks.length === 0
+    ? `<div class="flex h-full max-h-full w-full flex-col">${EmptyTaskList()}</div>`
+    : UndoneTaskList(undoneTasks)
 }

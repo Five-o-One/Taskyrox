@@ -1,9 +1,9 @@
-import { renderAddTaskCard } from '../render/add_task_render'
+import { addTaskCard_render } from '../render/add_task_render'
 import { currentTask, tasksState } from '../state/task_state'
 import { resetCurrentTask } from './reset_current_task'
-import { renderTaskList } from '../render/list_render'
+import { taskList_render } from '../render/list_render'
 
-export function CloseBtn(target: HTMLElement): void {
+export function closeTaskEditor(target: HTMLElement): void {
   const isEditingExistingTask = tasksState.some(
     (task) => task.id === currentTask.id,
   )
@@ -12,9 +12,9 @@ export function CloseBtn(target: HTMLElement): void {
   resetCurrentTask()
 
   if (isEditingExistingTask) {
-    renderTaskList()
+    taskList_render()
     return
   }
 
-  renderAddTaskCard(target)
+  addTaskCard_render(target)
 }

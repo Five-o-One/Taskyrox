@@ -1,6 +1,6 @@
 import { FaDic } from '../../dic/fa'
 import { appState } from '../../state/app_state'
-import { NavProfileAvatar } from './navbar_profile_avatar'
+import { NavBarProfileAvatar } from './navbar_profile_avatar'
 
 /**
  * Creates the profile section of the navigation bar.
@@ -8,7 +8,7 @@ import { NavProfileAvatar } from './navbar_profile_avatar'
  * @returns Navigation profile HTML.
  */
 
-export const usernameZone = () => {
+export const UsernameZone = () => {
   const { username, isUsernameEditable } = appState.navbarProfile
   let out = isUsernameEditable
     ? /* HTML */ `<div
@@ -43,9 +43,9 @@ export function NavBarProfile(scope: 'desktop' | 'mobile' = 'desktop'): string {
   const { avatarUrl, date } = appState.navbarProfile
   return /* HTML */ `
     <div class="flex w-full flex-row gap-3">
-      ${NavProfileAvatar(avatarUrl, scope)}
+      ${NavBarProfileAvatar(avatarUrl, scope)}
       <div class="flex flex-col gap-1">
-        ${usernameZone()}
+        ${UsernameZone()}
         <span class="text-text-secondary text-sm font-semibold">${date}</span>
       </div>
     </div>
