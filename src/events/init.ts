@@ -6,4 +6,5 @@ export function init() {
   tasksState.push(...JSON.parse(localStorage.getItem('tasks') || '[]'))
   appState.theme = (localStorage.getItem('theme') as theme) || 'light'
   appState.navbarProfile.avatarUrl = localStorage.getItem('user-img') || ''
+  appState.navbarProfile.username = localStorage.getItem('user-name') || ''
 }

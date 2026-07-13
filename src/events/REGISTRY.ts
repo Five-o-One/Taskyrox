@@ -3,12 +3,14 @@ import { clickedOnAddEvent } from './card_event'
 import { navbarMobileEvent } from './menu_event'
 import { ProfileImgEvent } from './profile_img_event'
 import { themeToggleEvent } from './theme_event'
+import { changeUserNameState } from './username_event'
 
 export default function registry() {
   clickedOnAddEvent()
   themeToggleEvent()
   navbarMobileEvent()
   ProfileImgEvent()
+  changeUserNameState()
   // Don't add any events after this line
   renderTaskList()
 }

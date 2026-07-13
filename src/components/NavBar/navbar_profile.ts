@@ -8,15 +8,44 @@ import { NavProfileAvatar } from './navbar_profile_avatar'
  * @returns Navigation profile HTML.
  */
 
+export const usernameZone = () => {
+  const { username, isUsernameEditable } = appState.navbarProfile
+  let out = isUsernameEditable
+    ? /* HTML */ `<div
+        class="border-border has-focus:border-primary flex flex-row rounded-lg border px-4 py-2"
+      >
+        <input
+          data-key="name-input"
+          type="text"
+          minlength="3"
+          maxlength="20"
+          class="w-full rounded-lg outline-0"
+        />
+        <button
+          data-key="name-save-button"
+          class="bg-primary-soft text-primary cursor-pointer rounded-lg px-2 py-1 text-sm font-normal"
+        >
+          ${FaDic.saveTitle}
+        </button>
+      </div>`
+    : /* HTML */ `<span data-key="name-output"
+        >${FaDic.navbarGreeting} ${username}</span
+      >`
+  return /* HTML */ `<div
+    class="text-text flex flex-row flex-nowrap text-lg font-extrabold"
+    data-key="name-zone"
+  >
+    ${out}
+  </div>`
+}
+
 export function NavBarProfile(scope: 'desktop' | 'mobile' = 'desktop'): string {
-  const { avatarUrl, username, date } = appState.navbarProfile
+  const { avatarUrl, date } = appState.navbarProfile
   return /* HTML */ `
-    <div class="flex max-w-58 flex-row gap-3">
+    <div class="flex w-full flex-row gap-3">
       ${NavProfileAvatar(avatarUrl, scope)}
       <div class="flex flex-col gap-1">
-        <p class="text-text text-lg font-extrabold">
-          ${FaDic.navbarGreeting} ${username}
-        </p>
+        ${usernameZone()}
         <span class="text-text-secondary text-sm font-semibold">${date}</span>
       </div>
     </div>

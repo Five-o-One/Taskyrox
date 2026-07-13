@@ -4,10 +4,9 @@ export const appState: AppState = {
   openPageId: 0,
   navbarProfile: {
     avatarUrl: '',
-    // avatarUrl: 'https://i.pravatar.cc/300',
-
     date: '',
     username: 'Fo1',
+    isUsernameEditable: false,
   },
   theme: 'light',
   isNavbarOpen: false,
