@@ -31,7 +31,7 @@ export function ModifyTaskCard(task: Task, startRotated = false) {
           value="${task.title}"
         />
         <textarea
-          class="resize-none text-xs font-normal outline-none md:text-sm"
+          class="text-text-secondary resize-none text-xs font-normal outline-none md:text-sm"
           placeholder="${FaDic.taskDescriptionPlaceholder}"
           name=""
           data-key="task-description"
