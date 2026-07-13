@@ -7,19 +7,22 @@ import { iconGen } from '../../utils/icon_generator'
  * @returns Avatar HTML.
  */
 
-export function NavProfileAvatar(avatarUrl: string): string {
+export function NavProfileAvatar(
+  avatarUrl: string,
+  scope: 'desktop' | 'mobile' = 'desktop',
+): string {
   const hasAvatar = avatarUrl.trim() !== ''
 
   const img = hasAvatar
     ? /* HTML */ `<img
-        id="filledImageProfile"
+        data-key="filled-profile-image-${scope}"
         src="${avatarUrl}"
         alt="profile"
         class="size-14 shrink-0 rounded-full object-cover"
       />`
     : /* HTML */ `
         <div
-          id="emptyImageProfile"
+          data-key="empty-profile-image-${scope}"
           class="flex size-14 shrink-0 items-center justify-center rounded-full"
         >
           ${iconGen('userBold', 'size-7 fill-text-muted')}
@@ -27,6 +30,6 @@ export function NavProfileAvatar(avatarUrl: string): string {
       `
 
   return /* HTML */ `
-    <div id="imageProfile" class="cursor-pointer">${img}</div>
+    <div data-key="profile-image-${scope}" class="cursor-pointer">${img}</div>
   `
 }

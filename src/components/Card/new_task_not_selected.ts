@@ -1,4 +1,4 @@
-import {FaDic} from '../../dic/fa'
+import { FaDic } from '../../dic/fa'
 import { iconGen } from '../../utils/icon_generator'
 
 /**
@@ -9,7 +9,7 @@ export function NewTaskComponenet() {
   return /* HTML */ `
     <!-- EmptyStateComponent -->
     <div
-      id="Card"
+      data-key="empty-task-card"
       class="border-border h-14 w-full rounded-xl border border-dashed p-4"
     >
       <button class="text-primary flex gap-2 text-sm font-semibold">

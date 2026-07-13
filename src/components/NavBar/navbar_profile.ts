@@ -8,11 +8,11 @@ import { NavProfileAvatar } from './navbar_profile_avatar'
  * @returns Navigation profile HTML.
  */
 
-export function NavBarProfile(): string {
+export function NavBarProfile(scope: 'desktop' | 'mobile' = 'desktop'): string {
   const { avatarUrl, username, date } = appState.navbarProfile
   return /* HTML */ `
     <div class="flex max-w-58 flex-row gap-3">
-      ${NavProfileAvatar(avatarUrl)}
+      ${NavProfileAvatar(avatarUrl, scope)}
       <div class="flex flex-col gap-1">
         <p class="text-text text-lg font-extrabold">
           ${FaDic.navbarGreeting} ${username}

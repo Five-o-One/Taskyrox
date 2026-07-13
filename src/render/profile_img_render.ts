@@ -1,12 +1,15 @@
 export function profileImgRender(base64: string) {
-  const userImage = document.getElementById('imageProfile')
+  const userImages = document.querySelectorAll<HTMLElement>(
+    '[data-key^="profile-image-"]',
+  )
 
-  if (userImage) {
+  userImages.forEach((userImage) => {
+    const scope = userImage.dataset.key?.replace('profile-image-', '')
     const existingImage = userImage.querySelector(
-      '#filledImageProfile',
+      `[data-key="filled-profile-image-${scope}"]`,
     ) as HTMLImageElement | null
     const placeholder = userImage.querySelector(
-      '#emptyImageProfile',
+      `[data-key="empty-profile-image-${scope}"]`,
     ) as HTMLDivElement | null
 
     if (existingImage) {
@@ -20,7 +23,7 @@ export function profileImgRender(base64: string) {
 
     userImage.insertAdjacentHTML(
       'beforeend',
-      `<img id="filledImageProfile" src="${base64}" alt="profile" class="size-14 shrink-0 rounded-full object-cover"/>`,
+      `<img data-key="filled-profile-image-${scope}" src="${base64}" alt="profile" class="size-14 shrink-0 rounded-full object-cover"/>`,
     )
-  }
+  })
 }

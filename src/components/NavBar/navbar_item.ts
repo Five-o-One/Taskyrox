@@ -5,7 +5,7 @@ import { iconGen } from '../../utils/icon_generator'
 /**
  * Creates a single navbar item.
  * Displays the item icon and label, and applies active or inactive styles based on `appState`.
- * @param itemId The unique id of the navbar item.
+ * @param itemId The unique key of the navbar item.
  * @param itemIcon The icon name of the navbar item.
  * @param itemLabel The display label of the navbar item.
  * @returns Navigation bar item HTML.
@@ -15,11 +15,12 @@ export function NavBarItem({
   itemId,
   itemIcon,
   itemLabel,
+  scope = 'desktop',
 }: NavBarItem): string {
   const isActive: boolean = appState.openPageId === itemId
   return /* HTML */ `
     <div
-      id="${itemId}"
+      data-key="navbar-item-${scope}-${itemId}"
       class="group ${isActive ? 'bg-primary-soft' : ''} flex w-full cursor-pointer flex-row items-center gap-4 rounded-lg py-2 pr-1 select-none"
     >
       ${iconGen(itemIcon, `size-5 object-contain ${isActive ? 'fill-primary' : 'fill-text-muted'}  duration-300 transition-discrete ease-in group-hover:-translate-y-2 group-hover:rotate-45`)}

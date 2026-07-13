@@ -9,4 +9,5 @@ export interface NavBarItem {
   itemId: number
   itemIcon: IconName
   itemLabel: string
+  scope?: 'desktop' | 'mobile'
 }

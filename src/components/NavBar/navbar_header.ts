@@ -3,14 +3,14 @@
  * @returns the header that contains menu button and logo.
  */
 
-import { FaDic } from "../../dic/fa";
+import { FaDic } from '../../dic/fa'
 
 export function NavbarMobileHeader(): string {
   return /* HTML */ `
     <div
       class="bg-bg-elevated flex w-full items-center gap-4 rounded-lg p-4 md:hidden lg:hidden"
     >
-      <div id="menu-open" class="flex flex-col space-y-2">
+      <div data-key="menu-open" class="flex flex-col space-y-2">
         <div class="bg-text h-px w-5"></div>
         <div class="bg-text h-px w-5"></div>
         <div class="bg-text h-px w-5"></div>

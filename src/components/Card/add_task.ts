@@ -1,17 +1,16 @@
-import {FaDic} from '../../dic/fa'
+import { FaDic } from '../../dic/fa'
 import { iconGen } from '../../utils/icon_generator'
 
-
 /**
- * 
- * @returns This component creates the UI for adding a new task. 
+ *
+ * @returns This component creates the UI for adding a new task.
  * It uses `FaDic` for the button's title and `iconGen` for generating icons with the determined appearance.
  */
 
 export function AddNewTask() {
   return /* HTML */ `
     <div
-      id="NewTaskCard"
+      data-key="new-task-card"
       class="border-border bg-bg h-14 w-full rounded-lg border border-dashed p-4"
     >
       <button

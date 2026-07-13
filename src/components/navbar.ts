@@ -13,15 +13,15 @@ import { NavBarThemeToggle } from './NavBar/navbar_theme_toggle'
 export function NavBar() {
   return /* HTML */ `
     <navbar
-      class="bg-bg-elevated m-4 hidden h-11/12 w-full flex-col justify-around rounded-lg p-4 transition-all duration-500 shadow-md  md:flex md:max-w-1/5"
+      class="bg-bg-elevated m-4 hidden h-11/12 w-full flex-col justify-around rounded-lg p-4 shadow-md transition-all duration-500 md:flex md:max-w-1/5"
     >
-      ${NavBarProfile()} ${NavBarList()}
+      ${NavBarProfile('desktop')} ${NavBarList('desktop')}
       <div class="flex flex-col gap-2">
-        ${NavBarThemeToggle()}
+        ${NavBarThemeToggle('desktop')}
         <div
           class="bg-border from-bg-elevated via-border to-bg-elevated mx-auto h-px w-full bg-linear-to-r"
         ></div>
-        ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle })}
+        ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle, scope: 'desktop' })}
       </div>
     </navbar>
   `
