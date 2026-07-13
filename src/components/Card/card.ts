@@ -1,8 +1,8 @@
 import type { Task } from '../../types/task'
 import type { TaskCardState } from '../../types/card_state'
-import { DoneCardComponent } from './done_card'
-import { Modifycard } from './modify_card'
-import { UnDoneCardComponent } from './undone_card'
+import { DoneTaskCard } from './done_card'
+import { ModifyTaskCard } from './modify_card'
+import { UndoneTaskCard } from './undone_card'
 
 /**
  * This component selects the correct task card component based on the current card state.
@@ -10,18 +10,17 @@ import { UnDoneCardComponent } from './undone_card'
  * @param task The task information.
  * @returns HTML string for the selected task card component.
  */
-
-export function Card(state: TaskCardState, task: Task) {
+export function TaskCard(state: TaskCardState, task: Task) {
   switch (state) {
     case 'Done':
-      return /* HTML */ ` ${DoneCardComponent(task)} `
+      return /* HTML */ ` ${DoneTaskCard(task)} `
     case 'NotDone':
       return `
-      ${UnDoneCardComponent(task)}
+      ${UndoneTaskCard(task)}
       `
     default:
       return `
-      ${Modifycard(task)}
+      ${ModifyTaskCard(task)}
       `
   }
 }

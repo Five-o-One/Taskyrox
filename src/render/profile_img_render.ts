@@ -1,4 +1,8 @@
-export function profileImgRender(base64: string) {
+/**
+ * Updates every visible profile avatar with a new image.
+ * @param base64 The Base64 data URL to display.
+ */
+export function profileImage_render(base64: string) {
   const userImages = document.querySelectorAll<HTMLElement>(
     '[data-key^="profile-image-"]',
   )

@@ -1,14 +1,25 @@
 export const FaDic = {
   titleListNotDone: 'تسک های امروز',
-  subTittleNotDone: (n: number | string) => {
-    if (n === 0) {
+  /**
+   * Creates the Persian summary for incomplete tasks.
+   * @param taskCount The number of incomplete tasks.
+   * @returns The localized incomplete-task summary.
+   */
+  getUndoneTaskSummary: (taskCount: number | string) => {
+    if (taskCount === 0) {
       return 'هیچ تسکی نداری'
     } else {
-      return `${n} تسک را باید انجام دهید.`
+      return `${taskCount} تسک را باید انجام دهید.`
     }
   },
   titleListDone: 'تسک های انحام شده',
-  subTittleDone: (n: number | string) => `${n} تسک انجام شده است.`,
+  /**
+   * Creates the Persian summary for completed tasks.
+   * @param taskCount The number of completed tasks.
+   * @returns The localized completed-task summary.
+   */
+  getDoneTaskSummary: (taskCount: number | string) =>
+    `${taskCount} تسک انجام شده است.`,
   highPriorityTitle: 'بالا',
   mediumPriorityTitle: 'متوسط',
   lowPriorityTitle: 'پایین',

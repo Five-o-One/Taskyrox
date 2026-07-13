@@ -2,13 +2,6 @@ import { FaDic } from '../../dic/fa'
 import type { NavBarItem } from '../../types/navbar'
 import { NavBarItem as Item } from './navbar_item'
 
-/**
- * Creates the main navigation item list.
- * Used to display the middle section of the sidebar navigation.
- * Renders all navbar items using the predefined navbar items array and `NavBarItem`.
- * @returns Navigation item list HTML.
- */
-
 const items: NavBarItem[] = [
   { itemIcon: 'home', itemId: 0, itemLabel: FaDic.navbarHomeTitle },
   { itemIcon: 'checklist', itemId: 1, itemLabel: FaDic.navbarTasksTitle },
@@ -18,6 +11,12 @@ const items: NavBarItem[] = [
   { itemIcon: 'info', itemId: 5, itemLabel: FaDic.navbarSupportTitle },
   { itemIcon: 'user', itemId: 6, itemLabel: FaDic.navbarProfileTitle },
 ]
+
+/**
+ * Creates the navigation item list for the requested layout.
+ * @param scope The desktop or mobile navigation scope.
+ * @returns Navigation item list HTML.
+ */
 export function NavBarList(scope: 'desktop' | 'mobile' = 'desktop'): string {
   return /* HTML */ `
     <div>

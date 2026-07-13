@@ -1,9 +1,9 @@
 import { isCurrentTaskValid } from '../../core/save_btn_disabled'
 import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
-import { iconGen } from '../../utils/icon_generator'
-import { ColorPriorityPiece } from './priority_span_color'
-import { SelectPriority } from './select_priority'
+import { generateIcon } from '../../utils/icon_generator'
+import { TaskPriorityBadge } from './priority_span_color'
+import { PrioritySelector } from './select_priority'
 
 /**
  * Creates an edit form for a task.
@@ -12,8 +12,7 @@ import { SelectPriority } from './select_priority'
  * @returns Task edit form HTML.
  * The save button is disabled.
  */
-
-export function Modifycard(task: Task, startRotated = false) {
+export function ModifyTaskCard(task: Task, startRotated = false) {
   const isSelected = task.state.isTagmenuOpened
   const disabled = !isCurrentTaskValid()
   const iconWrapperClass = `transition-transform duration-300 ease-in-out origin-center${startRotated ? ' rotate-90' : ''}`
@@ -45,13 +44,13 @@ ${task.description}</textarea>
           class="border-border mb-6 flex cursor-pointer flex-row items-center justify-center gap-1 rounded-sm border px-2 py-1 active:scale-90"
         >
           <div data-key="tag-icon" class="${iconWrapperClass}">
-            ${iconGen('tag', 'shrink-0')}
+            ${generateIcon('tag', 'shrink-0')}
           </div>
           <span class="text-text-secondary text-xs font-semibold"
-            >${task.priority ? ColorPriorityPiece(task.priority) : FaDic.tagTitle}</span
+            >${task.priority ? TaskPriorityBadge(task.priority) : FaDic.tagTitle}</span
           >
         </button>
-        ${isSelected ? SelectPriority() : ''}
+        ${isSelected ? PrioritySelector() : ''}
       </div>
       <div
         class="border-border flex w-full flex-row justify-end gap-1.5 border-t p-4"
@@ -60,7 +59,7 @@ ${task.description}</textarea>
           data-key="close-modify-card-button"
           class="cursor-pointer active:scale-90"
         >
-          ${iconGen('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
+          ${generateIcon('xmark', 'bg-bg-elevated rounded-md w-8 h-8 shadow')}
         </button>
         <button
           ${disabled ? 'disabled' : ''}

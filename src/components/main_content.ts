@@ -1,11 +1,11 @@
 import { tasksState } from '../state/task_state'
-import { ListTask } from './Card/list_task'
+import { TaskList } from './Card/list_task'
 import { NavBarProfile } from './NavBar/navbar_profile'
 
 /**
- * This function contains the main content.
+ * Creates the main task content area for desktop and mobile layouts.
+ * @returns The main content HTML.
  */
-
 export function MainContent() {
   const tasks = tasksState
   return /* HTML */ ` <div
@@ -13,8 +13,8 @@ export function MainContent() {
   >
     <div class="mb-4 block md:hidden">${NavBarProfile('mobile')}</div>
     <div data-key="not-done-tasks" class="w-full p-4">
-      ${ListTask(false, tasks)}
+      ${TaskList(false, tasks)}
     </div>
-    <div data-key="done-tasks" class="w-full p-4">${ListTask(true, tasks)}</div>
+    <div data-key="done-tasks" class="w-full p-4">${TaskList(true, tasks)}</div>
   </div>`
 }

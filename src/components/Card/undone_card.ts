@@ -1,8 +1,8 @@
 import type { Task } from '../../types/task'
-import { iconGen } from '../../utils/icon_generator'
-import { EditButtonDiv } from './edit_btn_div'
-import { PriorityNavColor } from './priority_nav_color'
-import { ColorPriorityPiece } from './priority_span_color'
+import { generateIcon } from '../../utils/icon_generator'
+import { TaskActions } from './edit_btn_div'
+import { TaskPriorityBar } from './priority_nav_color'
+import { TaskPriorityBadge } from './priority_span_color'
 
 /**
  * Creates an unfinished task card.
@@ -10,16 +10,15 @@ import { ColorPriorityPiece } from './priority_span_color'
  * @param task contains the task title, description, priority, and state.
  * @returns Unfinished task card HTML.
  */
-
-export function UnDoneCardComponent(task: Task) {
-  const isbtnselected = task.state.isOptionOpened
+export function UndoneTaskCard(task: Task) {
+  const isOptionMenuOpen = task.state.isOptionOpened
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
       data-key="task-card-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
-      ${PriorityNavColor(task.priority, task.id)}
+      ${TaskPriorityBar(task.priority, task.id)}
       <!-- checkbox and title ردیف بالا-->
       <div class="flex items-start justify-between">
         <!-- right -->
@@ -31,15 +30,15 @@ export function UnDoneCardComponent(task: Task) {
           />
           <div class="flex flex-col gap-1 md:flex-row md:gap-3">
             <h3 class="text-text mb-1 text-sm font-semibold">${task.title}</h3>
-            ${ColorPriorityPiece(task.priority)}
+            ${TaskPriorityBadge(task.priority)}
           </div>
         </div>
         <!-- button left -->
         <button data-key="option-${task.id}">
-          ${iconGen('menu', 'rotate-90 fill-icon')}
+          ${generateIcon('menu', 'rotate-90 fill-icon')}
         </button>
         <div class="absolute bottom-6 left-6 md:bottom-1">
-          ${isbtnselected ? EditButtonDiv(task.id) : ' '}
+          ${isOptionMenuOpen ? TaskActions(task.id) : ' '}
         </div>
       </div>
       <!-- description -->

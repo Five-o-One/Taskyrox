@@ -1,21 +1,14 @@
 import { FaDic } from '../../dic/fa'
 import type { Task } from '../../types/task'
-import { AddNewTask } from './add_task'
-import { Card } from './card'
+import { AddTaskCard } from './add_task'
+import { TaskCard } from './card'
 import ImgEmpty from '../../assets/images/empty.svg'
 
 /**
- * Render task list HTML for the current view.
- *
- * - When `isDone` is false, shows the not-done task list or an empty state.
- * - When `isDone` is true, shows completed tasks.
- *
- * @param isDone Whether the done tasks view is active.
- * @param list All tasks from the application state.
- * @returns HTML string for the task list section.
+ * Creates the empty state shown when there are no incomplete tasks.
+ * @returns Empty task-list HTML.
  */
-
-const EmptyPage = () => /* HTML */ `
+const EmptyTaskList = () => /* HTML */ `
   <div
     class="relative flex h-full w-full flex-col items-center justify-center select-none"
   >
@@ -41,46 +34,62 @@ const EmptyPage = () => /* HTML */ `
   </div>
 `
 
-const NotDoneTaskList = (tasks: Task[]) => /* HTML */ `
+/**
+ * Creates the incomplete-task section.
+ * @param tasks The incomplete tasks to display.
+ * @returns Incomplete task-list HTML.
+ */
+const UndoneTaskList = (tasks: Task[]) => /* HTML */ `
   <div class="flex h-full max-h-full w-full flex-col">
     <div class="mb-4 flex flex-col space-y-4">
       <span class="text-text text-lg font-bold">${FaDic.titleListNotDone}</span>
       <span class="text-text-secondary text-sm"
-        >${FaDic.subTittleNotDone(tasks.length)}</span
+        >${FaDic.getUndoneTaskSummary(tasks.length)}</span
       >
-      ${AddNewTask()}
+      ${AddTaskCard()}
     </div>
 
     <div class="space-y-2 overflow-auto">
-      ${tasks.map((task) => Card('NotDone', task)).join('')}
+      ${tasks.map((task) => TaskCard('NotDone', task)).join('')}
     </div>
   </div>
 `
 
+/**
+ * Creates the completed-task section.
+ * @param tasksDone The completed tasks to display.
+ * @returns Completed task-list HTML.
+ */
 const DoneTaskList = (tasksDone: Task[]) => /* HTML */ `
   <div class="flex h-full max-h-full w-full flex-col">
     <div class="mb-4 flex flex-col space-y-4">
       <span class="text-text text-lg font-bold">${FaDic.titleListDone}</span>
       <span class="text-text-secondary text-sm"
-        >${FaDic.subTittleDone(tasksDone.length)}</span
+        >${FaDic.getDoneTaskSummary(tasksDone.length)}</span
       >
     </div>
 
     <div class="space-y-2 overflow-auto">
-      ${tasksDone.map((task) => Card('Done', task)).join('')}
+      ${tasksDone.map((task) => TaskCard('Done', task)).join('')}
     </div>
   </div>
 `
 
-export function ListTask(isDone: boolean, list: Task[]) {
-  const tasks: Task[] = list.filter((t) => !t.isDone)
-  const tasksDone: Task[] = list.filter((t) => t.isDone)
+/**
+ * Creates the requested completed or incomplete task-list view.
+ * @param isDone Whether the completed-task view should be returned.
+ * @param list All tasks from application state.
+ * @returns Task-list HTML for the requested view.
+ */
+export function TaskList(isDone: boolean, list: Task[]) {
+  const undoneTasks: Task[] = list.filter((task) => !task.isDone)
+  const doneTasks: Task[] = list.filter((task) => task.isDone)
 
   if (isDone) {
-    return tasksDone.length !== 0 ? DoneTaskList(tasksDone) : ''
+    return doneTasks.length !== 0 ? DoneTaskList(doneTasks) : ''
   }
 
-  return tasks.length === 0
-    ? `<div class="flex h-full max-h-full w-full flex-col">${EmptyPage()}</div>`
-    : NotDoneTaskList(tasks)
+  return undoneTasks.length === 0
+    ? `<div class="flex h-full max-h-full w-full flex-col">${EmptyTaskList()}</div>`
+    : UndoneTaskList(undoneTasks)
 }

@@ -1,11 +1,15 @@
-import { renderTaskList } from '../render/list_render'
+import { taskList_render } from '../render/list_render'
 import { currentTask, tasksState } from '../state/task_state'
 import type { Task } from '../types/task'
 import { resetCurrentTask } from './reset_current_task'
 import { isCurrentTaskValid } from './save_btn_disabled'
 import { saveTasks } from './task_storage'
 
-export function SaveDataBtn() {
+/**
+ * Creates or updates the current task and persists the task collection.
+ * @returns Whether the task passed validation and was saved.
+ */
+export function saveCurrentTask() {
   if (!isCurrentTaskValid()) {
     return false
   }
@@ -24,7 +28,7 @@ export function SaveDataBtn() {
   }
   saveTasks(tasksState)
 
-  renderTaskList()
+  taskList_render()
   resetCurrentTask()
 
   return true

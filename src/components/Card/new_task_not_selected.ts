@@ -1,11 +1,11 @@
 import { FaDic } from '../../dic/fa'
-import { iconGen } from '../../utils/icon_generator'
+import { generateIcon } from '../../utils/icon_generator'
 
 /**
- * This component must be deleted.
+ * Creates the legacy unselected task placeholder.
+ * @returns Unselected task-card HTML.
  */
-
-export function NewTaskComponenet() {
+export function UnselectedTaskCard() {
   return /* HTML */ `
     <!-- EmptyStateComponent -->
     <div
@@ -13,7 +13,7 @@ export function NewTaskComponenet() {
       class="border-border h-14 w-full rounded-xl border border-dashed p-4"
     >
       <button class="text-primary flex gap-2 text-sm font-semibold">
-        ${iconGen('xmark', 'rotate-45 w-6 h-6')}
+        ${generateIcon('xmark', 'rotate-45 w-6 h-6')}
         <span>${FaDic.addingNewTaskTitle}</span>
       </button>
     </div>

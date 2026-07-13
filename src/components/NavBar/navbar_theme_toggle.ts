@@ -4,9 +4,9 @@ import { appState } from '../../state/app_state'
 /**
  * Creates the theme toggle section in the navigation bar.
  * Displays light and dark theme options and activates the selected one based on the current theme in `appState`.
+ * @param scope The desktop or mobile theme-control scope.
  * @returns Theme toggle HTML.
  */
-
 export function NavBarThemeToggle(
   scope: 'desktop' | 'mobile' = 'desktop',
 ): string {

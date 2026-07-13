@@ -1,16 +1,20 @@
-import { AddTask } from '../core/add_task'
-import { CloseBtn } from '../core/close_caard'
+import { openNewTaskEditor } from '../core/add_task'
+import { closeTaskEditor } from '../core/close_caard'
 import { toggleOptionMenu } from '../core/option_menu'
-import { PrSelector } from '../core/priority'
-import { removeCard } from '../core/remove_card'
-import { SaveDataBtn } from '../core/save_task'
-import { TagMenu } from '../core/tag_menu'
+import { selectPriorityFromTarget } from '../core/priority'
+import { removeTask } from '../core/remove_card'
+import { saveCurrentTask } from '../core/save_task'
+import { togglePriorityMenu } from '../core/tag_menu'
 import { toggleTask } from '../core/toggle_task'
 import { currentTask } from '../state/task_state'
-import { EditTask } from '../core/edit_task'
+import { editTask } from '../core/edit_task'
 let isCardEventsBound = false
 
-function handleTaskInput(event: Event) {
+/**
+ * Synchronizes task title and description inputs with the current task state.
+ * @param event The delegated document input event.
+ */
+function taskInput_event(event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
 
   if (target.dataset.key === 'task-title') {
@@ -22,62 +26,76 @@ function handleTaskInput(event: Event) {
   }
 }
 
-function handleCardClick(event: MouseEvent) {
+/**
+ * Routes delegated task-card clicks to the matching task action.
+ * @param event The delegated document click event.
+ */
+function taskCardClick_event(event: MouseEvent) {
   const target = event.target as HTMLElement
 
-  if (AddTask(target)) {
+  if (openNewTaskEditor(target)) {
     return
   }
 
   if (target.closest('[data-key="tag-menu-button"]')) {
-    TagMenu()
+    togglePriorityMenu()
     return
   }
 
   if (target.closest('[data-key="close-modify-card-button"]')) {
-    CloseBtn(target)
+    closeTaskEditor(target)
     return
   }
 
-  if (PrSelector(target)) {
+  if (selectPriorityFromTarget(target)) {
     return
   }
 
   if (target.closest('[data-key="save-task-button"]')) {
-    SaveDataBtn()
+    saveCurrentTask()
   }
 }
 
-export function clickedOnAddEvent() {
+/**
+ * Registers delegated task editor interactions once for the document.
+ */
+export function taskCardInteractions_event() {
   if (isCardEventsBound) {
     return
   }
 
   isCardEventsBound = true
-  document.addEventListener('input', handleTaskInput)
-  document.addEventListener('click', handleCardClick)
+  document.addEventListener('input', taskInput_event)
+  document.addEventListener('click', taskCardClick_event)
 }
 
-export function CardDeleteEvent() {
+/**
+ * Binds delete actions to all currently rendered task cards.
+ */
+export function taskDelete_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="remove-"]')
     .forEach((btn) => {
-      btn.addEventListener('click', (e: Event) => {
-        e.preventDefault()
+      btn.addEventListener('click', (event: Event) => {
+        event.preventDefault()
         //todo
-        const target = e.currentTarget as HTMLElement
+        const target = event.currentTarget as HTMLElement
         const id = Number(target.dataset.key!.replace('remove-', ''))
-        removeCard(id)
+        removeTask(id)
       })
     })
 }
-export function CardOptionEvent() {
+
+/**
+ * Binds option-menu toggles to all currently rendered task cards.
+ */
+export function taskOptions_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="option-"]')
     .forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault()
-        const target = e.currentTarget as HTMLElement
+      btn.addEventListener('click', (event) => {
+        event.preventDefault()
+        const target = event.currentTarget as HTMLElement
 
         const id = Number(target.dataset.key!.replace('option-', ''))
 
@@ -86,12 +104,15 @@ export function CardOptionEvent() {
     })
 }
 
-export function CardCheckEvent() {
+/**
+ * Binds completion toggles to all currently rendered task checkboxes.
+ */
+export function taskCheck_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="check-"]')
     .forEach((checkbox) => {
-      checkbox.addEventListener('change', (e) => {
-        const target = e.currentTarget as HTMLElement
+      checkbox.addEventListener('change', (event) => {
+        const target = event.currentTarget as HTMLElement
 
         const id = Number(target.dataset.key!.replace('check-', ''))
 
@@ -100,15 +121,18 @@ export function CardCheckEvent() {
     })
 }
 
-export function CardEditEvent() {
+/**
+ * Binds edit actions to all currently rendered task cards.
+ */
+export function taskEdit_event() {
   document
     .querySelectorAll<HTMLElement>('[data-key^="edit-"]')
     .forEach((btn) => {
-      btn.addEventListener('click', (e: Event) => {
-        e.preventDefault()
-        const target = e.currentTarget as HTMLElement
+      btn.addEventListener('click', (event: Event) => {
+        event.preventDefault()
+        const target = event.currentTarget as HTMLElement
         const id = Number(target.dataset.key!.replace('edit-', ''))
-        EditTask(id)
+        editTask(id)
       })
     })
 }

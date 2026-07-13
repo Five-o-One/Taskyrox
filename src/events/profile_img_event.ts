@@ -1,33 +1,22 @@
-import { profileImg as imgCore } from '../core/profile_img'
-async function fileToBase64(file: File): Promise<string> {
-  return await new Promise((resolve, reject) => {
-    const reader = new FileReader()
+import {
+  convertFileToBase64,
+  saveProfileImage,
+} from '../core/profile_img'
 
-    reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        resolve(reader.result)
-        return
-      }
-
-      reject(new Error('Failed to read file as base64'))
-    }
-
-    reader.onerror = () => reject(reader.error)
-    reader.readAsDataURL(file)
-  })
-}
-
-export function ProfileImgEvent() {
+/**
+ * Opens the file picker when a profile avatar is clicked and saves the image.
+ */
+export function profileImageSelection_event() {
   const profileImages = document.querySelectorAll<HTMLElement>(
     '[data-key^="profile-image-"]',
   )
 
-  profileImages.forEach((profileImg) => {
-    profileImg.addEventListener('click', async () => {
+  profileImages.forEach((profileImage) => {
+    profileImage.addEventListener('click', async () => {
       const profileAvatar = await window.showOpenFilePicker()
       const file = await profileAvatar[0].getFile()
-      const base64 = await fileToBase64(file)
-      imgCore(base64)
+      const base64 = await convertFileToBase64(file)
+      saveProfileImage(base64)
     })
   })
 }

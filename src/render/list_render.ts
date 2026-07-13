@@ -1,31 +1,38 @@
-import { ListTask } from '../components/Card/list_task'
+import { TaskList } from '../components/Card/list_task'
 import {
-  CardCheckEvent,
-  CardDeleteEvent,
-  CardEditEvent,
-  CardOptionEvent,
+  taskCheck_event,
+  taskDelete_event,
+  taskEdit_event,
+  taskOptions_event,
 } from '../events/card_event'
 import { tasksState } from '../state/task_state'
-import { Card } from '../components/Card/card'
+import { TaskCard } from '../components/Card/card'
 
-export function renderTaskList() {
+/**
+ * Renders the completed and incomplete task sections and binds card events.
+ */
+export function taskList_render() {
   const notDone = document.querySelector('[data-key="not-done-tasks"]')
   const done = document.querySelector('[data-key="done-tasks"]')
 
   if (notDone) {
-    notDone.innerHTML = ListTask(false, tasksState)
+    notDone.innerHTML = TaskList(false, tasksState)
   }
 
   if (done) {
-    done.innerHTML = ListTask(true, tasksState)
+    done.innerHTML = TaskList(true, tasksState)
   }
-  CardDeleteEvent()
-  CardOptionEvent()
-  CardCheckEvent()
-  CardEditEvent()
+  taskDelete_event()
+  taskOptions_event()
+  taskCheck_event()
+  taskEdit_event()
 }
 
-export function renderTaskCard(id: number) {
+/**
+ * Renders one task card from the latest task state and rebinds its events.
+ * @param id The identifier of the task card to refresh.
+ */
+export function taskCard_render(id: number) {
   const task = tasksState.find((taskItem) => taskItem.id === id)
   if (!task) {
     return
@@ -39,10 +46,10 @@ export function renderTaskCard(id: number) {
   }
 
   const state = task.isDone ? 'Done' : 'NotDone'
-  cardWrapper.outerHTML = Card(state, task)
+  cardWrapper.outerHTML = TaskCard(state, task)
 
-  CardDeleteEvent()
-  CardOptionEvent()
-  CardCheckEvent()
-  CardEditEvent()
+  taskDelete_event()
+  taskOptions_event()
+  taskCheck_event()
+  taskEdit_event()
 }
