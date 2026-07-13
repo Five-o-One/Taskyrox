@@ -8,6 +8,7 @@ import { togglePriorityMenu } from '../core/tag_menu'
 import { toggleTask } from '../core/toggle_task'
 import { currentTask } from '../state/task_state'
 import { editTask } from '../core/edit_task'
+import { isCurrentTaskValid } from '../core/save_btn_disabled'
 let isCardEventsBound = false
 
 /**
@@ -16,6 +17,9 @@ let isCardEventsBound = false
  */
 function taskInput_event(event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
+  const saveBtn = document.querySelector<HTMLButtonElement>(
+    '[data-key="save-task-button"]',
+  )
 
   if (target.dataset.key === 'task-title') {
     currentTask.title = target.value
@@ -23,6 +27,16 @@ function taskInput_event(event: Event) {
 
   if (target.dataset.key === 'task-description') {
     currentTask.description = target.value
+  }
+
+  if (saveBtn) {
+    const isValid = isCurrentTaskValid()
+
+    if (isValid) {
+      saveBtn.disabled = false
+    } else {
+      saveBtn.disabled = true
+    }
   }
 }
 
