@@ -12,18 +12,18 @@ import { FaDic } from '../../dic/fa'
 export function NavbarMobile(): string {
   return /* HTML */ `
     <div
-      id="menu-overlay"
+      data-key="menu-overlay"
       class="bg-overlay pointer-events-none fixed inset-0 z-40 opacity-0 transition-opacity duration-500"
     ></div>
 
     <aside
-      id="navbar-main"
+      data-key="navbar-main"
       class="bg-sidebar border-border-muted fixed inset-y-0 right-0 z-50 flex h-full w-72 translate-x-full transform flex-col gap-6 border-l p-5 shadow-2xl transition-transform duration-300"
     >
       <div class="flex items-center justify-between">
         <span class="text-text text-lg font-bold">${FaDic.appName}</span>
         <button
-          id="menu-close"
+          data-key="menu-close"
           class="text-icon active:bg-surface-active rounded-full p-2 transition-colors"
         >
           <svg
@@ -44,13 +44,13 @@ export function NavbarMobile(): string {
       </div>
 
       <div class="flex flex-1 flex-col justify-between">
-        <nav class="">${NavBarList()}</nav>
+        <nav class="">${NavBarList('mobile')}</nav>
         <div class="space-y-7">
-          ${NavBarThemeToggle()}
+          ${NavBarThemeToggle('mobile')}
           <div
             class="bg-border from-bg-elevated via-border to-bg-elevated mx-auto h-px w-full bg-linear-to-r"
           ></div>
-          ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle })}
+          ${NavBarItem({ itemIcon: 'logout', itemId: 7, itemLabel: FaDic.logoutTitle, scope: 'mobile' })}
         </div>
       </div>
     </aside>

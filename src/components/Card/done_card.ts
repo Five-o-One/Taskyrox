@@ -13,10 +13,10 @@ export function DoneCardComponent(task: Task) {
   const isbtnselected = task.state.isOptionOpened
   return /* HTML */ `
     <div
-      id="taskCard-${task.id}"
+      data-key="task-card-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
-      ${PriorityNavColor(task.priority)}
+      ${PriorityNavColor(task.priority, task.id)}
       <div class="flex items-start justify-between">
         <div class="flex items-center gap-4">
           <input

@@ -9,13 +9,13 @@ export function SelectPrBtn(priority: Task['priority']) {
 }
 
 export function PrSelector(target: HTMLElement): boolean {
-  const priorities: { id: string; value: Task['priority'] }[] = [
-    { id: '#lowPriorityBtn', value: 'LOW' },
-    { id: '#mediumPriorityBtn', value: 'MEDIUM' },
-    { id: '#highPriorityBtn', value: 'HIGH' },
+  const priorities: { selector: string; value: Task['priority'] }[] = [
+    { selector: '[data-key="priority-low-button"]', value: 'LOW' },
+    { selector: '[data-key="priority-medium-button"]', value: 'MEDIUM' },
+    { selector: '[data-key="priority-high-button"]', value: 'HIGH' },
   ]
   for (const priority of priorities) {
-    if (target.closest(priority.id)) {
+    if (target.closest(priority.selector)) {
       SelectPrBtn(priority.value)
       return true
     }

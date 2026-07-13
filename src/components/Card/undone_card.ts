@@ -16,10 +16,10 @@ export function UnDoneCardComponent(task: Task) {
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
-      id="taskCard-${task.id}"
+      data-key="task-card-${task.id}"
       class="border-border bg-bg relative h-fit w-full overflow-hidden rounded-xl border px-4 py-3"
     >
-      ${PriorityNavColor(task.priority)}
+      ${PriorityNavColor(task.priority, task.id)}
       <!-- checkbox and title ردیف بالا-->
       <div class="flex items-start justify-between">
         <!-- right -->
