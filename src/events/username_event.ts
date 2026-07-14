@@ -8,7 +8,6 @@ export function usernameEdit_event() {
     '[data-key="name-output"]',
   )
   outputs.forEach((output) => {
-    console.log('output :>> ', output)
     output.addEventListener('click', toggleUsernameEditor)
   })
 }
