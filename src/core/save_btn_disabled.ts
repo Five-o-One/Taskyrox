@@ -5,9 +5,5 @@ import { currentTask } from '../state/task_state'
  * @returns Whether the current task can be saved.
  */
 export function isCurrentTaskValid() {
-  return (
-    currentTask.title.trim() !== '' &&
-    currentTask.description.trim() !== '' &&
-    currentTask.priority !== ''
-  )
+  return currentTask.title.trim() !== '' && currentTask.priority !== ''
 }
