@@ -16,6 +16,7 @@ export function toggleUsernameEditor() {
  * @param username The display name to save.
  */
 export function saveUsername(username: string) {
+  if (username === null || username === '') return
   appState.navbarProfile.username = username
   localStorage.setItem('user-name', username)
 }
