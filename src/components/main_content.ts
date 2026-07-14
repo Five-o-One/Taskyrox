@@ -1,20 +1,10 @@
-import { tasksState } from '../state/task_state'
-import { ListTask } from './Card/list_task'
-import { NavBarProfile } from './NavBar/navbar_profile'
-
-/**
- * This function contains the main content.
- */
+import { FaDic } from '../dic/fa'
+import { NavBarPage } from './NavBar/navbar_page'
 
 export function MainContent() {
-  const tasks = tasksState
-  return /* HTML */ ` <div
-    class="bg-bg flex h-full w-full flex-col justify-around p-4 md:w-4/5"
-  >
-    <div class="mb-16 block md:hidden">${NavBarProfile()}</div>
-    <div id="notDoneTasks" class="h-1/2 w-full p-4">
-      ${ListTask(false, tasks)}
-    </div>
-    <div id="doneTasks" class="h-1/2 w-full p-4">${ListTask(true, tasks)}</div>
-  </div>`
+  return /* HTML */ `
+    <main class="h-full w-full flex-1">
+      ${NavBarPage(FaDic.navbarCalendarTitle)}
+    </main>
+  `
 }
