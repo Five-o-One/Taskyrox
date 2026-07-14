@@ -115,6 +115,14 @@ function taskSaveMouseOut_event(event: MouseEvent) {
 }
 
 /**
+ * Hides the validation tooltip when the page or any container scrolls,
+ * since the tooltip's position becomes stale relative to the save button.
+ */
+export function taskSaveScroll_event() {
+  hideValidationTooltip_render()
+}
+
+/**
  * Registers delegated task editor interactions once for the document.
  */
 export function taskCardInteractions_event() {
@@ -127,6 +135,7 @@ export function taskCardInteractions_event() {
   document.addEventListener('click', taskCardClick_event)
   document.addEventListener('mouseover', taskSaveMouseOver_event)
   document.addEventListener('mouseout', taskSaveMouseOut_event)
+  document.addEventListener('scroll', taskSaveScroll_event, true)
 }
 
 /**
