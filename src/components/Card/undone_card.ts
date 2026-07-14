@@ -12,6 +12,7 @@ import { TaskPriorityBadge } from './priority_span_color'
  */
 export function UndoneTaskCard(task: Task) {
   const isOptionMenuOpen = task.state.isOptionOpened
+
   return /* HTML */ `
     <!-- TaskCardComponent -->
     <div
