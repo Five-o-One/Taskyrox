@@ -85,12 +85,9 @@
   --color-overlay: var(--color-overlay);
 }
 
-html {
+@layer base {
+  html {
+  @apply font-sans text-base leading-normal text-text bg-bg transition-all duration-300;
   font-family: 'Vazirmatn', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  transition-duration: 0.3s;
-  transition-property: all;
+}
 }
